@@ -2,7 +2,6 @@
 
 import { motion } from 'framer-motion'
 import { useEffect, useState } from 'react'
-import ThemeToggle from '../components/ThemeToggle'
 import SplashCursor from '../components/SplashCursor'
 
 export default function Home() {

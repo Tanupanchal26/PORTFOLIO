@@ -96,9 +96,11 @@ export default function Home() {
         transition={{ duration: 0.5 }}
         className="fixed top-0 left-0 right-0 bg-black/90 backdrop-blur-sm shadow-lg z-50"
       >
-        <div className="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
-          <div className="text-white font-bold text-xl tracking-wider">TANYA PANCHAL</div>
-          <div className="flex space-x-4">
+        <div className="max-w-7xl mx-auto px-6 py-4 flex justify-center items-center gap-12">
+          <div className="w-10 h-10 bg-white rounded-lg flex items-center justify-center font-bold text-black text-xl">
+            TP
+          </div>
+          <div className="flex space-x-3">
             {[
               { id: 'hero', label: 'Home', icon: 'M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6' },
               { id: 'about', label: 'About', icon: 'M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z' },

@@ -38,13 +38,13 @@ const Sidebar = () => {
 
   return (
     <>
-      <nav className="hidden md:flex fixed left-0 top-0 h-full w-16 bg-white shadow-lg z-50 flex-col items-center py-8">
-        <div className="space-y-6">
+      <nav className="fixed bottom-0 left-0 right-0 bg-white/90 backdrop-blur-sm shadow-lg z-40 flex justify-center items-center py-3">
+        <div className="flex space-x-6">
           {menuItems.map((item) => (
             <button
               key={item.id}
               onClick={() => scrollToSection(item.id)}
-              className={`w-12 h-12 rounded-full flex items-center justify-center text-xl transition-all duration-300 hover:scale-110 ${
+              className={`w-12 h-12 rounded-full flex items-center justify-center text-xl transition-all duration-300 hover:scale-110 relative z-50 ${
                 activeSection === item.id
                   ? 'bg-blue-500 text-white shadow-lg'
                   : 'bg-gray-100 text-gray-600 hover:bg-gray-200'
@@ -55,23 +55,6 @@ const Sidebar = () => {
             </button>
           ))}
         </div>
-      </nav>
-      
-      <nav className="md:hidden fixed bottom-0 left-0 right-0 bg-white shadow-lg z-50 flex justify-around items-center py-3">
-        {menuItems.map((item) => (
-          <button
-            key={item.id}
-            onClick={() => scrollToSection(item.id)}
-            className={`w-12 h-12 rounded-full flex items-center justify-center text-xl transition-all duration-300 ${
-              activeSection === item.id
-                ? 'bg-blue-500 text-white shadow-lg'
-                : 'bg-gray-100 text-gray-600'
-            }`}
-            title={item.label}
-          >
-            {item.icon}
-          </button>
-        ))}
       </nav>
     </>
   )

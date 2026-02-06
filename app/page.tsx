@@ -67,7 +67,7 @@ export default function Home() {
       title: 'HotWheels – Automotive Showcase Platform',
       year: '2024',
       tech: 'React.js, Node.js, MongoDB, Express.js',
-      description: 'A modern automotive showcase platform enabling users to browse, search, and compare a curated collection of vehicle models. Features include dynamic data fetching, responsive UI, user authentication, structured API endpoints, and smooth client-server interactions. The platform offers optimized performance and an engaging interface across devices.',
+      description: 'A modern automotive showcase platform that allows users to browse, search, and compare curated vehicle models. Built with dynamic data handling, responsive design, and efficient client-server communication for a smooth user experience across devices.',
       github: 'https://github.com/Tanupanchal26/hotwheels.git'
     },
     {

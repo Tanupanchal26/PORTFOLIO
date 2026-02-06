@@ -415,7 +415,10 @@ export default function Home() {
               <div className="flex justify-center">
                 <a href="https://github.com/Tanupanchal26" target="_blank" rel="noopener noreferrer">
                   <img 
-                    src="https://github-readme-activity-graph.vercel.app/graph?username=Tanupanchal26&bg_color=000000&color=c9d1d9&line=22c55e&point=ffffff&area=true&hide_border=false&border_color=30363d" 
+                    src={isDarkMode 
+                      ? "https://github-readme-activity-graph.vercel.app/graph?username=Tanupanchal26&bg_color=000000&color=c9d1d9&line=22c55e&point=ffffff&area=true&hide_border=false&border_color=30363d" 
+                      : "https://github-readme-activity-graph.vercel.app/graph?username=Tanupanchal26&bg_color=F0F1F3&color=111111&line=22c55e&point=111111&area=true&hide_border=false&border_color=D8D9DB"
+                    }
                     alt="Contribution Graph" 
                     className="hover:scale-105 transition-all duration-300 w-full max-w-5xl"
                   />
@@ -431,7 +434,10 @@ export default function Home() {
                 <div className="flex justify-center">
                   <a href="https://github.com/Tanupanchal26" target="_blank" rel="noopener noreferrer">
                     <img 
-                      src="https://github-profile-summary-cards.vercel.app/api/cards/profile-details?username=Tanupanchal26&theme=github_dark" 
+                      src={isDarkMode 
+                        ? "https://github-profile-summary-cards.vercel.app/api/cards/profile-details?username=Tanupanchal26&theme=github_dark" 
+                        : "https://github-profile-summary-cards.vercel.app/api/cards/profile-details?username=Tanupanchal26&theme=default"
+                      }
                       alt="Profile Details" 
                       className="hover:scale-105 transition-all duration-300 w-full max-w-4xl"
                     />
@@ -443,7 +449,10 @@ export default function Home() {
                 <div className="flex justify-center">
                   <a href="https://github.com/Tanupanchal26" target="_blank" rel="noopener noreferrer">
                     <img 
-                      src="https://github-profile-summary-cards.vercel.app/api/cards/repos-per-language?username=Tanupanchal26&theme=github_dark" 
+                      src={isDarkMode 
+                        ? "https://github-profile-summary-cards.vercel.app/api/cards/repos-per-language?username=Tanupanchal26&theme=github_dark" 
+                        : "https://github-profile-summary-cards.vercel.app/api/cards/repos-per-language?username=Tanupanchal26&theme=default"
+                      }
                       alt="Repos per Language" 
                       className="hover:scale-105 transition-all duration-300"
                     />
@@ -452,7 +461,10 @@ export default function Home() {
                 <div className="flex justify-center">
                   <a href="https://github.com/Tanupanchal26" target="_blank" rel="noopener noreferrer">
                     <img 
-                      src="https://github-profile-summary-cards.vercel.app/api/cards/most-commit-language?username=Tanupanchal26&theme=github_dark" 
+                      src={isDarkMode 
+                        ? "https://github-profile-summary-cards.vercel.app/api/cards/most-commit-language?username=Tanupanchal26&theme=github_dark" 
+                        : "https://github-profile-summary-cards.vercel.app/api/cards/most-commit-language?username=Tanupanchal26&theme=default"
+                      }
                       alt="Most Commit Language" 
                       className="hover:scale-105 transition-all duration-300"
                     />
@@ -464,7 +476,10 @@ export default function Home() {
                 <div className="flex justify-center">
                   <a href="https://github.com/Tanupanchal26" target="_blank" rel="noopener noreferrer">
                     <img 
-                      src="https://github-profile-summary-cards.vercel.app/api/cards/stats?username=Tanupanchal26&theme=github_dark" 
+                      src={isDarkMode 
+                        ? "https://github-profile-summary-cards.vercel.app/api/cards/stats?username=Tanupanchal26&theme=github_dark" 
+                        : "https://github-profile-summary-cards.vercel.app/api/cards/stats?username=Tanupanchal26&theme=default"
+                      }
                       alt="Stats" 
                       className="hover:scale-105 transition-all duration-300"
                     />
@@ -473,7 +488,10 @@ export default function Home() {
                 <div className="flex justify-center">
                   <a href="https://github.com/Tanupanchal26" target="_blank" rel="noopener noreferrer">
                     <img 
-                      src="https://github-profile-summary-cards.vercel.app/api/cards/productive-time?username=Tanupanchal26&theme=github_dark&utcOffset=5.5" 
+                      src={isDarkMode 
+                        ? "https://github-profile-summary-cards.vercel.app/api/cards/productive-time?username=Tanupanchal26&theme=github_dark&utcOffset=5.5" 
+                        : "https://github-profile-summary-cards.vercel.app/api/cards/productive-time?username=Tanupanchal26&theme=default&utcOffset=5.5"
+                      }
                       alt="Productive Time" 
                       className="hover:scale-105 transition-all duration-300"
                     />

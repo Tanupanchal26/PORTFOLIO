@@ -2,7 +2,7 @@
 
 import { motion } from 'framer-motion'
 import { useEffect, useState } from 'react'
-import SplashCursor from '../components/SplashCursor'
+import ThemeToggle from '../components/ThemeToggle'
 
 export default function Home() {
   const [mounted, setMounted] = useState(false)
@@ -77,7 +77,6 @@ export default function Home() {
 
   return (
     <main className="min-h-screen">
-      <SplashCursor />
       {/* Fixed Vertical Sidebar */}
       <motion.nav 
         initial={{ x: -100, opacity: 0 }}
@@ -156,7 +155,7 @@ export default function Home() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
           >
-            Tanya Panchal
+            Hi, I'm Tanya Panchal<br />Software Developer
           </motion.h1>
           <motion.p 
             className="text-xl md:text-2xl text-gray-400 mb-8"
@@ -200,10 +199,7 @@ export default function Home() {
               variants={fadeInUp}
               className="text-lg md:text-xl leading-relaxed text-gray-400 text-center max-w-3xl mx-auto mb-12"
             >
-              Passionate and driven B.Tech 2nd-year student with a keen interest in Software Development, 
-              UI/UX design, and competitive programming. Strong foundation in front-end and back-end technologies, 
-              version control systems, and problem-solving. Eager to learn, innovate, and apply my skills to 
-              real-world projects while continuously improving as a developer.
+              I am a passionate Software Developer and B.Tech Computer Science student with a strong interest in building modern, scalable, and user-focused web applications. I have a solid foundation in front-end and back-end technologies and enjoy turning ideas into practical digital solutions. Through academic learning and hands-on projects, I continuously work on improving my problem-solving skills, code quality, and understanding of real-world software development. I am eager to learn, grow, and contribute to meaningful projects as a developer.
             </motion.p>
             
             <div className="text-center mt-12">

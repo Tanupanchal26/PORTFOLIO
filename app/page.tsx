@@ -102,7 +102,7 @@ export default function Home() {
   ]
 
   return (
-    <main className={isDarkMode ? 'min-h-screen bg-black text-white' : 'min-h-screen bg-gray-50 text-black'}>
+    <main className={isDarkMode ? 'min-h-screen bg-black text-white' : 'min-h-screen bg-[#F4F5F7] text-[#111111]'}>
       <SplashCursor />
       {/* Fixed Top Menubar */}
       <motion.nav 
@@ -112,13 +112,13 @@ export default function Home() {
           opacity: isMenuVisible ? 1 : 0 
         }}
         transition={{ duration: 0.3, ease: "easeInOut" }}
-        className={`fixed top-0 left-0 right-0 backdrop-blur-sm shadow-lg z-50 ${
-          isDarkMode ? 'bg-black/90' : 'bg-gray-100/90'
+        className={`fixed top-0 left-0 right-0 backdrop-blur-sm z-50 ${
+          isDarkMode ? 'bg-black/90 shadow-lg' : 'bg-white shadow-[0_2px_8px_rgba(0,0,0,0.06)]'
         }`}
       >
         <div className="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
           <div className={`font-bold text-xl tracking-wider ${
-            isDarkMode ? 'text-white' : 'text-gray-800'
+            isDarkMode ? 'text-white' : 'text-[#111111]'
           }`}>TANYA</div>
           <div className="flex gap-20">
             {[
@@ -140,8 +140,8 @@ export default function Home() {
                 }}
                 className={`w-10 h-10 rounded-lg flex items-center justify-center transition-all duration-300 group relative ${
                   activeSection === item.id
-                    ? isDarkMode ? 'bg-white shadow-lg' : 'bg-gray-800 shadow-lg'
-                    : isDarkMode ? 'hover:bg-gray-800' : 'hover:bg-gray-200'
+                    ? isDarkMode ? 'bg-white shadow-lg' : 'bg-[#111111] shadow-lg'
+                    : isDarkMode ? 'hover:bg-gray-800' : 'hover:bg-[#F0F0F0]'
                 }`}
                 whileHover={{ scale: 1.1 }}
                 whileTap={{ scale: 0.95 }}
@@ -151,7 +151,7 @@ export default function Home() {
                   className={`w-5 h-5 transition-colors duration-300 ${
                     activeSection === item.id 
                       ? isDarkMode ? 'text-black' : 'text-white'
-                      : isDarkMode ? 'text-gray-300 group-hover:text-white' : 'text-gray-600 group-hover:text-gray-800'
+                      : isDarkMode ? 'text-gray-300 group-hover:text-white' : 'text-[#374151] group-hover:text-[#111111]'
                   }`}
                   fill={item.fill ? "currentColor" : "none"}
                   stroke={item.fill ? "none" : "currentColor"}
@@ -169,12 +169,12 @@ export default function Home() {
           <button
             onClick={() => setIsDarkMode(!isDarkMode)}
             className={`w-10 h-10 rounded-lg flex items-center justify-center transition-all duration-300 ${
-              isDarkMode ? 'bg-gray-800 hover:bg-gray-700' : 'bg-gray-300 hover:bg-gray-400'
+              isDarkMode ? 'bg-gray-800 hover:bg-gray-700' : 'bg-[#E5E7EB] hover:bg-[#D1D5DB]'
             }`}
             aria-label="Toggle theme"
           >
             <svg className={`w-5 h-5 ${
-              isDarkMode ? 'text-gray-300' : 'text-gray-700'
+              isDarkMode ? 'text-gray-300' : 'text-[#111111]'
             }`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
               {isDarkMode ? (
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
@@ -205,7 +205,9 @@ export default function Home() {
             Hi, I'm Tanya Panchal<br />Software Developer
           </motion.h1>
           <motion.p 
-            className="text-xl md:text-2xl text-gray-400 mb-8"
+            className={`text-xl md:text-2xl mb-8 ${
+              isDarkMode ? 'text-gray-400' : 'text-[#4B5563]'
+            }`}
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
@@ -219,7 +221,11 @@ export default function Home() {
           >
             <a 
               href="#about" 
-              className="inline-block border border-white px-8 py-3 hover:bg-white hover:text-black transition-all duration-300"
+              className={`inline-block px-8 py-3 transition-all duration-300 ${
+                isDarkMode 
+                  ? 'border border-white hover:bg-white hover:text-black' 
+                  : 'bg-[#111111] text-white hover:bg-[#1F2937]'
+              }`}
             >
               Learn More
             </a>
@@ -244,7 +250,9 @@ export default function Home() {
             </motion.h2>
             <motion.p 
               variants={fadeInUp}
-              className="text-lg md:text-xl leading-relaxed text-gray-400 text-center max-w-3xl mx-auto mb-12"
+              className={`text-lg md:text-xl leading-relaxed text-center max-w-3xl mx-auto mb-12 ${
+                isDarkMode ? 'text-gray-400' : 'text-[#4B5563]'
+              }`}
             >
               I am a passionate Software Developer and B.Tech Computer Science student with a strong interest in building modern, scalable, and user-focused web applications. I have a solid foundation in front-end and back-end technologies and enjoy turning ideas into practical digital solutions. Through academic learning and hands-on projects, I continuously work on improving my problem-solving skills, code quality, and understanding of real-world software development. I am eager to learn, grow, and contribute to meaningful projects as a developer.
             </motion.p>
@@ -259,7 +267,11 @@ export default function Home() {
                   link.click();
                   document.body.removeChild(link);
                 }}
-                className="inline-block border border-white px-8 py-3 hover:bg-white hover:text-black transition-all duration-300"
+                className={`inline-block px-8 py-3 transition-all duration-300 ${
+                  isDarkMode 
+                    ? 'border border-white hover:bg-white hover:text-black' 
+                    : 'bg-[#111111] text-white hover:bg-[#1F2937]'
+                }`}
               >
                 📄 Download Resume
               </button>
@@ -291,7 +303,11 @@ export default function Home() {
                 <motion.div
                   key={skill}
                   variants={fadeInUp}
-                  className="border border-gray-600 px-4 py-3 text-center hover:border-white transition-colors duration-300"
+                  className={`px-4 py-3 text-center transition-colors duration-300 ${
+                    isDarkMode 
+                      ? 'border border-gray-600 hover:border-white' 
+                      : 'bg-white border border-[#E5E7EB] hover:border-[#D1D5DB]'
+                  }`}
                 >
                   {skill}
                 </motion.div>
@@ -324,22 +340,30 @@ export default function Home() {
                 <motion.div
                   key={project.title}
                   variants={fadeInUp}
-                  className="border border-gray-600 p-6 hover:border-white transition-all duration-300 group"
+                  className={`p-6 transition-all duration-300 group ${
+                    isDarkMode 
+                      ? 'border border-gray-600 hover:border-white' 
+                      : 'bg-white border border-[#E5E7EB] hover:border-[#D1D5DB] shadow-sm'
+                  }`}
                 >
                   <div className="flex justify-between items-start mb-4">
                     <h3 className="text-xl font-semibold group-hover:text-gray-300 transition-colors">
                       {project.title}
                     </h3>
-                    <span className="text-gray-400 text-sm">{project.year}</span>
+                    <span className={isDarkMode ? 'text-gray-400 text-sm' : 'text-[#6B7280] text-sm'}>{project.year}</span>
                   </div>
-                  <p className="text-gray-400 text-sm mb-4">{project.tech}</p>
-                  <p className="text-gray-400 leading-relaxed mb-4">{project.description}</p>
+                  <p className={`text-sm mb-4 ${isDarkMode ? 'text-gray-400' : 'text-[#6B7280]'}`}>{project.tech}</p>
+                  <p className={`leading-relaxed mb-4 ${isDarkMode ? 'text-gray-400' : 'text-[#4B5563]'}`}>{project.description}</p>
                   <div className="text-center">
                     <a
                       href={project.github}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="inline-flex items-center px-4 py-2 border border-gray-600 rounded-lg hover:border-white hover:bg-white hover:text-black transition-all duration-300 text-sm"
+                      className={`inline-flex items-center px-4 py-2 rounded-lg transition-all duration-300 text-sm ${
+                        isDarkMode 
+                          ? 'border border-gray-600 hover:border-white hover:bg-white hover:text-black' 
+                          : 'border border-[#E5E7EB] hover:bg-[#111111] hover:text-white hover:border-[#111111]'
+                      }`}
                     >
                       <svg className="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 24 24">
                         <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.30.653 1.652.242 2.873.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
@@ -454,26 +478,38 @@ export default function Home() {
               {/* GitHub Stats Cards */}
               <motion.div
                 variants={fadeInUp}
-                className="border border-gray-600 p-6 text-center hover:border-white transition-all duration-300"
+                className={`p-6 text-center transition-all duration-300 ${
+                  isDarkMode 
+                    ? 'border border-gray-600 hover:border-white' 
+                    : 'bg-white border border-[#E5E7EB] hover:border-[#D1D5DB]'
+                }`}
               >
                 <h3 className="text-2xl font-bold text-green-400 mb-2">15+</h3>
-                <p className="text-gray-400">Public Repositories</p>
+                <p className={isDarkMode ? 'text-gray-400' : 'text-[#6B7280]'}>Public Repositories</p>
               </motion.div>
               
               <motion.div
                 variants={fadeInUp}
-                className="border border-gray-600 p-6 text-center hover:border-white transition-all duration-300"
+                className={`p-6 text-center transition-all duration-300 ${
+                  isDarkMode 
+                    ? 'border border-gray-600 hover:border-white' 
+                    : 'bg-white border border-[#E5E7EB] hover:border-[#D1D5DB]'
+                }`}
               >
                 <h3 className="text-2xl font-bold text-green-400 mb-2">JavaScript</h3>
-                <p className="text-gray-400">Primary Language</p>
+                <p className={isDarkMode ? 'text-gray-400' : 'text-[#6B7280]'}>Primary Language</p>
               </motion.div>
               
               <motion.div
                 variants={fadeInUp}
-                className="border border-gray-600 p-6 text-center hover:border-white transition-all duration-300"
+                className={`p-6 text-center transition-all duration-300 ${
+                  isDarkMode 
+                    ? 'border border-gray-600 hover:border-white' 
+                    : 'bg-white border border-[#E5E7EB] hover:border-[#D1D5DB]'
+                }`}
               >
                 <h3 className="text-2xl font-bold text-green-400 mb-2">Active</h3>
-                <p className="text-gray-400">Developer Status</p>
+                <p className={isDarkMode ? 'text-gray-400' : 'text-[#6B7280]'}>Developer Status</p>
               </motion.div>
             </motion.div>
 
@@ -484,7 +520,11 @@ export default function Home() {
                 target="_blank"
                 rel="noopener noreferrer"
                 whileHover={{ scale: 1.05 }}
-                className="inline-flex items-center border border-white px-8 py-3 hover:bg-white hover:text-black transition-all duration-300"
+                className={`inline-flex items-center px-8 py-3 transition-all duration-300 ${
+                  isDarkMode 
+                    ? 'border border-white hover:bg-white hover:text-black' 
+                    : 'bg-[#111111] text-white hover:bg-[#1F2937]'
+                }`}
               >
                 <svg className="w-5 h-5 mr-3" fill="currentColor" viewBox="0 0 24 24">
                   <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.30.653 1.652.242 2.873.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
@@ -519,12 +559,18 @@ export default function Home() {
               {/* Deloitte Certificate */}
               <motion.div
                 variants={fadeInUp}
-                className="flex items-center justify-between p-6 border border-gray-600 rounded-lg hover:border-white transition-all duration-300 group"
+                className={`flex items-center justify-between p-6 rounded-lg transition-all duration-300 group ${
+                  isDarkMode 
+                    ? 'border border-gray-600 hover:border-white' 
+                    : 'bg-white border border-[#E5E7EB] hover:border-[#D1D5DB] shadow-sm'
+                }`}
               >
                 <div className="flex-1">
-                  <h3 className="text-xl font-semibold mb-2 group-hover:text-gray-300 transition-colors">Technology Job Simulation</h3>
-                  <p className="text-gray-400 text-sm mb-1">Deloitte Australia</p>
-                  <span className="text-gray-500 text-sm">2025</span>
+                  <h3 className={`text-xl font-semibold mb-2 transition-colors ${
+                    isDarkMode ? 'group-hover:text-gray-300' : ''
+                  }`}>Technology Job Simulation</h3>
+                  <p className={`text-sm mb-1 ${isDarkMode ? 'text-gray-400' : 'text-[#6B7280]'}`}>Deloitte Australia</p>
+                  <span className={`text-sm ${isDarkMode ? 'text-gray-500' : 'text-[#9CA3AF]'}`}>2025</span>
                 </div>
                 <button
                   onClick={() => {
@@ -535,7 +581,11 @@ export default function Home() {
                     link.click();
                     document.body.removeChild(link);
                   }}
-                  className="ml-6 px-4 py-2 border border-gray-600 rounded-lg hover:border-white hover:bg-white hover:text-black transition-all duration-300 flex items-center space-x-2"
+                  className={`ml-6 px-4 py-2 rounded-lg transition-all duration-300 flex items-center space-x-2 ${
+                    isDarkMode 
+                      ? 'border border-gray-600 hover:border-white hover:bg-white hover:text-black' 
+                      : 'border border-[#E5E7EB] hover:bg-[#111111] hover:text-white hover:border-[#111111]'
+                  }`}
                 >
                   <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />

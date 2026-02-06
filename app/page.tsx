@@ -102,7 +102,7 @@ export default function Home() {
   ]
 
   return (
-    <main className={isDarkMode ? 'min-h-screen bg-black text-white' : 'min-h-screen bg-[#F4F5F7] text-[#111111]'}>
+    <main className={isDarkMode ? 'min-h-screen bg-black text-white' : 'min-h-screen bg-[#E8E9EB] text-[#111111]'}>
       <SplashCursor />
       {/* Fixed Top Menubar */}
       <motion.nav 
@@ -113,7 +113,7 @@ export default function Home() {
         }}
         transition={{ duration: 0.3, ease: "easeInOut" }}
         className={`fixed top-0 left-0 right-0 backdrop-blur-sm z-50 ${
-          isDarkMode ? 'bg-black/90 shadow-lg' : 'bg-white shadow-[0_2px_8px_rgba(0,0,0,0.06)]'
+          isDarkMode ? 'bg-black/90 shadow-lg' : 'bg-[#F0F1F3] shadow-[0_2px_8px_rgba(0,0,0,0.08)]'
         }`}
       >
         <div className="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
@@ -141,7 +141,7 @@ export default function Home() {
                 className={`w-10 h-10 rounded-lg flex items-center justify-center transition-all duration-300 group relative ${
                   activeSection === item.id
                     ? isDarkMode ? 'bg-white shadow-lg' : 'bg-[#111111] shadow-lg'
-                    : isDarkMode ? 'hover:bg-gray-800' : 'hover:bg-[#F0F0F0]'
+                    : isDarkMode ? 'hover:bg-gray-800' : 'hover:bg-[#E0E1E3]'
                 }`}
                 whileHover={{ scale: 1.1 }}
                 whileTap={{ scale: 0.95 }}
@@ -169,7 +169,7 @@ export default function Home() {
           <button
             onClick={() => setIsDarkMode(!isDarkMode)}
             className={`w-10 h-10 rounded-lg flex items-center justify-center transition-all duration-300 ${
-              isDarkMode ? 'bg-gray-800 hover:bg-gray-700' : 'bg-[#E5E7EB] hover:bg-[#D1D5DB]'
+              isDarkMode ? 'bg-gray-800 hover:bg-gray-700' : 'bg-[#D8D9DB] hover:bg-[#C8C9CB]'
             }`}
             aria-label="Toggle theme"
           >
@@ -306,7 +306,7 @@ export default function Home() {
                   className={`px-4 py-3 text-center transition-colors duration-300 ${
                     isDarkMode 
                       ? 'border border-gray-600 hover:border-white' 
-                      : 'bg-white border border-[#E5E7EB] hover:border-[#D1D5DB]'
+                      : 'bg-[#F0F1F3] border border-[#D8D9DB] hover:border-[#C0C1C3]'
                   }`}
                 >
                   {skill}
@@ -343,7 +343,7 @@ export default function Home() {
                   className={`p-6 transition-all duration-300 group ${
                     isDarkMode 
                       ? 'border border-gray-600 hover:border-white' 
-                      : 'bg-white border border-[#E5E7EB] hover:border-[#D1D5DB] shadow-sm'
+                      : 'bg-[#F0F1F3] border border-[#D8D9DB] hover:border-[#C0C1C3] shadow-sm'
                   }`}
                 >
                   <div className="flex justify-between items-start mb-4">
@@ -362,7 +362,7 @@ export default function Home() {
                       className={`inline-flex items-center px-4 py-2 rounded-lg transition-all duration-300 text-sm ${
                         isDarkMode 
                           ? 'border border-gray-600 hover:border-white hover:bg-white hover:text-black' 
-                          : 'border border-[#E5E7EB] hover:bg-[#111111] hover:text-white hover:border-[#111111]'
+                          : 'border border-[#D8D9DB] hover:bg-[#111111] hover:text-white hover:border-[#111111]'
                       }`}
                     >
                       <svg className="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 24 24">
@@ -481,7 +481,7 @@ export default function Home() {
                 className={`p-6 text-center transition-all duration-300 ${
                   isDarkMode 
                     ? 'border border-gray-600 hover:border-white' 
-                    : 'bg-white border border-[#E5E7EB] hover:border-[#D1D5DB]'
+                    : 'bg-[#F0F1F3] border border-[#D8D9DB] hover:border-[#C0C1C3]'
                 }`}
               >
                 <h3 className="text-2xl font-bold text-green-400 mb-2">15+</h3>
@@ -493,7 +493,7 @@ export default function Home() {
                 className={`p-6 text-center transition-all duration-300 ${
                   isDarkMode 
                     ? 'border border-gray-600 hover:border-white' 
-                    : 'bg-white border border-[#E5E7EB] hover:border-[#D1D5DB]'
+                    : 'bg-[#F0F1F3] border border-[#D8D9DB] hover:border-[#C0C1C3]'
                 }`}
               >
                 <h3 className="text-2xl font-bold text-green-400 mb-2">JavaScript</h3>
@@ -505,7 +505,7 @@ export default function Home() {
                 className={`p-6 text-center transition-all duration-300 ${
                   isDarkMode 
                     ? 'border border-gray-600 hover:border-white' 
-                    : 'bg-white border border-[#E5E7EB] hover:border-[#D1D5DB]'
+                    : 'bg-[#F0F1F3] border border-[#D8D9DB] hover:border-[#C0C1C3]'
                 }`}
               >
                 <h3 className="text-2xl font-bold text-green-400 mb-2">Active</h3>
@@ -562,7 +562,7 @@ export default function Home() {
                 className={`flex items-center justify-between p-6 rounded-lg transition-all duration-300 group ${
                   isDarkMode 
                     ? 'border border-gray-600 hover:border-white' 
-                    : 'bg-white border border-[#E5E7EB] hover:border-[#D1D5DB] shadow-sm'
+                    : 'bg-[#F0F1F3] border border-[#D8D9DB] hover:border-[#C0C1C3] shadow-sm'
                 }`}
               >
                 <div className="flex-1">
@@ -584,7 +584,7 @@ export default function Home() {
                   className={`ml-6 px-4 py-2 rounded-lg transition-all duration-300 flex items-center space-x-2 ${
                     isDarkMode 
                       ? 'border border-gray-600 hover:border-white hover:bg-white hover:text-black' 
-                      : 'border border-[#E5E7EB] hover:bg-[#111111] hover:text-white hover:border-[#111111]'
+                      : 'border border-[#D8D9DB] hover:bg-[#111111] hover:text-white hover:border-[#111111]'
                   }`}
                 >
                   <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">

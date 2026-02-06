@@ -714,7 +714,9 @@ export default function Home() {
             </motion.h2>
             <motion.p 
               variants={fadeInUp}
-              className="text-lg text-gray-400 mb-16 text-center max-w-2xl mx-auto"
+              className={`text-lg mb-16 text-center max-w-2xl mx-auto ${
+                isDarkMode ? 'text-gray-400' : 'text-[#111111]'
+              }`}
             >
               Let's connect and discuss opportunities. I'm always open to new projects and collaborations.
             </motion.p>
@@ -722,37 +724,25 @@ export default function Home() {
             <div className="grid lg:grid-cols-2 gap-12 items-start">
               {/* Contact Cards */}
               <motion.div variants={fadeInUp} className="space-y-6">
-                <h3 className="text-2xl font-semibold mb-8">Contact Information</h3>
+                <h3 className={`text-2xl font-semibold mb-8 ${
+                  isDarkMode ? '' : 'text-[#111111]'
+                }`}>Contact Information</h3>
                 
                 {/* Email Card */}
                 <motion.a
                   href="mailto:panchaltanya32@gmail.com"
                   variants={fadeInUp}
                   whileHover={{ scale: 1.02, y: -2 }}
-                  className={`flex items-center p-6 rounded-lg transition-all duration-300 group ${
-                    isDarkMode 
-                      ? 'border border-gray-600 hover:border-white hover:shadow-lg hover:shadow-white/10' 
-                      : 'bg-[#1F2937] border border-[#374151] hover:border-[#4B5563]'
-                  }`}
+                  className="flex items-center p-6 border border-gray-600 rounded-lg hover:border-white hover:shadow-lg hover:shadow-white/10 transition-all duration-300 group"
                 >
-                  <div className={`w-12 h-12 rounded-full flex items-center justify-center mr-4 transition-all duration-300 ${
-                    isDarkMode 
-                      ? 'border border-gray-600 group-hover:border-white group-hover:bg-white/5' 
-                      : 'border border-[#4B5563] group-hover:border-[#6B7280]'
-                  }`}>
-                    <svg className={`w-6 h-6 transition-colors duration-300 ${
-                      isDarkMode ? 'text-gray-400 group-hover:text-white' : 'text-gray-300 group-hover:text-white'
-                    }`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <div className="w-12 h-12 rounded-full border border-gray-600 flex items-center justify-center mr-4 group-hover:border-white group-hover:bg-white/5 transition-all duration-300">
+                    <svg className="w-6 h-6 text-gray-400 group-hover:text-white transition-colors duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                     </svg>
                   </div>
                   <div>
-                    <h4 className={`font-medium transition-colors duration-300 ${
-                      isDarkMode ? 'text-white group-hover:text-gray-200' : 'text-white'
-                    }`}>Email</h4>
-                    <p className={`text-sm transition-colors duration-300 ${
-                      isDarkMode ? 'text-gray-400 group-hover:text-gray-300' : 'text-gray-400'
-                    }`}>Contact me</p>
+                    <h4 className="text-white font-medium group-hover:text-gray-200 transition-colors duration-300">Email</h4>
+                    <p className="text-gray-400 text-sm group-hover:text-gray-300 transition-colors duration-300">Contact me</p>
                   </div>
                 </motion.a>
 
@@ -819,7 +809,9 @@ export default function Home() {
 
               {/* Contact Form */}
               <motion.div variants={fadeInUp} className="">
-                <h3 className="text-2xl font-semibold mb-8">Send a Message</h3>
+                <h3 className={`text-2xl font-semibold mb-8 ${
+                  isDarkMode ? '' : 'text-[#111111]'
+                }`}>Send a Message</h3>
                 <motion.form 
                   variants={staggerContainer}
                   onSubmit={async (e) => {
@@ -846,24 +838,22 @@ export default function Home() {
                 >
                   <motion.div variants={fadeInUp}>
                     <label htmlFor="name" className={`block text-sm font-medium mb-2 ${
-                      isDarkMode ? 'text-gray-300' : 'text-gray-300'
+                      isDarkMode ? 'text-gray-300' : 'text-[#111111]'
                     }`}>Name</label>
                     <input
                       type="text"
                       id="name"
                       name="name"
                       required
-                      className={`w-full rounded-lg px-4 py-3 transition-all duration-300 ${
-                        isDarkMode 
-                          ? 'bg-transparent border border-gray-600 text-white placeholder-gray-500 focus:border-white focus:outline-none focus:ring-1 focus:ring-white/20' 
-                          : 'bg-[#1F2937] border border-[#374151] text-white placeholder-gray-500 focus:border-[#4B5563] focus:outline-none focus:ring-1 focus:ring-gray-500/20'
-                      }`}
+                      className="w-full bg-transparent border border-gray-600 rounded-lg px-4 py-3 text-white placeholder-gray-500 focus:border-white focus:outline-none focus:ring-1 focus:ring-white/20 transition-all duration-300"
                       placeholder="Your full name"
                     />
                   </motion.div>
                   
                   <motion.div variants={fadeInUp}>
-                    <label htmlFor="email" className="block text-sm font-medium text-gray-300 mb-2">Email</label>
+                    <label htmlFor="email" className={`block text-sm font-medium mb-2 ${
+                      isDarkMode ? 'text-gray-300' : 'text-[#111111]'
+                    }`}>Email</label>
                     <input
                       type="email"
                       id="email"
@@ -875,7 +865,9 @@ export default function Home() {
                   </motion.div>
                   
                   <motion.div variants={fadeInUp}>
-                    <label htmlFor="message" className="block text-sm font-medium text-gray-300 mb-2">Message</label>
+                    <label htmlFor="message" className={`block text-sm font-medium mb-2 ${
+                      isDarkMode ? 'text-gray-300' : 'text-[#111111]'
+                    }`}>Message</label>
                     <textarea
                       id="message"
                       name="message"

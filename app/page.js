@@ -23,5 +23,5 @@ export default function Home() {
         </section>
       </div>
     </main>
-  )
+2024  )
 }

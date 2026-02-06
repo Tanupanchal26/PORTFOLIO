@@ -102,7 +102,7 @@ export default function Home() {
   ]
 
   return (
-    <main className={isDarkMode ? 'min-h-screen bg-black text-white' : 'min-h-screen bg-[#E8E9EB] text-[#111111]'}>
+    <main className={isDarkMode ? 'min-h-screen bg-black text-white' : 'min-h-screen bg-[#ECEFF1] text-[#111111]'}>
       <SplashCursor />
       {/* Fixed Top Menubar */}
       <motion.nav 
@@ -113,7 +113,7 @@ export default function Home() {
         }}
         transition={{ duration: 0.3, ease: "easeInOut" }}
         className={`fixed top-0 left-0 right-0 backdrop-blur-sm z-50 ${
-          isDarkMode ? 'bg-black/90 shadow-lg' : 'bg-[#F0F1F3] shadow-[0_2px_8px_rgba(0,0,0,0.08)]'
+          isDarkMode ? 'bg-black/90 shadow-lg' : 'bg-[#ECEFF1] shadow-[0_2px_8px_rgba(0,0,0,0.08)]'
         }`}
         style={{ position: 'relative' }}
         onMouseMove={(e) => {
@@ -239,7 +239,7 @@ export default function Home() {
               className={`inline-block px-8 py-3 transition-all duration-300 ${
                 isDarkMode 
                   ? 'border border-white hover:bg-white hover:text-black' 
-                  : 'bg-[#111111] text-white hover:bg-[#1F2937]'
+                  : 'border border-[#D8D9DB] hover:bg-[#111111] hover:text-white hover:border-[#111111]'
               }`}
             >
               Learn More
@@ -285,7 +285,7 @@ export default function Home() {
                 className={`inline-block px-8 py-3 transition-all duration-300 ${
                   isDarkMode 
                     ? 'border border-white hover:bg-white hover:text-black' 
-                    : 'bg-[#111111] text-white hover:bg-[#1F2937]'
+                    : 'border border-[#D8D9DB] hover:bg-[#111111] hover:text-white hover:border-[#111111]'
                 }`}
               >
                 📄 Download Resume
@@ -556,7 +556,7 @@ export default function Home() {
                 className={`inline-flex items-center px-8 py-3 transition-all duration-300 ${
                   isDarkMode 
                     ? 'border border-white hover:bg-white hover:text-black' 
-                    : 'bg-[#111111] text-white hover:bg-[#1F2937]'
+                    : 'border border-[#D8D9DB] hover:bg-[#111111] hover:text-white hover:border-[#111111]'
                 }`}
               >
                 <svg className="w-5 h-5 mr-3" fill="currentColor" viewBox="0 0 24 24">
@@ -630,12 +630,18 @@ export default function Home() {
               {/* BCG Certificate */}
               <motion.div
                 variants={fadeInUp}
-                className="flex items-center justify-between p-6 border border-gray-600 rounded-lg hover:border-white transition-all duration-300 group"
+                className={`flex items-center justify-between p-6 rounded-lg transition-all duration-300 group ${
+                  isDarkMode 
+                    ? 'border border-gray-600 hover:border-white' 
+                    : 'bg-[#F0F1F3] border border-[#D8D9DB] hover:border-[#C0C1C3] shadow-sm'
+                }`}
               >
                 <div className="flex-1">
-                  <h3 className="text-xl font-semibold mb-2 group-hover:text-gray-300 transition-colors">GenAI Job Simulation</h3>
-                  <p className="text-gray-400 text-sm mb-1">BCG</p>
-                  <span className="text-gray-500 text-sm">2025</span>
+                  <h3 className={`text-xl font-semibold mb-2 transition-colors ${
+                    isDarkMode ? 'group-hover:text-gray-300' : ''
+                  }`}>GenAI Job Simulation</h3>
+                  <p className={`text-sm mb-1 ${isDarkMode ? 'text-gray-400' : 'text-[#6B7280]'}`}>BCG</p>
+                  <span className={`text-sm ${isDarkMode ? 'text-gray-500' : 'text-[#9CA3AF]'}`}>2025</span>
                 </div>
                 <button
                   onClick={() => {
@@ -646,7 +652,11 @@ export default function Home() {
                     link.click();
                     document.body.removeChild(link);
                   }}
-                  className="ml-6 px-4 py-2 border border-gray-600 rounded-lg hover:border-white hover:bg-white hover:text-black transition-all duration-300 flex items-center space-x-2"
+                  className={`ml-6 px-4 py-2 rounded-lg transition-all duration-300 flex items-center space-x-2 ${
+                    isDarkMode 
+                      ? 'border border-gray-600 hover:border-white hover:bg-white hover:text-black' 
+                      : 'border border-[#D8D9DB] hover:bg-[#111111] hover:text-white hover:border-[#111111]'
+                  }`}
                 >
                   <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
@@ -658,12 +668,18 @@ export default function Home() {
               {/* Google Cloud Certificate */}
               <motion.div
                 variants={fadeInUp}
-                className="flex items-center justify-between p-6 border border-gray-600 rounded-lg hover:border-white transition-all duration-300 group"
+                className={`flex items-center justify-between p-6 rounded-lg transition-all duration-300 group ${
+                  isDarkMode 
+                    ? 'border border-gray-600 hover:border-white' 
+                    : 'bg-[#F0F1F3] border border-[#D8D9DB] hover:border-[#C0C1C3] shadow-sm'
+                }`}
               >
                 <div className="flex-1">
-                  <h3 className="text-xl font-semibold mb-2 group-hover:text-gray-300 transition-colors">Introduction to Generative AI Studio</h3>
-                  <p className="text-gray-400 text-sm mb-1">Google Cloud Certified</p>
-                  <span className="text-gray-500 text-sm">2025</span>
+                  <h3 className={`text-xl font-semibold mb-2 transition-colors ${
+                    isDarkMode ? 'group-hover:text-gray-300' : ''
+                  }`}>Introduction to Generative AI Studio</h3>
+                  <p className={`text-sm mb-1 ${isDarkMode ? 'text-gray-400' : 'text-[#6B7280]'}`}>Google Cloud Certified</p>
+                  <span className={`text-sm ${isDarkMode ? 'text-gray-500' : 'text-[#9CA3AF]'}`}>2025</span>
                 </div>
                 <button
                   onClick={() => {
@@ -674,7 +690,11 @@ export default function Home() {
                     link.click();
                     document.body.removeChild(link);
                   }}
-                  className="ml-6 px-4 py-2 border border-gray-600 rounded-lg hover:border-white hover:bg-white hover:text-black transition-all duration-300 flex items-center space-x-2"
+                  className={`ml-6 px-4 py-2 rounded-lg transition-all duration-300 flex items-center space-x-2 ${
+                    isDarkMode 
+                      ? 'border border-gray-600 hover:border-white hover:bg-white hover:text-black' 
+                      : 'border border-[#D8D9DB] hover:bg-[#111111] hover:text-white hover:border-[#111111]'
+                  }`}
                 >
                   <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
@@ -686,12 +706,18 @@ export default function Home() {
               {/* AWS Certificate */}
               <motion.div
                 variants={fadeInUp}
-                className="flex items-center justify-between p-6 border border-gray-600 rounded-lg hover:border-white transition-all duration-300 group"
+                className={`flex items-center justify-between p-6 rounded-lg transition-all duration-300 group ${
+                  isDarkMode 
+                    ? 'border border-gray-600 hover:border-white' 
+                    : 'bg-[#F0F1F3] border border-[#D8D9DB] hover:border-[#C0C1C3] shadow-sm'
+                }`}
               >
                 <div className="flex-1">
-                  <h3 className="text-xl font-semibold mb-2 group-hover:text-gray-300 transition-colors">Solutions Architecture Job Simulation</h3>
-                  <p className="text-gray-400 text-sm mb-1">AWS</p>
-                  <span className="text-gray-500 text-sm">2025</span>
+                  <h3 className={`text-xl font-semibold mb-2 transition-colors ${
+                    isDarkMode ? 'group-hover:text-gray-300' : ''
+                  }`}>Solutions Architecture Job Simulation</h3>
+                  <p className={`text-sm mb-1 ${isDarkMode ? 'text-gray-400' : 'text-[#6B7280]'}`}>AWS</p>
+                  <span className={`text-sm ${isDarkMode ? 'text-gray-500' : 'text-[#9CA3AF]'}`}>2025</span>
                 </div>
                 <button
                   onClick={() => {
@@ -702,7 +728,11 @@ export default function Home() {
                     link.click();
                     document.body.removeChild(link);
                   }}
-                  className="ml-6 px-4 py-2 border border-gray-600 rounded-lg hover:border-white hover:bg-white hover:text-black transition-all duration-300 flex items-center space-x-2"
+                  className={`ml-6 px-4 py-2 rounded-lg transition-all duration-300 flex items-center space-x-2 ${
+                    isDarkMode 
+                      ? 'border border-gray-600 hover:border-white hover:bg-white hover:text-black' 
+                      : 'border border-[#D8D9DB] hover:bg-[#111111] hover:text-white hover:border-[#111111]'
+                  }`}
                 >
                   <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
@@ -957,7 +987,11 @@ export default function Home() {
                     type="submit"
                     whileHover={{ scale: 1.02 }}
                     whileTap={{ scale: 0.98 }}
-                    className="w-full bg-white text-black py-3 px-6 rounded-lg font-medium hover:bg-gray-200 transition-all duration-300 flex items-center justify-center group"
+                    className={`w-full py-3 px-6 rounded-lg font-medium transition-all duration-300 flex items-center justify-center group ${
+                      isDarkMode 
+                        ? 'bg-white text-black hover:bg-gray-200' 
+                        : 'border border-[#D8D9DB] hover:bg-[#111111] hover:text-white hover:border-[#111111]'
+                    }`}
                   >
                     <span>Send Message</span>
                     <svg className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">

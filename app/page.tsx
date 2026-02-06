@@ -124,18 +124,18 @@ export default function Home() {
           e.currentTarget.style.setProperty('--mouse-y', `${y}px`)
         }}
       >
-        <div className="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center relative">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 py-3 sm:py-4 flex justify-between items-center relative">
           <div 
-            className="absolute inset-0 pointer-events-none"
+            className="absolute inset-0 pointer-events-none hidden md:block"
             style={{
               background: 'radial-gradient(circle 150px at var(--mouse-x, 50%) var(--mouse-y, 50%), rgba(255, 255, 255, 0.08), transparent)',
               opacity: 0.5
             }}
           />
-          <div className={`font-bold text-xl tracking-wider relative z-10 ${
+          <div className={`font-bold text-lg sm:text-xl tracking-wider relative z-10 ${
             isDarkMode ? 'text-white' : 'text-[#111111]'
           }`}>TANYA</div>
-          <div className="flex gap-20 relative z-10">
+          <div className="flex gap-3 sm:gap-4 md:gap-6 lg:gap-8 relative z-10">
             {[
               { id: 'hero', label: 'Home', icon: 'M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6' },
               { id: 'about', label: 'About', icon: 'M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z' },
@@ -153,7 +153,7 @@ export default function Home() {
                     element.scrollIntoView({ behavior: 'smooth', block: 'start' })
                   }
                 }}
-                className={`w-10 h-10 rounded-lg flex items-center justify-center transition-all duration-300 group relative ${
+                className={`w-8 h-8 sm:w-9 sm:h-9 md:w-10 md:h-10 rounded-lg flex items-center justify-center transition-all duration-300 group relative ${
                   activeSection === item.id
                     ? isDarkMode ? 'bg-white shadow-lg' : 'bg-[#111111] shadow-lg'
                     : isDarkMode ? 'hover:bg-gray-800' : 'hover:bg-[#E0E1E3]'
@@ -163,7 +163,7 @@ export default function Home() {
                 aria-label={item.label}
               >
                 <svg
-                  className={`w-5 h-5 transition-colors duration-300 ${
+                  className={`w-4 h-4 sm:w-5 sm:h-5 transition-colors duration-300 ${
                     activeSection === item.id 
                       ? isDarkMode ? 'text-black' : 'text-white'
                       : isDarkMode ? 'text-gray-300 group-hover:text-white' : 'text-[#374151] group-hover:text-[#111111]'
@@ -183,12 +183,12 @@ export default function Home() {
           </div>
           <button
             onClick={() => setIsDarkMode(!isDarkMode)}
-            className={`w-10 h-10 rounded-lg flex items-center justify-center transition-all duration-300 relative z-10 ${
+            className={`w-8 h-8 sm:w-9 sm:h-9 md:w-10 md:h-10 rounded-lg flex items-center justify-center transition-all duration-300 relative z-10 ${
               isDarkMode ? 'bg-gray-800 hover:bg-gray-700' : 'bg-[#D8D9DB] hover:bg-[#C8C9CB]'
             }`}
             aria-label="Toggle theme"
           >
-            <svg className={`w-5 h-5 ${
+            <svg className={`w-4 h-4 sm:w-5 sm:h-5 ${
               isDarkMode ? 'text-gray-300' : 'text-[#111111]'
             }`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
               {isDarkMode ? (
@@ -204,7 +204,7 @@ export default function Home() {
       {/* Main Content with Top Padding */}
       <div className="pt-20">
         {/* Hero Section */}
-        <section id="hero" className="min-h-screen flex items-center justify-center px-6">
+        <section id="hero" className="min-h-screen flex items-center justify-center px-4 sm:px-6">
         <motion.div 
           className="text-center max-w-4xl mx-auto"
           initial={{ opacity: 0, y: 30 }}
@@ -212,7 +212,7 @@ export default function Home() {
           transition={{ duration: 0.8, ease: "easeOut" }}
         >
           <motion.h1 
-            className="text-5xl md:text-7xl font-bold mb-6 tracking-tight"
+            className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold mb-4 sm:mb-6 tracking-tight leading-tight"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
@@ -220,7 +220,7 @@ export default function Home() {
             Hi, I'm Tanya Panchal<br />Software Developer
           </motion.h1>
           <motion.p 
-            className={`text-xl md:text-2xl mb-8 ${
+            className={`text-base sm:text-lg md:text-xl lg:text-2xl mb-6 sm:mb-8 ${
               isDarkMode ? 'text-gray-400' : 'text-[#4B5563]'
             }`}
             initial={{ opacity: 0, y: 20 }}
@@ -236,7 +236,7 @@ export default function Home() {
           >
             <a 
               href="#about" 
-              className={`inline-block px-8 py-3 transition-all duration-300 ${
+              className={`inline-block px-6 sm:px-8 py-2.5 sm:py-3 text-sm sm:text-base transition-all duration-300 ${
                 isDarkMode 
                   ? 'border border-white hover:bg-white hover:text-black' 
                   : 'border border-[#D8D9DB] hover:bg-[#111111] hover:text-white hover:border-[#111111]'
@@ -249,7 +249,7 @@ export default function Home() {
       </section>
 
       {/* About Section */}
-      <section id="about" className="py-20 px-6">
+      <section id="about" className="py-12 sm:py-16 md:py-20 px-4 sm:px-6">
         <div className="max-w-4xl mx-auto">
           <motion.div
             variants={staggerContainer}
@@ -259,20 +259,20 @@ export default function Home() {
           >
             <motion.h2 
               variants={fadeInUp}
-              className="text-4xl md:text-5xl font-bold mb-12 text-center"
+              className="text-3xl sm:text-4xl md:text-5xl font-bold mb-8 sm:mb-10 md:mb-12 text-center"
             >
               About
             </motion.h2>
             <motion.p 
               variants={fadeInUp}
-              className={`text-lg md:text-xl leading-relaxed text-center max-w-3xl mx-auto mb-12 ${
+              className={`text-base sm:text-lg md:text-xl leading-relaxed text-center max-w-3xl mx-auto mb-8 sm:mb-10 md:mb-12 ${
                 isDarkMode ? 'text-gray-400' : 'text-[#4B5563]'
               }`}
             >
               I am a passionate Software Developer and B.Tech Computer Science student with a strong interest in building modern, scalable, and user-focused web applications. I have a solid foundation in front-end and back-end technologies and enjoy turning ideas into practical digital solutions. Through academic learning and hands-on projects, I continuously work on improving my problem-solving skills, code quality, and understanding of real-world software development. I am eager to learn, grow, and contribute to meaningful projects as a developer.
             </motion.p>
             
-            <div className="text-center mt-12">
+            <div className="text-center mt-8 sm:mt-10 md:mt-12">
               <button
                 onClick={() => {
                   const link = document.createElement('a');
@@ -282,7 +282,7 @@ export default function Home() {
                   link.click();
                   document.body.removeChild(link);
                 }}
-                className={`inline-block px-8 py-3 transition-all duration-300 ${
+                className={`inline-block px-6 sm:px-8 py-2.5 sm:py-3 text-sm sm:text-base transition-all duration-300 ${
                   isDarkMode 
                     ? 'border border-white hover:bg-white hover:text-black' 
                     : 'border border-[#D8D9DB] hover:bg-[#111111] hover:text-white hover:border-[#111111]'
@@ -296,7 +296,7 @@ export default function Home() {
       </section>
 
       {/* Skills Section */}
-      <section id="skills" className="py-20 px-6">
+      <section id="skills" className="py-12 sm:py-16 md:py-20 px-4 sm:px-6">
         <div className="max-w-4xl mx-auto">
           <motion.div
             variants={staggerContainer}
@@ -306,19 +306,19 @@ export default function Home() {
           >
             <motion.h2 
               variants={fadeInUp}
-              className="text-4xl md:text-5xl font-bold mb-12 text-center"
+              className="text-3xl sm:text-4xl md:text-5xl font-bold mb-8 sm:mb-10 md:mb-12 text-center"
             >
               Skills
             </motion.h2>
             <motion.div 
               variants={staggerContainer}
-              className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4"
+              className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-3 sm:gap-4"
             >
               {skills.map((skill, index) => (
                 <motion.div
                   key={skill}
                   variants={fadeInUp}
-                  className={`px-4 py-3 text-center transition-colors duration-300 ${
+                  className={`px-3 sm:px-4 py-2.5 sm:py-3 text-sm sm:text-base text-center transition-colors duration-300 ${
                     isDarkMode 
                       ? 'border border-gray-600 hover:border-white' 
                       : 'bg-[#F0F1F3] border border-[#D8D9DB] hover:border-[#C0C1C3]'
@@ -333,7 +333,7 @@ export default function Home() {
       </section>
 
       {/* Projects Section */}
-      <section id="projects" className="py-20 px-6">
+      <section id="projects" className="py-12 sm:py-16 md:py-20 px-4 sm:px-6">
         <div className="max-w-6xl mx-auto">
           <motion.div
             variants={staggerContainer}
@@ -343,32 +343,32 @@ export default function Home() {
           >
             <motion.h2 
               variants={fadeInUp}
-              className="text-4xl md:text-5xl font-bold mb-12 text-center"
+              className="text-3xl sm:text-4xl md:text-5xl font-bold mb-8 sm:mb-10 md:mb-12 text-center"
             >
               Projects
             </motion.h2>
             <motion.div 
               variants={staggerContainer}
-              className="grid md:grid-cols-2 gap-8"
+              className="grid sm:grid-cols-2 gap-6 sm:gap-8"
             >
               {projects.map((project, index) => (
                 <motion.div
                   key={project.title}
                   variants={fadeInUp}
-                  className={`p-6 transition-all duration-300 group ${
+                  className={`p-4 sm:p-5 md:p-6 transition-all duration-300 group ${
                     isDarkMode 
                       ? 'border border-gray-600 hover:border-white' 
                       : 'bg-[#F0F1F3] border border-[#D8D9DB] hover:border-[#C0C1C3] shadow-sm'
                   }`}
                 >
-                  <div className="flex justify-between items-start mb-4">
-                    <h3 className="text-xl font-semibold group-hover:text-gray-300 transition-colors">
+                  <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-2 sm:gap-0 mb-4">
+                    <h3 className="text-lg sm:text-xl font-semibold group-hover:text-gray-300 transition-colors">
                       {project.title}
                     </h3>
                     <span className={isDarkMode ? 'text-gray-400 text-sm' : 'text-[#6B7280] text-sm'}>{project.year}</span>
                   </div>
-                  <p className={`text-sm mb-4 ${isDarkMode ? 'text-gray-400' : 'text-[#6B7280]'}`}>{project.tech}</p>
-                  <p className={`leading-relaxed mb-4 ${isDarkMode ? 'text-gray-400' : 'text-[#4B5563]'}`}>{project.description}</p>
+                  <p className={`text-xs sm:text-sm mb-3 sm:mb-4 ${isDarkMode ? 'text-gray-400' : 'text-[#6B7280]'}`}>{project.tech}</p>
+                  <p className={`text-sm sm:text-base leading-relaxed mb-4 ${isDarkMode ? 'text-gray-400' : 'text-[#4B5563]'}`}>{project.description}</p>
                   <div className="text-center">
                     <a
                       href={project.github}
@@ -394,7 +394,7 @@ export default function Home() {
       </section>
 
       {/* GitHub Section */}
-      <section id="github" className="py-20 px-6">
+      <section id="github" className="py-12 sm:py-16 md:py-20 px-4 sm:px-6">
         <div className="max-w-6xl mx-auto">
           <motion.div
             variants={staggerContainer}
@@ -404,14 +404,14 @@ export default function Home() {
           >
             <motion.h2 
               variants={fadeInUp}
-              className="text-4xl md:text-5xl font-bold mb-12 text-center"
+              className="text-3xl sm:text-4xl md:text-5xl font-bold mb-8 sm:mb-10 md:mb-12 text-center"
             >
               GitHub Activity
             </motion.h2>
             
             {/* Contribution Graph */}
-            <motion.div variants={fadeInUp} className="mb-12">
-              <h3 className="text-2xl font-semibold mb-8 text-center">📊 𝐂𝐨𝐧𝐭𝐫𝐢𝐛𝐮𝐭𝐢𝐨𝐧 𝐆𝐫𝐚𝐩𝐡</h3>
+            <motion.div variants={fadeInUp} className="mb-8 sm:mb-10 md:mb-12">
+              <h3 className="text-xl sm:text-2xl font-semibold mb-6 sm:mb-8 text-center">📊 𝐂𝐨𝐧𝐭𝐫𝐢𝐛𝐮𝐭𝐢𝐨𝐧 𝐆𝐫𝐚𝐩𝐡</h3>
               <div className="flex justify-center">
                 <a href="https://github.com/Tanupanchal26" target="_blank" rel="noopener noreferrer">
                   <img 
@@ -427,10 +427,10 @@ export default function Home() {
             </motion.div>
 
             {/* GitHub Analytics */}
-            <motion.div variants={fadeInUp} className="mb-12">
-              <h3 className="text-2xl font-semibold mb-8 text-center">📈 𝐆𝐢𝐭𝐇𝐮𝐛 𝐀𝐧𝐚𝐥𝐲𝐭𝐢𝐜𝐬</h3>
+            <motion.div variants={fadeInUp} className="mb-8 sm:mb-10 md:mb-12">
+              <h3 className="text-xl sm:text-2xl font-semibold mb-6 sm:mb-8 text-center">📈 𝐆𝐢𝐭𝐇𝐮𝐛 𝐀𝐧𝐚𝐥𝐲𝐭𝐢𝐜𝐬</h3>
               
-              <div className="mb-8">
+              <div className="mb-6 sm:mb-8">
                 <div className="flex justify-center">
                   <a href="https://github.com/Tanupanchal26" target="_blank" rel="noopener noreferrer">
                     <img 
@@ -445,7 +445,7 @@ export default function Home() {
                 </div>
               </div>
               
-              <div className="grid md:grid-cols-2 gap-6 mb-8">
+              <div className="grid sm:grid-cols-2 gap-4 sm:gap-6 mb-6 sm:mb-8">
                 <div className="flex justify-center">
                   <a href="https://github.com/Tanupanchal26" target="_blank" rel="noopener noreferrer">
                     <img 
@@ -472,7 +472,7 @@ export default function Home() {
                 </div>
               </div>
               
-              <div className="grid md:grid-cols-2 gap-6">
+              <div className="grid sm:grid-cols-2 gap-4 sm:gap-6">
                 <div className="flex justify-center">
                   <a href="https://github.com/Tanupanchal26" target="_blank" rel="noopener noreferrer">
                     <img 
@@ -506,36 +506,36 @@ export default function Home() {
             
             <motion.div 
               variants={staggerContainer}
-              className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12"
+              className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 mb-8 sm:mb-10 md:mb-12"
             >
               {/* GitHub Stats Cards */}
               <motion.div
                 variants={fadeInUp}
-                className={`p-6 text-center transition-all duration-300 ${
+                className={`p-4 sm:p-5 md:p-6 text-center transition-all duration-300 ${
                   isDarkMode 
                     ? 'border border-gray-600 hover:border-white' 
                     : 'bg-[#F0F1F3] border border-[#D8D9DB] hover:border-[#C0C1C3]'
                 }`}
               >
-                <h3 className="text-2xl font-bold text-green-400 mb-2">15+</h3>
+                <h3 className="text-xl sm:text-2xl font-bold text-green-400 mb-2">15+</h3>
                 <p className={isDarkMode ? 'text-gray-400' : 'text-[#6B7280]'}>Public Repositories</p>
               </motion.div>
               
               <motion.div
                 variants={fadeInUp}
-                className={`p-6 text-center transition-all duration-300 ${
+                className={`p-4 sm:p-5 md:p-6 text-center transition-all duration-300 ${
                   isDarkMode 
                     ? 'border border-gray-600 hover:border-white' 
                     : 'bg-[#F0F1F3] border border-[#D8D9DB] hover:border-[#C0C1C3]'
                 }`}
               >
-                <h3 className="text-2xl font-bold text-green-400 mb-2">JavaScript</h3>
+                <h3 className="text-xl sm:text-2xl font-bold text-green-400 mb-2">JavaScript</h3>
                 <p className={isDarkMode ? 'text-gray-400' : 'text-[#6B7280]'}>Primary Language</p>
               </motion.div>
               
               <motion.div
                 variants={fadeInUp}
-                className={`p-6 text-center transition-all duration-300 ${
+                className={`p-4 sm:p-5 md:p-6 text-center transition-all duration-300 ${
                   isDarkMode 
                     ? 'border border-gray-600 hover:border-white' 
                     : 'bg-[#F0F1F3] border border-[#D8D9DB] hover:border-[#C0C1C3]'
@@ -553,7 +553,7 @@ export default function Home() {
                 target="_blank"
                 rel="noopener noreferrer"
                 whileHover={{ scale: 1.05 }}
-                className={`inline-flex items-center px-8 py-3 transition-all duration-300 ${
+                className={`inline-flex items-center px-6 sm:px-8 py-2.5 sm:py-3 text-sm sm:text-base transition-all duration-300 ${
                   isDarkMode 
                     ? 'border border-white hover:bg-white hover:text-black' 
                     : 'border border-[#D8D9DB] hover:bg-[#111111] hover:text-white hover:border-[#111111]'
@@ -570,7 +570,7 @@ export default function Home() {
       </section>
 
       {/* Certificates Section */}
-      <section id="certificates" className="py-20 px-6">
+      <section id="certificates" className="py-12 sm:py-16 md:py-20 px-4 sm:px-6">
         <div className="max-w-6xl mx-auto">
           <motion.div
             variants={staggerContainer}
@@ -580,26 +580,26 @@ export default function Home() {
           >
             <motion.h2 
               variants={fadeInUp}
-              className="text-4xl md:text-5xl font-bold mb-12 text-center"
+              className="text-3xl sm:text-4xl md:text-5xl font-bold mb-8 sm:mb-10 md:mb-12 text-center"
             >
               Certificates
             </motion.h2>
             
             <motion.div 
               variants={staggerContainer}
-              className="space-y-6 max-w-4xl mx-auto"
+              className="space-y-4 sm:space-y-6 max-w-4xl mx-auto"
             >
               {/* Deloitte Certificate */}
               <motion.div
                 variants={fadeInUp}
-                className={`flex items-center justify-between p-6 rounded-lg transition-all duration-300 group ${
+                className={`flex flex-col sm:flex-row items-start sm:items-center justify-between p-4 sm:p-5 md:p-6 rounded-lg transition-all duration-300 group gap-4 sm:gap-0 ${
                   isDarkMode 
                     ? 'border border-gray-600 hover:border-white' 
                     : 'bg-[#F0F1F3] border border-[#D8D9DB] hover:border-[#C0C1C3] shadow-sm'
                 }`}
               >
                 <div className="flex-1">
-                  <h3 className={`text-xl font-semibold mb-2 transition-colors ${
+                  <h3 className={`text-lg sm:text-xl font-semibold mb-2 transition-colors ${
                     isDarkMode ? 'group-hover:text-gray-300' : ''
                   }`}>Technology Job Simulation</h3>
                   <p className={`text-sm mb-1 ${isDarkMode ? 'text-gray-400' : 'text-[#6B7280]'}`}>Deloitte Australia</p>
@@ -614,7 +614,7 @@ export default function Home() {
                     link.click();
                     document.body.removeChild(link);
                   }}
-                  className={`ml-6 px-4 py-2 rounded-lg transition-all duration-300 flex items-center space-x-2 ${
+                  className={`px-4 py-2 rounded-lg transition-all duration-300 flex items-center space-x-2 text-sm sm:text-base w-full sm:w-auto justify-center sm:ml-6 ${
                     isDarkMode 
                       ? 'border border-gray-600 hover:border-white hover:bg-white hover:text-black' 
                       : 'border border-[#D8D9DB] hover:bg-[#111111] hover:text-white hover:border-[#111111]'
@@ -630,14 +630,14 @@ export default function Home() {
               {/* BCG Certificate */}
               <motion.div
                 variants={fadeInUp}
-                className={`flex items-center justify-between p-6 rounded-lg transition-all duration-300 group ${
+                className={`flex flex-col sm:flex-row items-start sm:items-center justify-between p-4 sm:p-5 md:p-6 rounded-lg transition-all duration-300 group gap-4 sm:gap-0 ${
                   isDarkMode 
                     ? 'border border-gray-600 hover:border-white' 
                     : 'bg-[#F0F1F3] border border-[#D8D9DB] hover:border-[#C0C1C3] shadow-sm'
                 }`}
               >
                 <div className="flex-1">
-                  <h3 className={`text-xl font-semibold mb-2 transition-colors ${
+                  <h3 className={`text-lg sm:text-xl font-semibold mb-2 transition-colors ${
                     isDarkMode ? 'group-hover:text-gray-300' : ''
                   }`}>GenAI Job Simulation</h3>
                   <p className={`text-sm mb-1 ${isDarkMode ? 'text-gray-400' : 'text-[#6B7280]'}`}>BCG</p>
@@ -652,7 +652,7 @@ export default function Home() {
                     link.click();
                     document.body.removeChild(link);
                   }}
-                  className={`ml-6 px-4 py-2 rounded-lg transition-all duration-300 flex items-center space-x-2 ${
+                  className={`px-4 py-2 rounded-lg transition-all duration-300 flex items-center space-x-2 text-sm sm:text-base w-full sm:w-auto justify-center sm:ml-6 ${
                     isDarkMode 
                       ? 'border border-gray-600 hover:border-white hover:bg-white hover:text-black' 
                       : 'border border-[#D8D9DB] hover:bg-[#111111] hover:text-white hover:border-[#111111]'
@@ -668,14 +668,14 @@ export default function Home() {
               {/* Google Cloud Certificate */}
               <motion.div
                 variants={fadeInUp}
-                className={`flex items-center justify-between p-6 rounded-lg transition-all duration-300 group ${
+                className={`flex flex-col sm:flex-row items-start sm:items-center justify-between p-4 sm:p-5 md:p-6 rounded-lg transition-all duration-300 group gap-4 sm:gap-0 ${
                   isDarkMode 
                     ? 'border border-gray-600 hover:border-white' 
                     : 'bg-[#F0F1F3] border border-[#D8D9DB] hover:border-[#C0C1C3] shadow-sm'
                 }`}
               >
                 <div className="flex-1">
-                  <h3 className={`text-xl font-semibold mb-2 transition-colors ${
+                  <h3 className={`text-lg sm:text-xl font-semibold mb-2 transition-colors ${
                     isDarkMode ? 'group-hover:text-gray-300' : ''
                   }`}>Introduction to Generative AI Studio</h3>
                   <p className={`text-sm mb-1 ${isDarkMode ? 'text-gray-400' : 'text-[#6B7280]'}`}>Google Cloud Certified</p>
@@ -690,7 +690,7 @@ export default function Home() {
                     link.click();
                     document.body.removeChild(link);
                   }}
-                  className={`ml-6 px-4 py-2 rounded-lg transition-all duration-300 flex items-center space-x-2 ${
+                  className={`px-4 py-2 rounded-lg transition-all duration-300 flex items-center space-x-2 text-sm sm:text-base w-full sm:w-auto justify-center sm:ml-6 ${
                     isDarkMode 
                       ? 'border border-gray-600 hover:border-white hover:bg-white hover:text-black' 
                       : 'border border-[#D8D9DB] hover:bg-[#111111] hover:text-white hover:border-[#111111]'
@@ -706,14 +706,14 @@ export default function Home() {
               {/* AWS Certificate */}
               <motion.div
                 variants={fadeInUp}
-                className={`flex items-center justify-between p-6 rounded-lg transition-all duration-300 group ${
+                className={`flex flex-col sm:flex-row items-start sm:items-center justify-between p-4 sm:p-5 md:p-6 rounded-lg transition-all duration-300 group gap-4 sm:gap-0 ${
                   isDarkMode 
                     ? 'border border-gray-600 hover:border-white' 
                     : 'bg-[#F0F1F3] border border-[#D8D9DB] hover:border-[#C0C1C3] shadow-sm'
                 }`}
               >
                 <div className="flex-1">
-                  <h3 className={`text-xl font-semibold mb-2 transition-colors ${
+                  <h3 className={`text-lg sm:text-xl font-semibold mb-2 transition-colors ${
                     isDarkMode ? 'group-hover:text-gray-300' : ''
                   }`}>Solutions Architecture Job Simulation</h3>
                   <p className={`text-sm mb-1 ${isDarkMode ? 'text-gray-400' : 'text-[#6B7280]'}`}>AWS</p>
@@ -728,7 +728,7 @@ export default function Home() {
                     link.click();
                     document.body.removeChild(link);
                   }}
-                  className={`ml-6 px-4 py-2 rounded-lg transition-all duration-300 flex items-center space-x-2 ${
+                  className={`px-4 py-2 rounded-lg transition-all duration-300 flex items-center space-x-2 text-sm sm:text-base w-full sm:w-auto justify-center sm:ml-6 ${
                     isDarkMode 
                       ? 'border border-gray-600 hover:border-white hover:bg-white hover:text-black' 
                       : 'border border-[#D8D9DB] hover:bg-[#111111] hover:text-white hover:border-[#111111]'
@@ -746,7 +746,7 @@ export default function Home() {
       </section>
 
       {/* Contact Section */}
-      <section id="contact" className="py-20 px-6">
+      <section id="contact" className="py-12 sm:py-16 md:py-20 px-4 sm:px-6">
         <div className="max-w-6xl mx-auto">
           <motion.div
             variants={staggerContainer}
@@ -756,23 +756,23 @@ export default function Home() {
           >
             <motion.h2 
               variants={fadeInUp}
-              className="text-4xl md:text-5xl font-bold mb-4 text-center"
+              className="text-3xl sm:text-4xl md:text-5xl font-bold mb-3 sm:mb-4 text-center"
             >
               Get In Touch
             </motion.h2>
             <motion.p 
               variants={fadeInUp}
-              className={`text-lg mb-16 text-center max-w-2xl mx-auto ${
+              className={`text-base sm:text-lg mb-10 sm:mb-12 md:mb-16 text-center max-w-2xl mx-auto ${
                 isDarkMode ? 'text-gray-400' : 'text-[#111111]'
               }`}
             >
               Let's connect and discuss opportunities. I'm always open to new projects and collaborations.
             </motion.p>
             
-            <div className="grid lg:grid-cols-2 gap-12 items-start">
+            <div className="grid lg:grid-cols-2 gap-8 sm:gap-10 md:gap-12 items-start">
               {/* Contact Cards */}
-              <motion.div variants={fadeInUp} className="space-y-6">
-                <h3 className={`text-2xl font-semibold mb-8 ${
+              <motion.div variants={fadeInUp} className="space-y-4 sm:space-y-6">
+                <h3 className={`text-xl sm:text-2xl font-semibold mb-6 sm:mb-8 ${
                   isDarkMode ? '' : 'text-[#111111]'
                 }`}>Contact Information</h3>
                 
@@ -781,13 +781,13 @@ export default function Home() {
                   href="mailto:panchaltanya32@gmail.com"
                   variants={fadeInUp}
                   whileHover={{ scale: 1.02, y: -2 }}
-                  className={`flex items-center p-6 rounded-lg transition-all duration-300 group ${
+                  className={`flex items-center p-4 sm:p-5 md:p-6 rounded-lg transition-all duration-300 group ${
                     isDarkMode 
                       ? 'border border-gray-600 hover:border-white hover:shadow-lg hover:shadow-white/10' 
                       : 'bg-[#F0F1F3] border border-[#D8D9DB] hover:border-[#C0C1C3]'
                   }`}
                 >
-                  <div className={`w-12 h-12 rounded-full flex items-center justify-center mr-4 transition-all duration-300 ${
+                  <div className={`w-10 h-10 sm:w-12 sm:h-12 rounded-full flex items-center justify-center mr-3 sm:mr-4 transition-all duration-300 ${
                     isDarkMode 
                       ? 'border border-gray-600 group-hover:border-white group-hover:bg-white/5' 
                       : 'border border-[#D8D9DB] group-hover:border-[#C0C1C3]'
@@ -815,13 +815,13 @@ export default function Home() {
                   rel="noopener noreferrer"
                   variants={fadeInUp}
                   whileHover={{ scale: 1.02, y: -2 }}
-                  className={`flex items-center p-6 rounded-lg transition-all duration-300 group ${
+                  className={`flex items-center p-4 sm:p-5 md:p-6 rounded-lg transition-all duration-300 group ${
                     isDarkMode 
                       ? 'border border-gray-600 hover:border-white hover:shadow-lg hover:shadow-white/10' 
                       : 'bg-[#F0F1F3] border border-[#D8D9DB] hover:border-[#C0C1C3]'
                   }`}
                 >
-                  <div className={`w-12 h-12 rounded-full flex items-center justify-center mr-4 transition-all duration-300 ${
+                  <div className={`w-10 h-10 sm:w-12 sm:h-12 rounded-full flex items-center justify-center mr-3 sm:mr-4 transition-all duration-300 ${
                     isDarkMode 
                       ? 'border border-gray-600 group-hover:border-white group-hover:bg-white/5' 
                       : 'border border-[#D8D9DB] group-hover:border-[#C0C1C3]'
@@ -849,13 +849,13 @@ export default function Home() {
                   rel="noopener noreferrer"
                   variants={fadeInUp}
                   whileHover={{ scale: 1.02, y: -2 }}
-                  className={`flex items-center p-6 rounded-lg transition-all duration-300 group ${
+                  className={`flex items-center p-4 sm:p-5 md:p-6 rounded-lg transition-all duration-300 group ${
                     isDarkMode 
                       ? 'border border-gray-600 hover:border-white hover:shadow-lg hover:shadow-white/10' 
                       : 'bg-[#F0F1F3] border border-[#D8D9DB] hover:border-[#C0C1C3]'
                   }`}
                 >
-                  <div className={`w-12 h-12 rounded-full flex items-center justify-center mr-4 transition-all duration-300 ${
+                  <div className={`w-10 h-10 sm:w-12 sm:h-12 rounded-full flex items-center justify-center mr-3 sm:mr-4 transition-all duration-300 ${
                     isDarkMode 
                       ? 'border border-gray-600 group-hover:border-white group-hover:bg-white/5' 
                       : 'border border-[#D8D9DB] group-hover:border-[#C0C1C3]'
@@ -883,13 +883,13 @@ export default function Home() {
                   rel="noopener noreferrer"
                   variants={fadeInUp}
                   whileHover={{ scale: 1.02, y: -2 }}
-                  className={`flex items-center p-6 rounded-lg transition-all duration-300 group ${
+                  className={`flex items-center p-4 sm:p-5 md:p-6 rounded-lg transition-all duration-300 group ${
                     isDarkMode 
                       ? 'border border-gray-600 hover:border-white hover:shadow-lg hover:shadow-white/10' 
                       : 'bg-[#F0F1F3] border border-[#D8D9DB] hover:border-[#C0C1C3]'
                   }`}
                 >
-                  <div className={`w-12 h-12 rounded-full flex items-center justify-center mr-4 transition-all duration-300 ${
+                  <div className={`w-10 h-10 sm:w-12 sm:h-12 rounded-full flex items-center justify-center mr-3 sm:mr-4 transition-all duration-300 ${
                     isDarkMode 
                       ? 'border border-gray-600 group-hover:border-white group-hover:bg-white/5' 
                       : 'border border-[#D8D9DB] group-hover:border-[#C0C1C3]'
@@ -913,7 +913,7 @@ export default function Home() {
 
               {/* Contact Form */}
               <motion.div variants={fadeInUp} className="">
-                <h3 className={`text-2xl font-semibold mb-8 ${
+                <h3 className={`text-xl sm:text-2xl font-semibold mb-6 sm:mb-8 ${
                   isDarkMode ? '' : 'text-[#111111]'
                 }`}>Send a Message</h3>
                 <motion.form 
@@ -938,7 +938,7 @@ export default function Home() {
                     // Reset form
                     (e.target as HTMLFormElement).reset();
                   }}
-                  className="space-y-6"
+                  className="space-y-4 sm:space-y-6"
                 >
                   <motion.div variants={fadeInUp}>
                     <label htmlFor="name" className={`block text-sm font-medium mb-2 ${
@@ -987,7 +987,7 @@ export default function Home() {
                     type="submit"
                     whileHover={{ scale: 1.02 }}
                     whileTap={{ scale: 0.98 }}
-                    className={`w-full py-3 px-6 rounded-lg font-medium transition-all duration-300 flex items-center justify-center group ${
+                    className={`w-full py-2.5 sm:py-3 px-4 sm:px-6 rounded-lg font-medium transition-all duration-300 flex items-center justify-center group text-sm sm:text-base ${
                       isDarkMode 
                         ? 'bg-white text-black hover:bg-gray-200' 
                         : 'border border-[#D8D9DB] hover:bg-[#111111] hover:text-white hover:border-[#111111]'
@@ -1006,9 +1006,9 @@ export default function Home() {
       </section>
 
       {/* Footer */}
-      <footer className="py-8 px-6 border-t border-gray-600">
+      <footer className="py-6 sm:py-8 px-4 sm:px-6 border-t border-gray-600">
         <div className="max-w-4xl mx-auto text-center">
-          <p className="text-gray-400">
+          <p className="text-sm sm:text-base text-gray-400">
             © 2024 Tanya Panchal. All rights reserved.
           </p>
         </div>
@@ -1019,7 +1019,7 @@ export default function Home() {
         onClick={() => {
           window.scrollTo({ top: 0, behavior: 'smooth' })
         }}
-        className="fixed bottom-8 right-8 w-12 h-12 bg-white text-black rounded-full flex items-center justify-center shadow-lg hover:shadow-xl transition-all duration-300 z-40 group"
+        className="fixed bottom-6 right-6 sm:bottom-8 sm:right-8 w-10 h-10 sm:w-12 sm:h-12 bg-white text-black rounded-full flex items-center justify-center shadow-lg hover:shadow-xl transition-all duration-300 z-40 group"
         whileHover={{ scale: 1.1 }}
         whileTap={{ scale: 0.95 }}
         initial={{ opacity: 0, y: 100 }}
@@ -1027,7 +1027,7 @@ export default function Home() {
         transition={{ duration: 0.5, delay: 1 }}
       >
         <svg
-          className="w-6 h-6 transition-transform duration-300 group-hover:-translate-y-1"
+          className="w-5 h-5 sm:w-6 sm:h-6 transition-transform duration-300 group-hover:-translate-y-1"
           fill="none"
           stroke="currentColor"
           viewBox="0 0 24 24"

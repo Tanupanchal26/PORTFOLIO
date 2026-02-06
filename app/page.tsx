@@ -97,7 +97,9 @@ export default function Home() {
         className="fixed top-0 left-0 right-0 bg-black/90 backdrop-blur-sm shadow-lg z-50"
       >
         <div className="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
-          <div className="text-white font-bold text-xl tracking-wider">TANYA PANCHAL</div>
+          <div className="w-10 h-10 bg-white rounded-lg flex items-center justify-center font-bold text-black text-xl">
+            TP
+          </div>
           <div className="flex space-x-6">
             {[
               { id: 'hero', label: 'Home', icon: '🏠' },

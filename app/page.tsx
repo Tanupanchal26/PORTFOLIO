@@ -124,7 +124,7 @@ export default function Home() {
           e.currentTarget.style.setProperty('--mouse-y', `${y}px`)
         }}
       >
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 py-3 sm:py-4 flex justify-between items-center relative">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 py-2 sm:py-2.5 flex justify-between items-center relative">
           <div 
             className="absolute inset-0 pointer-events-none hidden md:block"
             style={{
@@ -132,10 +132,10 @@ export default function Home() {
               opacity: 0.5
             }}
           />
-          <div className={`font-bold text-lg sm:text-xl tracking-wider relative z-10 ${
+          <div className={`font-bold text-base sm:text-lg tracking-wider relative z-10 ${
             isDarkMode ? 'text-white' : 'text-[#111111]'
           }`}>TANYA</div>
-          <div className="flex gap-3 sm:gap-4 md:gap-6 lg:gap-8 relative z-10">
+          <div className="flex gap-2 sm:gap-3 md:gap-4 lg:gap-6 relative z-10">
             {[
               { id: 'hero', label: 'Home', icon: 'M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6' },
               { id: 'about', label: 'About', icon: 'M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z' },
@@ -153,7 +153,7 @@ export default function Home() {
                     element.scrollIntoView({ behavior: 'smooth', block: 'start' })
                   }
                 }}
-                className={`w-8 h-8 sm:w-9 sm:h-9 md:w-10 md:h-10 rounded-lg flex items-center justify-center transition-all duration-300 group relative ${
+                className={`w-7 h-7 sm:w-8 sm:h-8 md:w-9 md:h-9 rounded-lg flex items-center justify-center transition-all duration-300 group relative ${
                   activeSection === item.id
                     ? isDarkMode ? 'bg-white shadow-lg' : 'bg-[#111111] shadow-lg'
                     : isDarkMode ? 'hover:bg-gray-800' : 'hover:bg-[#E0E1E3]'
@@ -163,7 +163,7 @@ export default function Home() {
                 aria-label={item.label}
               >
                 <svg
-                  className={`w-4 h-4 sm:w-5 sm:h-5 transition-colors duration-300 ${
+                  className={`w-3.5 h-3.5 sm:w-4 sm:h-4 md:w-4.5 md:h-4.5 transition-colors duration-300 ${
                     activeSection === item.id 
                       ? isDarkMode ? 'text-black' : 'text-white'
                       : isDarkMode ? 'text-gray-300 group-hover:text-white' : 'text-[#374151] group-hover:text-[#111111]'
@@ -183,12 +183,12 @@ export default function Home() {
           </div>
           <button
             onClick={() => setIsDarkMode(!isDarkMode)}
-            className={`w-8 h-8 sm:w-9 sm:h-9 md:w-10 md:h-10 rounded-lg flex items-center justify-center transition-all duration-300 relative z-10 ${
+            className={`w-7 h-7 sm:w-8 sm:h-8 md:w-9 md:h-9 rounded-lg flex items-center justify-center transition-all duration-300 relative z-10 ${
               isDarkMode ? 'bg-gray-800 hover:bg-gray-700' : 'bg-[#D8D9DB] hover:bg-[#C8C9CB]'
             }`}
             aria-label="Toggle theme"
           >
-            <svg className={`w-4 h-4 sm:w-5 sm:h-5 ${
+            <svg className={`w-3.5 h-3.5 sm:w-4 sm:h-4 md:w-4.5 md:h-4.5 ${
               isDarkMode ? 'text-gray-300' : 'text-[#111111]'
             }`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
               {isDarkMode ? (
@@ -202,9 +202,9 @@ export default function Home() {
       </motion.nav>
 
       {/* Main Content with Top Padding */}
-      <div className="pt-20">
+      <div className="pt-14 sm:pt-16">
         {/* Hero Section */}
-        <section id="hero" className="min-h-screen flex items-center justify-center px-4 sm:px-6">
+        <section id="hero" className="min-h-screen flex items-center justify-center px-4 sm:px-6 -mt-8 sm:-mt-10">
         <motion.div 
           className="text-center max-w-4xl mx-auto"
           initial={{ opacity: 0, y: 30 }}
@@ -249,7 +249,7 @@ export default function Home() {
       </section>
 
       {/* About Section */}
-      <section id="about" className="py-12 sm:py-16 md:py-20 px-4 sm:px-6">
+      <section id="about" className="py-16 sm:py-20 md:py-24 px-4 sm:px-6">
         <div className="max-w-4xl mx-auto">
           <motion.div
             variants={staggerContainer}
@@ -296,7 +296,7 @@ export default function Home() {
       </section>
 
       {/* Skills Section */}
-      <section id="skills" className="py-12 sm:py-16 md:py-20 px-4 sm:px-6">
+      <section id="skills" className="py-16 sm:py-20 md:py-24 px-4 sm:px-6">
         <div className="max-w-4xl mx-auto">
           <motion.div
             variants={staggerContainer}
@@ -333,7 +333,7 @@ export default function Home() {
       </section>
 
       {/* Projects Section */}
-      <section id="projects" className="py-12 sm:py-16 md:py-20 px-4 sm:px-6">
+      <section id="projects" className="py-16 sm:py-20 md:py-24 px-4 sm:px-6">
         <div className="max-w-6xl mx-auto">
           <motion.div
             variants={staggerContainer}
@@ -394,7 +394,7 @@ export default function Home() {
       </section>
 
       {/* GitHub Section */}
-      <section id="github" className="py-12 sm:py-16 md:py-20 px-4 sm:px-6">
+      <section id="github" className="py-16 sm:py-20 md:py-24 px-4 sm:px-6">
         <div className="max-w-6xl mx-auto">
           <motion.div
             variants={staggerContainer}
@@ -570,7 +570,7 @@ export default function Home() {
       </section>
 
       {/* Certificates Section */}
-      <section id="certificates" className="py-12 sm:py-16 md:py-20 px-4 sm:px-6">
+      <section id="certificates" className="py-16 sm:py-20 md:py-24 px-4 sm:px-6">
         <div className="max-w-6xl mx-auto">
           <motion.div
             variants={staggerContainer}
@@ -746,7 +746,7 @@ export default function Home() {
       </section>
 
       {/* Contact Section */}
-      <section id="contact" className="py-12 sm:py-16 md:py-20 px-4 sm:px-6">
+      <section id="contact" className="py-16 sm:py-20 md:py-24 px-4 sm:px-6">
         <div className="max-w-6xl mx-auto">
           <motion.div
             variants={staggerContainer}

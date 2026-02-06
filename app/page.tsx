@@ -2,6 +2,7 @@
 
 import { motion } from 'framer-motion'
 import { useEffect, useState } from 'react'
+import SplashCursor from '../components/SplashCursor'
 
 export default function Home() {
   const [mounted, setMounted] = useState(false)
@@ -76,6 +77,7 @@ export default function Home() {
 
   return (
     <main className="min-h-screen">
+      <SplashCursor />
       {/* Fixed Vertical Sidebar */}
       <motion.nav 
         initial={{ x: -100, opacity: 0 }}
@@ -135,33 +137,6 @@ export default function Home() {
               </div>
             </motion.button>
           ))}
-        </div>
-
-        {/* Bottom Social Icons */}
-        <div className="flex flex-col space-y-4 mt-auto mb-8">
-          <motion.button
-            onClick={() => {
-              window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' })
-            }}
-            className="w-10 h-10 rounded-lg flex items-center justify-center transition-all duration-300 group relative hover:bg-gray-900 hover:shadow-lg"
-            whileHover={{ scale: 1.1 }}
-            whileTap={{ scale: 0.95 }}
-          >
-            <svg
-              className="w-5 h-5 transition-colors duration-300 text-gray-500 group-hover:text-gray-300"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-              strokeWidth={1.5}
-            >
-              <path strokeLinecap="round" strokeLinejoin="round" d="M19 14l-7 7m0 0l-7-7m7 7V3" />
-            </svg>
-            
-            {/* Tooltip */}
-            <div className="absolute left-full ml-3 px-2 py-1 bg-gray-800 text-white text-xs rounded opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none whitespace-nowrap z-50">
-              Scroll Down
-            </div>
-          </motion.button>
         </div>
       </motion.nav>
 
@@ -339,92 +314,82 @@ export default function Home() {
               GitHub Activity
             </motion.h2>
             
-            {/* GitHub Statistics 2026 */}
-            <motion.div variants={fadeInUp} className="mb-12">
-              <h3 className="text-2xl font-semibold mb-8 text-center">𝐆𝐢𝐭𝐇𝐮𝐛 𝐒𝐭𝐚𝐭𝐢𝐬𝐭𝐢𝐜𝐬 (𝟐𝟎𝟐𝟔)</h3>
-              <div className="flex justify-center">
-                <img 
-                  src="https://github-readme-stats.vercel.app/api?username=Tanupanchal26&show_icons=true&theme=dark&bg_color=0d1117&text_color=c9d1d9&icon_color=58a6ff&title_color=f0f6fc&border_color=30363d&hide_border=false" 
-                  alt="GitHub Statistics" 
-                  className="border border-gray-600 rounded-lg hover:border-white transition-all duration-300"
-                />
-              </div>
-            </motion.div>
-
             {/* Contribution Graph */}
             <motion.div variants={fadeInUp} className="mb-12">
               <h3 className="text-2xl font-semibold mb-8 text-center">📊 𝐂𝐨𝐧𝐭𝐫𝐢𝐛𝐮𝐭𝐢𝐨𝐧 𝐆𝐫𝐚𝐩𝐡</h3>
               <div className="flex justify-center">
-                <img 
-                  src="https://github-readme-activity-graph.vercel.app/graph?username=Tanupanchal26&bg_color=0d1117&color=c9d1d9&line=58a6ff&point=f0f6fc&area=true&hide_border=false&border_color=30363d" 
-                  alt="Contribution Graph" 
-                  className="border border-gray-600 rounded-lg hover:border-white transition-all duration-300 w-full max-w-5xl h-auto"
-                />
+                <a href="https://github.com/Tanupanchal26" target="_blank" rel="noopener noreferrer">
+                  <img 
+                    src="https://github-readme-activity-graph.vercel.app/graph?username=Tanupanchal26&bg_color=000000&color=c9d1d9&line=22c55e&point=ffffff&area=true&hide_border=false&border_color=30363d" 
+                    alt="Contribution Graph" 
+                    className="hover:scale-105 transition-all duration-300 w-full max-w-5xl"
+                  />
+                </a>
               </div>
             </motion.div>
 
-            {/* Detailed Statistics */}
+            {/* GitHub Analytics */}
             <motion.div variants={fadeInUp} className="mb-12">
-              <h3 className="text-2xl font-semibold mb-8 text-center">📈 𝐃𝐞𝐭𝐚𝐢𝐥𝐞𝐝 𝐒𝐭𝐚𝐭𝐢𝐬𝐭𝐢𝐜𝐬</h3>
-              <div className="grid md:grid-cols-2 gap-6 mb-8">
+              <h3 className="text-2xl font-semibold mb-8 text-center">📈 𝐆𝐢𝐭𝐇𝐮𝐛 𝐀𝐧𝐚𝐥𝐲𝐭𝐢𝐜𝐬</h3>
+              
+              <div className="mb-8">
                 <div className="flex justify-center">
-                  <img 
-                    src="https://github-readme-stats.vercel.app/api/top-langs/?username=Tanupanchal26&layout=compact&theme=dark&bg_color=0d1117&text_color=c9d1d9&title_color=f0f6fc&border_color=30363d&hide_border=false" 
-                    alt="Top Languages" 
-                    className="border border-gray-600 rounded-lg hover:border-white transition-all duration-300"
-                  />
-                </div>
-                <div className="flex justify-center">
-                  <img 
-                    src="https://github-readme-streak-stats.herokuapp.com/?user=Tanupanchal26&theme=dark&background=0d1117&border=30363d&stroke=c9d1d9&ring=58a6ff&fire=58a6ff&currStreakNum=f0f6fc&sideNums=c9d1d9&currStreakLabel=c9d1d9&sideLabels=c9d1d9&dates=c9d1d9&hide_border=false" 
-                    alt="GitHub Streak" 
-                    className="border border-gray-600 rounded-lg hover:border-white transition-all duration-300"
-                  />
+                  <a href="https://github.com/Tanupanchal26" target="_blank" rel="noopener noreferrer">
+                    <img 
+                      src="https://github-profile-summary-cards.vercel.app/api/cards/profile-details?username=Tanupanchal26&theme=github_dark" 
+                      alt="Profile Details" 
+                      className="hover:scale-105 transition-all duration-300 w-full max-w-4xl"
+                    />
+                  </a>
                 </div>
               </div>
               
-              {/* Additional Detailed Stats */}
-              <div className="grid md:grid-cols-3 gap-6 mb-8">
+              <div className="grid md:grid-cols-2 gap-6 mb-8">
                 <div className="flex justify-center">
-                  <img 
-                    src="https://github-profile-summary-cards.vercel.app/api/cards/profile-details?username=Tanupanchal26&theme=github_dark" 
-                    alt="Profile Details" 
-                    className="border border-gray-600 rounded-lg hover:border-white transition-all duration-300 w-full"
-                  />
+                  <a href="https://github.com/Tanupanchal26" target="_blank" rel="noopener noreferrer">
+                    <img 
+                      src="https://github-profile-summary-cards.vercel.app/api/cards/repos-per-language?username=Tanupanchal26&theme=github_dark" 
+                      alt="Repos per Language" 
+                      className="hover:scale-105 transition-all duration-300"
+                    />
+                  </a>
                 </div>
                 <div className="flex justify-center">
-                  <img 
-                    src="https://github-profile-summary-cards.vercel.app/api/cards/repos-per-language?username=Tanupanchal26&theme=github_dark" 
-                    alt="Repos per Language" 
-                    className="border border-gray-600 rounded-lg hover:border-white transition-all duration-300"
-                  />
-                </div>
-                <div className="flex justify-center">
-                  <img 
-                    src="https://github-profile-summary-cards.vercel.app/api/cards/most-commit-language?username=Tanupanchal26&theme=github_dark" 
-                    alt="Most Commit Language" 
-                    className="border border-gray-600 rounded-lg hover:border-white transition-all duration-300"
-                  />
+                  <a href="https://github.com/Tanupanchal26" target="_blank" rel="noopener noreferrer">
+                    <img 
+                      src="https://github-profile-summary-cards.vercel.app/api/cards/most-commit-language?username=Tanupanchal26&theme=github_dark" 
+                      alt="Most Commit Language" 
+                      className="hover:scale-105 transition-all duration-300"
+                    />
+                  </a>
                 </div>
               </div>
               
               <div className="grid md:grid-cols-2 gap-6">
                 <div className="flex justify-center">
-                  <img 
-                    src="https://github-profile-summary-cards.vercel.app/api/cards/stats?username=Tanupanchal26&theme=github_dark" 
-                    alt="Stats" 
-                    className="border border-gray-600 rounded-lg hover:border-white transition-all duration-300"
-                  />
+                  <a href="https://github.com/Tanupanchal26" target="_blank" rel="noopener noreferrer">
+                    <img 
+                      src="https://github-profile-summary-cards.vercel.app/api/cards/stats?username=Tanupanchal26&theme=github_dark" 
+                      alt="Stats" 
+                      className="hover:scale-105 transition-all duration-300"
+                    />
+                  </a>
                 </div>
                 <div className="flex justify-center">
-                  <img 
-                    src="https://github-profile-summary-cards.vercel.app/api/cards/productive-time?username=Tanupanchal26&theme=github_dark&utcOffset=5.5" 
-                    alt="Productive Time" 
-                    className="border border-gray-600 rounded-lg hover:border-white transition-all duration-300"
-                  />
+                  <a href="https://github.com/Tanupanchal26" target="_blank" rel="noopener noreferrer">
+                    <img 
+                      src="https://github-profile-summary-cards.vercel.app/api/cards/productive-time?username=Tanupanchal26&theme=github_dark&utcOffset=5.5" 
+                      alt="Productive Time" 
+                      className="hover:scale-105 transition-all duration-300"
+                    />
+                  </a>
                 </div>
               </div>
             </motion.div>
+            
+
+
+
             
             <motion.div 
               variants={staggerContainer}

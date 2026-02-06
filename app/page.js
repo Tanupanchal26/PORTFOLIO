@@ -5,7 +5,7 @@ export default function Home() {
     <main className="min-h-screen">
       <Sidebar />
       
-      <div className="ml-0 md:ml-16">
+      <div className="pt-20">
         <section id="home" className="min-h-screen flex items-center justify-center px-6">
           <div className="text-center max-w-4xl">
             <h1 className="text-6xl md:text-8xl font-bold mb-6 tracking-tight text-white">Hi, I'm<br />Software Developer</h1>
@@ -23,5 +23,5 @@ export default function Home() {
         </section>
       </div>
     </main>
-2024  )
+  )
 }

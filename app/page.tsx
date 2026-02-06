@@ -58,28 +58,28 @@ export default function Home() {
   const projects = [
     {
       title: 'KaushalX – Job & Course Platform',
-      year: '2024', 
+      year: '2025', 
       tech: 'React.js, Node.js, MongoDB, Express.js',
       description: 'Comprehensive platform for job and course listings with advanced search and filtering capabilities, real-time updates, and responsive design.',
       github: 'https://github.com/lucky-panchal/Secret.git'
     },
     {
       title: 'HotWheels – Automotive Showcase Platform',
-      year: '2024',
+      year: '2025',
       tech: 'React.js, Node.js, MongoDB, Express.js',
       description: 'A modern automotive showcase platform enabling users to browse, search, and compare a curated collection of vehicle models. Features include dynamic data fetching, responsive UI, user authentication, structured API endpoints, and smooth client-server interactions. The platform offers optimized performance and an engaging interface across devices.',
       github: 'https://github.com/Tanupanchal26/hotwheels.git'
     },
     {
       title: 'HerRides – Women\'s Transportation UI',
-      year: '2024',
+      year: '2025',
       tech: 'Next.js, Tailwind CSS, Figma',
       description: 'Safety-oriented transportation app UI focusing on user research, wireframes, prototypes, and responsive implementation for women\'s safety.',
       github: 'https://github.com/Tanupanchal26/HerRides-UI.git'
     },
     {
       title: 'Portfolio Website',
-      year: '2024',
+      year: '2025',
       tech: 'React.js, CSS, JavaScript',
       description: 'Personal portfolio website showcasing projects and skills with smooth animations, responsive design, and modern UI/UX principles.',
       github: 'https://github.com/Tanupanchal26/PORTFOLIO.git'

@@ -648,7 +648,7 @@ export default function Home() {
                 
                 {/* Email Card */}
                 <motion.a
-                  href="mailto:tanyapanchal65@gmail.com"
+                  href="mailto:panchaltanya32@gmail.com"
                   variants={fadeInUp}
                   whileHover={{ scale: 1.02, y: -2 }}
                   className="flex items-center p-6 border border-gray-600 rounded-lg hover:border-white hover:shadow-lg hover:shadow-white/10 transition-all duration-300 group"
@@ -739,22 +739,16 @@ export default function Home() {
                       message: formData.get('message')
                     };
                     
-                    try {
-                      const response = await fetch('/api/contact', {
-                        method: 'POST',
-                        headers: { 'Content-Type': 'application/json' },
-                        body: JSON.stringify(data)
-                      });
-                      
-                      if (response.ok) {
-                        alert('Message sent successfully!');
-                        (e.target as HTMLFormElement).reset();
-                      } else {
-                        alert('Failed to send message. Please try again.');
-                      }
-                    } catch (error) {
-                      alert('Failed to send message. Please try again.');
-                    }
+                    // Create mailto link with form data
+                    const subject = encodeURIComponent(`Portfolio Contact: ${data.name}`);
+                    const body = encodeURIComponent(`Name: ${data.name}\nEmail: ${data.email}\n\nMessage:\n${data.message}`);
+                    const mailtoLink = `mailto:panchaltanya32@gmail.com?subject=${subject}&body=${body}`;
+                    
+                    // Open email client
+                    window.location.href = mailtoLink;
+                    
+                    // Reset form
+                    (e.target as HTMLFormElement).reset();
                   }}
                   className="space-y-6"
                 >

@@ -754,16 +754,16 @@ export default function Home() {
                   className={`flex items-center p-6 rounded-lg transition-all duration-300 group ${
                     isDarkMode 
                       ? 'border border-gray-600 hover:border-white hover:shadow-lg hover:shadow-white/10' 
-                      : 'bg-[#1F2937] border border-[#374151] hover:border-[#4B5563]'
+                      : 'bg-[#F0F1F3] border border-[#D8D9DB] hover:border-[#C0C1C3]'
                   }`}
                 >
                   <div className={`w-12 h-12 rounded-full flex items-center justify-center mr-4 transition-all duration-300 ${
                     isDarkMode 
                       ? 'border border-gray-600 group-hover:border-white group-hover:bg-white/5' 
-                      : 'border border-[#4B5563] group-hover:border-[#6B7280]'
+                      : 'border border-[#D8D9DB] group-hover:border-[#C0C1C3]'
                   }`}>
                     <svg className={`w-6 h-6 transition-colors duration-300 ${
-                      isDarkMode ? 'text-gray-400 group-hover:text-white' : 'text-gray-300 group-hover:text-white'
+                      isDarkMode ? 'text-gray-400 group-hover:text-white' : 'text-[#374151] group-hover:text-[#111111]'
                     }`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                     </svg>

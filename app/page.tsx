@@ -77,13 +77,6 @@ export default function Home() {
 
   const projects = [
     {
-      title: 'JARVIS – AI Personal Assistant',
-      year: '2026',
-      tech: 'Python • Speech Recognition • NLP • Automation',
-      description: 'An AI personal assistant that responds to voice commands, processes natural language, and automates tasks using speech recognition and NLP.',
-      github: 'https://github.com/Tanupanchal26/JARVIS.git'
-    },
-    {
       title: 'KaushalX – Job & Course Platform',
       year: '2025', 
       tech: 'React.js, Node.js, MongoDB, Express.js',
@@ -110,6 +103,13 @@ export default function Home() {
       tech: 'React.js, CSS, JavaScript',
       description: 'Personal portfolio website showcasing projects and skills with smooth animations, responsive design, and modern UI/UX principles.',
       github: 'https://github.com/Tanupanchal26/PORTFOLIO.git'
+    },
+    {
+      title: 'JARVIS – AI Personal Assistant',
+      year: '2026',
+      tech: 'Python • Speech Recognition • NLP • Automation',
+      description: 'An AI personal assistant that responds to voice commands, processes natural language, and automates tasks using speech recognition and NLP.',
+      github: 'https://github.com/Tanupanchal26/JARVIS.git'
     },
     {
       title: 'Python Projects Collection',

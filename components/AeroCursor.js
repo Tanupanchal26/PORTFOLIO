@@ -22,11 +22,11 @@ export default function AeroCursor() {
       const velocity = Math.sqrt(dx * dx + dy * dy);
       const angle = Math.atan2(dy, dx) * (180 / Math.PI);
 
-      const scale = isHovering ? 1.5 : 1;
-      const stretch = Math.min(velocity * 0.3, 2);
+      const scale = isHovering ? 1.8 : 1;
+      const stretch = Math.min(velocity * 0.4, 2.5);
       
       cursor.style.transform = `translate(${x}px, ${y}px) rotate(${angle}deg) scaleX(${1 + stretch * scale}) scaleY(${scale})`;
-      cursor.style.opacity = velocity > 0.5 ? '0.8' : '0.6';
+      cursor.style.opacity = velocity > 1 ? '0.9' : '0.7';
 
       posRef.current.prevX = x;
       posRef.current.prevY = y;
@@ -63,17 +63,18 @@ export default function AeroCursor() {
       ref={cursorRef}
       style={{
         position: 'fixed',
-        top: '-10px',
-        left: '-20px',
-        width: '40px',
-        height: '20px',
-        background: 'linear-gradient(90deg, rgba(255,255,255,0.1), rgba(255,255,255,0.3), rgba(255,255,255,0.1))',
-        borderRadius: '10px',
+        top: '-8px',
+        left: '-16px',
+        width: '32px',
+        height: '16px',
+        background: 'linear-gradient(90deg, transparent, rgba(255,255,255,0.4) 50%, transparent)',
+        borderRadius: '50%',
         pointerEvents: 'none',
         zIndex: 9999,
         mixBlendMode: 'screen',
-        transition: 'opacity 0.2s ease',
-        willChange: 'transform, opacity'
+        transition: 'opacity 0.15s ease',
+        willChange: 'transform, opacity',
+        boxShadow: '0 0 20px rgba(255,255,255,0.3), inset 0 0 10px rgba(255,255,255,0.2)'
       }}
     />
   );

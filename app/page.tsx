@@ -1028,7 +1028,7 @@ export default function Home() {
         onClick={() => {
           window.scrollTo({ top: 0, behavior: 'smooth' })
         }}
-        className="fixed bottom-6 right-6 sm:bottom-8 sm:right-8 w-10 h-10 sm:w-12 sm:h-12 bg-white text-black rounded-full flex items-center justify-center shadow-lg hover:shadow-xl transition-all duration-300 z-40"
+        className="fixed bottom-6 right-6 sm:bottom-8 sm:right-8 w-10 h-10 sm:w-12 sm:h-12 bg-white text-black rounded-full flex items-center justify-center shadow-lg hover:shadow-xl transition-all duration-300 z-40 group"
         whileHover={{ scale: 1.1 }}
         whileTap={{ scale: 0.95 }}
         initial={{ opacity: 0, y: 100 }}
@@ -1036,6 +1036,9 @@ export default function Home() {
         transition={{ duration: 0.5, delay: 1 }}
       >
         <ChevronUp width={24} height={24} stroke="#000000" strokeWidth={2} />
+        <div className="absolute right-full mr-3 px-3 py-1.5 bg-gray-800 text-white text-sm rounded opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none whitespace-nowrap">
+          Go to Home
+        </div>
       </motion.button>
       </div>
     </main>

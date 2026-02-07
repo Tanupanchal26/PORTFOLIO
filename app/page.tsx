@@ -84,18 +84,18 @@ export default function Home() {
       github: 'https://github.com/lucky-panchal/Secret.git'
     },
     {
-      title: 'HotWheels – Automotive Showcase Platform',
-      year: '2025',
-      tech: 'React.js, Node.js, MongoDB, Express.js',
-      description: 'An automotive showcase platform for browsing and comparing vehicle models with a responsive, user-friendly interface.',
-      github: 'https://github.com/Tanupanchal26/hotwheels.git'
-    },
-    {
       title: 'HerRides – Women\'s Transportation UI',
       year: '2025',
       tech: 'Next.js, Tailwind CSS, Figma',
       description: 'Safety-oriented transportation app UI focusing on user research, wireframes, prototypes, and responsive implementation for women\'s safety.',
       github: 'https://github.com/Tanupanchal26/HerRides-UI.git'
+    },
+    {
+      title: 'HotWheels – Automotive Showcase Platform',
+      year: '2025',
+      tech: 'React.js, Node.js, MongoDB, Express.js',
+      description: 'An automotive showcase platform for browsing and comparing vehicle models with a responsive, user-friendly interface.',
+      github: 'https://github.com/Tanupanchal26/hotwheels.git'
     },
     {
       title: 'Portfolio Website',

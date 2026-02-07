@@ -91,18 +91,18 @@ export default function Home() {
       github: 'https://github.com/Tanupanchal26/HerRides-UI.git'
     },
     {
-      title: 'HotWheels – Automotive Showcase Platform',
-      year: '2025',
-      tech: 'React.js, Node.js, MongoDB, Express.js',
-      description: 'An automotive showcase platform for browsing and comparing vehicle models with a responsive, user-friendly interface.',
-      github: 'https://github.com/Tanupanchal26/hotwheels.git'
-    },
-    {
       title: 'Portfolio Website',
       year: '2025',
       tech: 'React.js, CSS, JavaScript',
       description: 'Personal portfolio website showcasing projects and skills with smooth animations, responsive design, and modern UI/UX principles.',
       github: 'https://github.com/Tanupanchal26/PORTFOLIO.git'
+    },
+    {
+      title: 'HotWheels – Automotive Showcase Platform',
+      year: '2025',
+      tech: 'React.js, Node.js, MongoDB, Express.js',
+      description: 'An automotive showcase platform for browsing and comparing vehicle models with a responsive, user-friendly interface.',
+      github: 'https://github.com/Tanupanchal26/hotwheels.git'
     },
     {
       title: 'JARVIS – AI Personal Assistant',

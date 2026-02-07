@@ -3,15 +3,10 @@
 import { motion } from 'framer-motion'
 import { useEffect, useState, useCallback, useMemo } from 'react'
 import dynamic from 'next/dynamic'
+import { ChevronUp } from '../components/ChevronUp'
 
 // Lazy load SplashCursor for better performance
 const SplashCursor = dynamic(() => import('../components/SplashCursor'), {
-  ssr: false,
-  loading: () => null
-})
-
-// Lazy load AeroCursor for directional effect
-const AeroCursor = dynamic(() => import('../components/AeroCursor'), {
   ssr: false,
   loading: () => null
 })
@@ -129,7 +124,6 @@ export default function Home() {
   return (
     <main className={isDarkMode ? 'min-h-screen bg-black text-white' : 'min-h-screen bg-[#ECEFF1] text-[#111111]'}>
       <SplashCursor />
-      <AeroCursor />
       {/* Fixed Top Menubar */}
       <motion.nav 
         initial={{ y: -100, opacity: 0 }}
@@ -1034,22 +1028,14 @@ export default function Home() {
         onClick={() => {
           window.scrollTo({ top: 0, behavior: 'smooth' })
         }}
-        className="fixed bottom-6 right-6 sm:bottom-8 sm:right-8 w-10 h-10 sm:w-12 sm:h-12 bg-white text-black rounded-full flex items-center justify-center shadow-lg hover:shadow-xl transition-all duration-300 z-40 group"
+        className="fixed bottom-6 right-6 sm:bottom-8 sm:right-8 w-10 h-10 sm:w-12 sm:h-12 bg-white text-black rounded-full flex items-center justify-center shadow-lg hover:shadow-xl transition-all duration-300 z-40"
         whileHover={{ scale: 1.1 }}
         whileTap={{ scale: 0.95 }}
         initial={{ opacity: 0, y: 100 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5, delay: 1 }}
       >
-        <svg
-          className="w-5 h-5 sm:w-6 sm:h-6 transition-transform duration-300 group-hover:-translate-y-1"
-          fill="none"
-          stroke="currentColor"
-          viewBox="0 0 24 24"
-          strokeWidth={2}
-        >
-          <path strokeLinecap="round" strokeLinejoin="round" d="M5 10l7-7m0 0l7 7m-7-7v18" />
-        </svg>
+        <ChevronUp width={24} height={24} stroke="#000000" strokeWidth={2} />
       </motion.button>
       </div>
     </main>

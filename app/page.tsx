@@ -1,8 +1,14 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import { useEffect, useState } from 'react'
-import SplashCursor from '../components/SplashCursor'
+import { useEffect, useState, useCallback, useMemo } from 'react'
+import dynamic from 'next/dynamic'
+
+// Lazy load SplashCursor for better performance
+const SplashCursor = dynamic(() => import('../components/SplashCursor'), {
+  ssr: false,
+  loading: () => null
+})
 
 export default function Home() {
   const [mounted, setMounted] = useState(false)
@@ -616,15 +622,10 @@ export default function Home() {
                   <p className={`text-sm mb-1 ${isDarkMode ? 'text-gray-400' : 'text-[#6B7280]'}`}>Deloitte Australia</p>
                   <span className={`text-sm ${isDarkMode ? 'text-gray-500' : 'text-[#9CA3AF]'}`}>2025</span>
                 </div>
-                <button
-                  onClick={() => {
-                    const link = document.createElement('a');
-                    link.href = '/deloitte-certificate.pdf';
-                    link.download = 'Deloitte-Technology-Job-Simulation.pdf';
-                    document.body.appendChild(link);
-                    link.click();
-                    document.body.removeChild(link);
-                  }}
+                <a
+                  href="/DELOITTE.html"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className={`px-4 py-2 rounded-lg transition-all duration-300 flex items-center space-x-2 text-sm sm:text-base w-full sm:w-auto justify-center sm:ml-6 ${
                     isDarkMode 
                       ? 'border border-gray-600 hover:border-white hover:bg-white hover:text-black' 
@@ -632,10 +633,11 @@ export default function Home() {
                   }`}
                 >
                   <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
                   </svg>
-                  <span className="text-sm">Download</span>
-                </button>
+                  <span className="text-sm">View</span>
+                </a>
               </motion.div>
 
               {/* BCG Certificate */}
@@ -654,15 +656,10 @@ export default function Home() {
                   <p className={`text-sm mb-1 ${isDarkMode ? 'text-gray-400' : 'text-[#6B7280]'}`}>BCG</p>
                   <span className={`text-sm ${isDarkMode ? 'text-gray-500' : 'text-[#9CA3AF]'}`}>2025</span>
                 </div>
-                <button
-                  onClick={() => {
-                    const link = document.createElement('a');
-                    link.href = '/bcg-certificate.pdf';
-                    link.download = 'BCG-GenAI-Job-Simulation.pdf';
-                    document.body.appendChild(link);
-                    link.click();
-                    document.body.removeChild(link);
-                  }}
+                <a
+                  href="/BCG.jpg"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className={`px-4 py-2 rounded-lg transition-all duration-300 flex items-center space-x-2 text-sm sm:text-base w-full sm:w-auto justify-center sm:ml-6 ${
                     isDarkMode 
                       ? 'border border-gray-600 hover:border-white hover:bg-white hover:text-black' 
@@ -670,10 +667,11 @@ export default function Home() {
                   }`}
                 >
                   <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
                   </svg>
-                  <span className="text-sm">Download</span>
-                </button>
+                  <span className="text-sm">View</span>
+                </a>
               </motion.div>
 
               {/* Google Cloud Certificate */}
@@ -692,15 +690,10 @@ export default function Home() {
                   <p className={`text-sm mb-1 ${isDarkMode ? 'text-gray-400' : 'text-[#6B7280]'}`}>Google Cloud Certified</p>
                   <span className={`text-sm ${isDarkMode ? 'text-gray-500' : 'text-[#9CA3AF]'}`}>2025</span>
                 </div>
-                <button
-                  onClick={() => {
-                    const link = document.createElement('a');
-                    link.href = '/google-cloud-certificate.pdf';
-                    link.download = 'Google-Cloud-GenAI-Certificate.pdf';
-                    document.body.appendChild(link);
-                    link.click();
-                    document.body.removeChild(link);
-                  }}
+                <a
+                  href="/d2af6fc5-3ed3-4faa-88c6-659443d49c00.jpg"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className={`px-4 py-2 rounded-lg transition-all duration-300 flex items-center space-x-2 text-sm sm:text-base w-full sm:w-auto justify-center sm:ml-6 ${
                     isDarkMode 
                       ? 'border border-gray-600 hover:border-white hover:bg-white hover:text-black' 
@@ -708,10 +701,11 @@ export default function Home() {
                   }`}
                 >
                   <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
                   </svg>
-                  <span className="text-sm">Download</span>
-                </button>
+                  <span className="text-sm">View</span>
+                </a>
               </motion.div>
 
               {/* AWS Certificate */}
@@ -730,15 +724,10 @@ export default function Home() {
                   <p className={`text-sm mb-1 ${isDarkMode ? 'text-gray-400' : 'text-[#6B7280]'}`}>AWS</p>
                   <span className={`text-sm ${isDarkMode ? 'text-gray-500' : 'text-[#9CA3AF]'}`}>2025</span>
                 </div>
-                <button
-                  onClick={() => {
-                    const link = document.createElement('a');
-                    link.href = '/aws-certificate.pdf';
-                    link.download = 'AWS-Solutions-Architecture-Certificate.pdf';
-                    document.body.appendChild(link);
-                    link.click();
-                    document.body.removeChild(link);
-                  }}
+                <a
+                  href="/AWS.jpg"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className={`px-4 py-2 rounded-lg transition-all duration-300 flex items-center space-x-2 text-sm sm:text-base w-full sm:w-auto justify-center sm:ml-6 ${
                     isDarkMode 
                       ? 'border border-gray-600 hover:border-white hover:bg-white hover:text-black' 
@@ -746,10 +735,11 @@ export default function Home() {
                   }`}
                 >
                   <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
                   </svg>
-                  <span className="text-sm">Download</span>
-                </button>
+                  <span className="text-sm">View</span>
+                </a>
               </motion.div>
             </motion.div>
           </motion.div>

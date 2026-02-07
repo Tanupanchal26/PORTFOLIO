@@ -71,6 +71,13 @@ export default function Home() {
 
   const projects = [
     {
+      title: 'JARVIS – AI Personal Assistant',
+      year: '2026',
+      tech: 'Python • Speech Recognition • NLP • Automation',
+      description: 'An AI personal assistant that responds to voice commands, processes natural language, and automates tasks using speech recognition and NLP.',
+      github: 'https://github.com/Tanupanchal26/JARVIS.git'
+    },
+    {
       title: 'KaushalX – Job & Course Platform',
       year: '2025', 
       tech: 'React.js, Node.js, MongoDB, Express.js',
@@ -182,7 +189,7 @@ export default function Home() {
           </div>
           <button
             onClick={() => setIsDarkMode(!isDarkMode)}
-            className={`w-7 h-7 sm:w-8 sm:h-8 md:w-9 md:h-9 rounded-lg flex items-center justify-center transition-all duration-300 relative z-10 ${
+            className={`w-7 h-7 sm:w-8 sm:h-8 md:w-9 md:h-9 rounded-lg flex items-center justify-center transition-all duration-300 relative z-10 group ${
               isDarkMode ? 'bg-gray-800 hover:bg-gray-700' : 'bg-[#D8D9DB] hover:bg-[#C8C9CB]'
             }`}
             aria-label="Toggle theme"
@@ -196,6 +203,11 @@ export default function Home() {
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
               )}
             </svg>
+            <div className={`absolute top-full mt-2 px-2 py-1 text-xs rounded opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none whitespace-nowrap z-50 ${
+              isDarkMode ? 'bg-gray-800 text-white' : 'bg-[#111111] text-white'
+            }`}>
+              {isDarkMode ? 'Light Theme' : 'Dark Theme'}
+            </div>
           </button>
         </div>
       </motion.nav>

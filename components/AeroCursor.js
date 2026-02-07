@@ -3,8 +3,9 @@ import { useEffect, useRef } from 'react';
 
 export default function AeroCursor() {
   const cursorRef = useRef(null);
-  const posRef = useRef({ x: 0, y: 0, prevX: 0, prevY: 0 });
+  const posRef = useRef({ x: 0, y: 0, prevX: 0, prevY: 0, targetX: 0, targetY: 0 });
   const rafRef = useRef(null);
+  const hoverRef = useRef(false);
 
   useEffect(() => {
     const isMobile = /Android|webOS|iPhone|iPad|iPod/i.test(navigator.userAgent);
@@ -13,43 +14,43 @@ export default function AeroCursor() {
     const cursor = cursorRef.current;
     if (!cursor) return;
 
-    let isHovering = false;
-
     const updateCursor = () => {
-      const { x, y, prevX, prevY } = posRef.current;
-      const dx = x - prevX;
-      const dy = y - prevY;
+      const pos = posRef.current;
+      
+      // Smooth lerp
+      pos.x += (pos.targetX - pos.x) * 0.15;
+      pos.y += (pos.targetY - pos.y) * 0.15;
+      
+      const dx = pos.x - pos.prevX;
+      const dy = pos.y - pos.prevY;
       const velocity = Math.sqrt(dx * dx + dy * dy);
       const angle = Math.atan2(dy, dx) * (180 / Math.PI);
 
-      const scale = isHovering ? 1.8 : 1;
-      const stretch = Math.min(velocity * 0.4, 2.5);
+      const scale = hoverRef.current ? 2 : 1;
+      const stretch = Math.min(velocity * 0.5, 3);
       
-      cursor.style.transform = `translate(${x}px, ${y}px) rotate(${angle}deg) scaleX(${1 + stretch * scale}) scaleY(${scale})`;
-      cursor.style.opacity = velocity > 1 ? '0.9' : '0.7';
+      cursor.style.transform = `translate(${pos.x}px, ${pos.y}px) rotate(${angle}deg) scaleX(${1 + stretch}) scaleY(${scale})`;
+      cursor.style.opacity = velocity > 0.5 ? '1' : '0.8';
 
-      posRef.current.prevX = x;
-      posRef.current.prevY = y;
+      pos.prevX = pos.x;
+      pos.prevY = pos.y;
+      
+      rafRef.current = requestAnimationFrame(updateCursor);
     };
 
     const handleMove = (e) => {
-      posRef.current.x = e.clientX;
-      posRef.current.y = e.clientY;
+      posRef.current.targetX = e.clientX;
+      posRef.current.targetY = e.clientY;
     };
 
     const handleHover = (e) => {
       const target = e.target;
-      isHovering = target.closest('button, a, nav, [role="button"]') !== null;
-    };
-
-    const animate = () => {
-      updateCursor();
-      rafRef.current = requestAnimationFrame(animate);
+      hoverRef.current = target.closest('button, a, nav, [role="button"], .group') !== null;
     };
 
     document.addEventListener('mousemove', handleMove, { passive: true });
     document.addEventListener('mouseover', handleHover, { passive: true });
-    rafRef.current = requestAnimationFrame(animate);
+    rafRef.current = requestAnimationFrame(updateCursor);
 
     return () => {
       document.removeEventListener('mousemove', handleMove);
@@ -63,18 +64,19 @@ export default function AeroCursor() {
       ref={cursorRef}
       style={{
         position: 'fixed',
-        top: '-8px',
-        left: '-16px',
-        width: '32px',
-        height: '16px',
-        background: 'linear-gradient(90deg, transparent, rgba(255,255,255,0.4) 50%, transparent)',
+        top: '-10px',
+        left: '-20px',
+        width: '40px',
+        height: '20px',
+        background: 'radial-gradient(ellipse, rgba(255,255,255,0.6) 0%, rgba(255,255,255,0.3) 50%, transparent 100%)',
         borderRadius: '50%',
         pointerEvents: 'none',
         zIndex: 9999,
         mixBlendMode: 'screen',
-        transition: 'opacity 0.15s ease',
+        filter: 'blur(2px)',
+        transition: 'opacity 0.1s ease',
         willChange: 'transform, opacity',
-        boxShadow: '0 0 20px rgba(255,255,255,0.3), inset 0 0 10px rgba(255,255,255,0.2)'
+        boxShadow: '0 0 30px rgba(255,255,255,0.4)'
       }}
     />
   );

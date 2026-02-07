@@ -110,6 +110,13 @@ export default function Home() {
       tech: 'React.js, CSS, JavaScript',
       description: 'Personal portfolio website showcasing projects and skills with smooth animations, responsive design, and modern UI/UX principles.',
       github: 'https://github.com/Tanupanchal26/PORTFOLIO.git'
+    },
+    {
+      title: 'Python Projects Collection',
+      year: '2026',
+      tech: 'Python',
+      description: 'A curated set of Python applications demonstrating scripting, automation, data handling, and logic implementation for real-world utility and learning.',
+      github: 'https://github.com/Tanupanchal26/Python-Projects.git'
     }
   ]
 

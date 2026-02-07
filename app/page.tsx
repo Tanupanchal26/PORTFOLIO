@@ -10,6 +10,12 @@ const SplashCursor = dynamic(() => import('../components/SplashCursor'), {
   loading: () => null
 })
 
+// Lazy load AeroCursor for directional effect
+const AeroCursor = dynamic(() => import('../components/AeroCursor'), {
+  ssr: false,
+  loading: () => null
+})
+
 export default function Home() {
   const [mounted, setMounted] = useState(false)
   const [activeSection, setActiveSection] = useState('hero')
@@ -123,6 +129,7 @@ export default function Home() {
   return (
     <main className={isDarkMode ? 'min-h-screen bg-black text-white' : 'min-h-screen bg-[#ECEFF1] text-[#111111]'}>
       <SplashCursor />
+      <AeroCursor />
       {/* Fixed Top Menubar */}
       <motion.nav 
         initial={{ y: -100, opacity: 0 }}

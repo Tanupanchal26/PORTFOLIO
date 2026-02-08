@@ -233,74 +233,47 @@ export default function Home() {
       <div className="pt-14 sm:pt-16">
         {/* Hero Section */}
         <section id="hero" className="min-h-screen flex items-center justify-center px-4 sm:px-6 -mt-8 sm:-mt-10">
-        <div className="max-w-7xl mx-auto w-full">
-          <div className="flex flex-col lg:flex-row items-center justify-between gap-8 lg:gap-12">
-            {/* Left Side - Text Content */}
-            <motion.div 
-              className="text-center lg:text-left max-w-2xl lg:flex-1"
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, ease: "easeOut" }}
+        <motion.div 
+          className="text-center max-w-4xl mx-auto"
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, ease: "easeOut" }}
+        >
+          <motion.h1 
+            className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold mb-4 sm:mb-6 tracking-tight leading-tight"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+          >
+            Hi, I'm Tanya Panchal<br />Software Developer
+          </motion.h1>
+          <motion.p 
+            className={`text-base sm:text-lg md:text-xl lg:text-2xl mb-6 sm:mb-8 ${
+              isDarkMode ? 'text-gray-400' : 'text-[#4B5563]'
+            }`}
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.4 }}
+          >
+            B.Tech CSE Student | Aspiring Software Developer
+          </motion.p>
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.6 }}
+          >
+            <a 
+              href="#about" 
+              className={`inline-block px-6 sm:px-8 py-2.5 sm:py-3 text-sm sm:text-base transition-all duration-300 ${
+                isDarkMode 
+                  ? 'border border-white hover:bg-white hover:text-black' 
+                  : 'border border-[#D8D9DB] hover:bg-[#111111] hover:text-white hover:border-[#111111]'
+              }`}
             >
-              <motion.h1 
-                className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold mb-4 sm:mb-6 tracking-tight leading-tight"
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: 0.2 }}
-              >
-                Hi, I'm Tanya Panchal<br />Software Developer
-              </motion.h1>
-              <motion.p 
-                className={`text-base sm:text-lg md:text-xl lg:text-2xl mb-6 sm:mb-8 ${
-                  isDarkMode ? 'text-gray-400' : 'text-[#4B5563]'
-                }`}
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: 0.4 }}
-              >
-                B.Tech CSE Student | Aspiring Software Developer
-              </motion.p>
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: 0.6 }}
-              >
-                <a 
-                  href="#about" 
-                  className={`inline-block px-6 sm:px-8 py-2.5 sm:py-3 text-sm sm:text-base transition-all duration-300 ${
-                    isDarkMode 
-                      ? 'border border-white hover:bg-white hover:text-black' 
-                      : 'border border-[#D8D9DB] hover:bg-[#111111] hover:text-white hover:border-[#111111]'
-                  }`}
-                >
-                  Learn More
-                </a>
-              </motion.div>
-            </motion.div>
-
-            {/* Right Side - Visual Asset */}
-            <motion.div
-              className="lg:flex-[1.5] w-full"
-              initial={{ opacity: 0, scale: 0.8 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.8, delay: 0.3, ease: "easeOut" }}
-            >
-              <motion.img
-                src="/noma_remix (1).png"
-                alt="Developer Illustration"
-                className="w-full h-auto scale-125"
-                animate={{ 
-                  y: [0, -20, 0],
-                }}
-                transition={{
-                  duration: 3,
-                  repeat: Infinity,
-                  ease: "easeInOut"
-                }}
-              />
-            </motion.div>
-          </div>
-        </div>
+              Learn More
+            </a>
+          </motion.div>
+        </motion.div>
       </section>
 
       {/* About Section */}

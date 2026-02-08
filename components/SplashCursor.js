@@ -15,7 +15,8 @@ function SplashCursor({
   SHADING = true,
   COLOR_UPDATE_SPEED = 10,
   BACK_COLOR = { r: 0.5, g: 0, b: 0 },
-  TRANSPARENT = true
+  TRANSPARENT = true,
+  darkMode = true
 }) {
   const canvasRef = useRef(null);
   const animationFrameId = useRef(null);
@@ -882,9 +883,15 @@ function SplashCursor({
 
     function generateColor() {
       let c = HSVtoRGB(Math.random(), 1.0, 1.0);
-      c.r *= 0.3;
-      c.g *= 0.3;
-      c.b *= 0.3;
+      if (darkMode) {
+        c.r *= 0.2;
+        c.g *= 0.2;
+        c.b *= 0.2;
+      } else {
+        c.r *= 0.15;
+        c.g *= 0.15;
+        c.b *= 0.15;
+      }
       return c;
     }
 

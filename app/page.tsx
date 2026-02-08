@@ -126,7 +126,7 @@ export default function Home() {
 
   return (
     <main className={isDarkMode ? 'min-h-screen bg-black text-white' : 'min-h-screen bg-[#ECEFF1] text-[#111111]'}>
-      <SplashCursor />
+      <SplashCursor darkMode={isDarkMode} />
       {/* Fixed Top Menubar */}
       <motion.nav 
         initial={{ y: -100, opacity: 0 }}

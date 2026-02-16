@@ -1,14 +1,14 @@
 import './globals.css'
 import { Inter } from 'next/font/google'
+import type { Metadata, Viewport } from 'next'
 
 const inter = Inter({ subsets: ['latin'] })
 
-export const metadata = {
+export const metadata: Metadata = {
   title: 'Tanya Panchal - B.Tech CSE Student | Software Developer',
   description: 'Portfolio of Tanya Panchal, a passionate B.Tech Computer Science student specializing in software development, UI/UX design, and competitive programming.',
   keywords: 'Tanya Panchal, Software Developer, B.Tech CSE, Computer Science, React, Node.js, Portfolio, JavaScript, MongoDB',
-  author: 'Tanya Panchal',
-  viewport: 'width=device-width, initial-scale=1',
+  authors: [{ name: 'Tanya Panchal' }],
   openGraph: {
     title: 'Tanya Panchal - B.Tech CSE Student | Software Developer',
     description: 'Portfolio of Tanya Panchal, a passionate B.Tech Computer Science student specializing in software development, UI/UX design, and competitive programming.',
@@ -16,6 +16,11 @@ export const metadata = {
     siteName: 'Tanya Panchal Portfolio',
     type: 'website',
   },
+}
+
+export const viewport: Viewport = {
+  width: 'device-width',
+  initialScale: 1,
 }
 
 export default function RootLayout({

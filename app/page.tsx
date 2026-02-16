@@ -126,7 +126,7 @@ export default function Home() {
 
   return (
     <main className={isDarkMode ? 'min-h-screen bg-black text-white' : 'min-h-screen bg-[#ECEFF1] text-[#111111]'}>
-      <SplashCursor darkMode={isDarkMode} />
+      <SplashCursor />
       {/* Fixed Top Menubar */}
       <motion.nav 
         initial={{ y: -100, opacity: 0 }}
@@ -634,7 +634,7 @@ export default function Home() {
                   <span className={`text-sm ${isDarkMode ? 'text-gray-500' : 'text-[#9CA3AF]'}`}>2025</span>
                 </div>
                 <a
-                  href="/DELOITTE.html"
+                  href="https://res.cloudinary.com/dazqanb4h/image/upload/v1771257749/DELOITTE_b2xpfz.jpg"
                   target="_blank"
                   rel="noopener noreferrer"
                   className={`px-4 py-2 rounded-lg transition-all duration-300 flex items-center space-x-2 text-sm sm:text-base w-full sm:w-auto justify-center sm:ml-6 ${
@@ -668,7 +668,7 @@ export default function Home() {
                   <span className={`text-sm ${isDarkMode ? 'text-gray-500' : 'text-[#9CA3AF]'}`}>2025</span>
                 </div>
                 <a
-                  href="/BCG.jpg"
+                  href="https://res.cloudinary.com/dazqanb4h/image/upload/v1771258036/BCG_rjnby0.jpg"
                   target="_blank"
                   rel="noopener noreferrer"
                   className={`px-4 py-2 rounded-lg transition-all duration-300 flex items-center space-x-2 text-sm sm:text-base w-full sm:w-auto justify-center sm:ml-6 ${
@@ -702,7 +702,7 @@ export default function Home() {
                   <span className={`text-sm ${isDarkMode ? 'text-gray-500' : 'text-[#9CA3AF]'}`}>2025</span>
                 </div>
                 <a
-                  href="/d2af6fc5-3ed3-4faa-88c6-659443d49c00.jpg"
+                  href="https://res.cloudinary.com/dazqanb4h/image/upload/v1771257868/google_s7mgni.jpg"
                   target="_blank"
                   rel="noopener noreferrer"
                   className={`px-4 py-2 rounded-lg transition-all duration-300 flex items-center space-x-2 text-sm sm:text-base w-full sm:w-auto justify-center sm:ml-6 ${
@@ -736,7 +736,7 @@ export default function Home() {
                   <span className={`text-sm ${isDarkMode ? 'text-gray-500' : 'text-[#9CA3AF]'}`}>2025</span>
                 </div>
                 <a
-                  href="/AWS.jpg"
+                  href="https://res.cloudinary.com/dazqanb4h/image/upload/v1771257944/AWS_hnbxzx.jpg"
                   target="_blank"
                   rel="noopener noreferrer"
                   className={`px-4 py-2 rounded-lg transition-all duration-300 flex items-center space-x-2 text-sm sm:text-base w-full sm:w-auto justify-center sm:ml-6 ${

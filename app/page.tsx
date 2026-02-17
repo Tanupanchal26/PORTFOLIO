@@ -304,8 +304,8 @@ export default function Home() {
               <button
                 onClick={() => {
                   const link = document.createElement('a');
-                  link.href = 'Tanya_RESUME_e3zrn4.pdf';
-                  link.download = 'Tanya_RESUME_e3zrn4.pdf';
+                  link.href = 'RESUME.pdf';
+                  link.download = 'RESUME.pdf';
                   document.body.appendChild(link);
                   link.click();
                   document.body.removeChild(link);

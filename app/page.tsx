@@ -234,13 +234,14 @@ export default function Home() {
         {/* Hero Section */}
         <section id="hero" className="relative min-h-screen flex items-center justify-center px-4 sm:px-6 -mt-8 sm:-mt-10 overflow-hidden">
           {/* Animated Background - FloatingLines */}
-          <div className="absolute inset-0 z-0 pointer-events-none">
+          <div className="absolute inset-0 z-0">
             <FloatingLines
               enabledWaves={["top", "middle", "bottom"]}
               lineCount={8}
               lineDistance={25}
-              bendRadius={10}
-              bendStrength={2}
+              bendRadius={15}
+              bendStrength={3}
+              mouseDamping={0.15}
               animationSpeed={0.6}
               interactive={true}
               parallax={true}
@@ -777,8 +778,24 @@ export default function Home() {
       </section>
 
       {/* Contact Section */}
-      <section id="contact" className="py-16 sm:py-20 md:py-24 px-4 sm:px-6">
-        <div className="max-w-6xl mx-auto">
+      <section id="contact" className="py-16 sm:py-20 md:py-24 px-4 sm:px-6 relative overflow-hidden">
+        {/* Animated Background - FloatingLines */}
+        <div className="absolute inset-0 z-0">
+          <FloatingLines
+            enabledWaves={["top", "middle", "bottom"]}
+            lineCount={8}
+            lineDistance={25}
+            bendRadius={15}
+            bendStrength={3}
+            mouseDamping={0.15}
+            animationSpeed={0.6}
+            interactive={true}
+            parallax={true}
+            mixBlendMode="screen"
+          />
+        </div>
+        <div className="absolute inset-0 z-0 bg-gradient-to-b from-black/70 via-black/60 to-black" />
+        <div className="max-w-6xl mx-auto relative z-10">
           <motion.div
             variants={staggerContainer}
             initial="initial"
@@ -1062,7 +1079,7 @@ export default function Home() {
           Go to Home
         </div>
       </motion.button>
-      </div>
+    </div>
     </main>
   )
 }

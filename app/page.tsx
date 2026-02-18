@@ -3,6 +3,7 @@
 import { motion } from 'framer-motion'
 import { useEffect, useState, useCallback, useMemo, useRef } from 'react'
 import { ChevronUp } from '../components/ChevronUp'
+import FloatingLines from '../components/FloatingLines'
 
 export default function Home() {
   const [mounted, setMounted] = useState(false)
@@ -231,9 +232,28 @@ export default function Home() {
       {/* Main Content with Top Padding */}
       <div className="pt-14 sm:pt-16">
         {/* Hero Section */}
-        <section id="hero" className="min-h-screen flex items-center justify-center px-4 sm:px-6 -mt-8 sm:-mt-10">
-        <motion.div 
-          className="text-center max-w-4xl mx-auto"
+        <section id="hero" className="relative min-h-screen flex items-center justify-center px-4 sm:px-6 -mt-8 sm:-mt-10 overflow-hidden">
+          {/* Animated Background - FloatingLines */}
+          <div className="absolute inset-0 z-0 pointer-events-none">
+            <FloatingLines
+              enabledWaves={["top", "middle", "bottom"]}
+              lineCount={8}
+              lineDistance={25}
+              bendRadius={10}
+              bendStrength={2}
+              animationSpeed={0.6}
+              interactive={true}
+              parallax={true}
+              mixBlendMode="screen"
+            />
+          </div>
+
+          {/* Dark Overlay for Better Text Readability */}
+          <div className="absolute inset-0 z-0 bg-gradient-to-b from-black/70 via-black/60 to-black" />
+
+          {/* Hero Content */}
+          <motion.div 
+            className="relative z-10 text-center max-w-4xl mx-auto"
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, ease: "easeOut" }}

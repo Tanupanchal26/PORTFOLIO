@@ -59,9 +59,15 @@ uniform vec2 parallaxOffset;
 uniform vec3 lineGradient[8];
 uniform int lineGradientCount;
 
+uniform bool lightTheme;
+
 const vec3 BLACK = vec3(0.0);
 const vec3 PINK  = vec3(233.0, 71.0, 245.0) / 255.0;
 const vec3 BLUE  = vec3(47.0,  75.0, 162.0) / 255.0;
+
+const vec3 WHITE = vec3(1.0);
+const vec3 DARK_BLUE  = vec3(47.0,  75.0, 162.0) / 255.0;
+const vec3 DARK_PINK = vec3(180.0, 50.0, 180.0) / 255.0;
 
 mat2 rotate(float r) {
   return mat2(cos(r), sin(r), -sin(r), cos(r));
@@ -69,7 +75,17 @@ mat2 rotate(float r) {
 
 vec3 background_color(vec2 uv) {
   vec3 col = vec3(0.0);
-
+  
+  if (lightTheme) {
+    // White background for light theme - subtle wave hints
+    float y = sin(uv.x - 0.2) * 0.3 - 0.1;
+    float m = uv.y - y;
+    
+    col += mix(DARK_BLUE, WHITE, smoothstep(0.0, 1.0, abs(m)));
+    col += mix(DARK_PINK, WHITE, smoothstep(0.0, 1.0, abs(m - 0.8)));
+    return col * 0.3; // Subtle background
+  }
+  
   float y = sin(uv.x - 0.2) * 0.3 - 0.1;
   float m = uv.y - y;
 
@@ -80,6 +96,10 @@ vec3 background_color(vec2 uv) {
 
 vec3 getLineColor(float t, vec3 baseColor) {
   if (lineGradientCount <= 0) {
+    if (lightTheme) {
+      // Return dark colors for waves in light theme
+      return vec3(0.2, 0.2, 0.3);
+    }
     return baseColor;
   }
 
@@ -247,6 +267,7 @@ interface FloatingLinesProps {
   parallax?: boolean;
   parallaxStrength?: number;
   mixBlendMode?: string;
+  lightTheme?: boolean;
 }
 
 export default function FloatingLines({
@@ -264,7 +285,8 @@ export default function FloatingLines({
   mouseDamping = 0.05,
   parallax = true,
   parallaxStrength = 0.2,
-  mixBlendMode = 'screen'
+  mixBlendMode = 'screen',
+  lightTheme = false
 }: FloatingLinesProps) {
   const containerRef = useRef<HTMLDivElement>(null);
   const targetMouseRef = useRef(new Vector2(-1000, -1000));
@@ -358,7 +380,9 @@ export default function FloatingLines({
       lineGradient: {
         value: Array.from({ length: MAX_GRADIENT_STOPS }, () => new Vector3(1, 1, 1))
       },
-      lineGradientCount: { value: 0 }
+      lineGradientCount: { value: 0 },
+      
+      lightTheme: { value: lightTheme }
     };
 
     if (linesGradient && linesGradient.length > 0) {

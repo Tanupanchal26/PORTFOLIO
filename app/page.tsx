@@ -3,7 +3,6 @@
 import { motion } from 'framer-motion'
 import { useEffect, useState, useCallback, useMemo, useRef } from 'react'
 import { ChevronUp } from '../components/ChevronUp'
-import FloatingLines from '../components/FloatingLines'
 
 export default function Home() {
   const [mounted, setMounted] = useState(false)
@@ -126,7 +125,7 @@ export default function Home() {
   ]
 
   return (
-    <main className={isDarkMode ? 'min-h-screen bg-black text-white' : 'min-h-screen bg-[#ECEFF1] text-[#111111]'}>
+    <main className={isDarkMode ? 'min-h-screen bg-black text-white' : 'min-h-screen bg-white text-[#111111]'}>
       {/* Fixed Top Menubar */}
       <motion.nav 
         initial={{ y: -100, opacity: 0 }}
@@ -233,25 +232,6 @@ export default function Home() {
       <div className="pt-14 sm:pt-16">
         {/* Hero Section */}
         <section id="hero" className="relative min-h-screen flex items-center justify-center px-4 sm:px-6 -mt-8 sm:-mt-10 overflow-hidden">
-          {/* Animated Background - FloatingLines */}
-          <div className="absolute inset-0 z-0">
-            <FloatingLines
-              enabledWaves={["top", "middle", "bottom"]}
-              lineCount={8}
-              lineDistance={25}
-              bendRadius={15}
-              bendStrength={3}
-              mouseDamping={0.15}
-              animationSpeed={0.6}
-              interactive={true}
-              parallax={true}
-              mixBlendMode="screen"
-            />
-          </div>
-
-          {/* Dark Overlay for Better Text Readability */}
-          <div className="absolute inset-0 z-0 bg-gradient-to-b from-black/70 via-black/60 to-black" />
-
           {/* Hero Content */}
           <motion.div 
             className="relative z-10 text-center max-w-4xl mx-auto"
@@ -779,22 +759,7 @@ export default function Home() {
 
       {/* Contact Section */}
       <section id="contact" className="py-16 sm:py-20 md:py-24 px-4 sm:px-6 relative overflow-hidden">
-        {/* Animated Background - FloatingLines */}
-        <div className="absolute inset-0 z-0">
-          <FloatingLines
-            enabledWaves={["top", "middle", "bottom"]}
-            lineCount={8}
-            lineDistance={25}
-            bendRadius={15}
-            bendStrength={3}
-            mouseDamping={0.15}
-            animationSpeed={0.6}
-            interactive={true}
-            parallax={true}
-            mixBlendMode="screen"
-          />
-        </div>
-        <div className="absolute inset-0 z-0 bg-gradient-to-b from-black/70 via-black/60 to-black" />
+        <div className={`absolute inset-0 z-0 ${isDarkMode ? 'bg-gradient-to-b from-black/70 via-black/60 to-black' : 'bg-gradient-to-b from-white/30 via-white/20 to-white/30'}`} />
         <div className="max-w-6xl mx-auto relative z-10">
           <motion.div
             variants={staggerContainer}

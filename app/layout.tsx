@@ -11,6 +11,9 @@ export const metadata: Metadata = {
   description: 'Portfolio of Tanya Panchal, a passionate B.Tech Computer Science student specializing in software development, UI/UX design, and competitive programming.',
   keywords: 'Tanya Panchal, Software Developer, B.Tech CSE, Computer Science, React, Node.js, Portfolio, JavaScript, MongoDB',
   authors: [{ name: 'Tanya Panchal' }],
+  icons: {
+    icon: '/favicon.ico',
+  },
   openGraph: {
     title: 'Tanya Panchal - B.Tech CSE Student | Software Developer',
     description: 'Portfolio of Tanya Panchal, a passionate B.Tech Computer Science student specializing in software development, UI/UX design, and competitive programming.',

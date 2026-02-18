@@ -1,22 +1,15 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import { useEffect, useState, useCallback, useMemo } from 'react'
-import dynamic from 'next/dynamic'
+import { useEffect, useState, useCallback, useMemo, useRef } from 'react'
 import { ChevronUp } from '../components/ChevronUp'
-
-// Lazy load SplashCursor for better performance
-const SplashCursor = dynamic(() => import('../components/SplashCursor'), {
-  ssr: false,
-  loading: () => null
-})
 
 export default function Home() {
   const [mounted, setMounted] = useState(false)
   const [activeSection, setActiveSection] = useState('hero')
   const [isDarkMode, setIsDarkMode] = useState(true)
   const [isMenuVisible, setIsMenuVisible] = useState(true)
-  const [lastScrollY, setLastScrollY] = useState(0)
+  const lastScrollYRef = useRef(0)
 
   useEffect(() => {
     setMounted(true)
@@ -24,6 +17,7 @@ export default function Home() {
     // Handle scroll for active section and menu visibility
     const handleScroll = () => {
       const currentScrollY = window.scrollY
+      const lastScrollY = lastScrollYRef.current
       
       // Menu visibility logic
       if (currentScrollY > lastScrollY && currentScrollY > 80) {
@@ -32,7 +26,7 @@ export default function Home() {
         setIsMenuVisible(true)
       }
       
-      setLastScrollY(currentScrollY)
+      lastScrollYRef.current = currentScrollY
       
       // Active section logic
       const sections = ['hero', 'about', 'skills', 'projects', 'github', 'certificates', 'contact']
@@ -52,9 +46,15 @@ export default function Home() {
     
     window.addEventListener('scroll', handleScroll, { passive: true })
     return () => window.removeEventListener('scroll', handleScroll)
-  }, [lastScrollY])
+  }, [])
 
-  if (!mounted) return null
+  if (!mounted) {
+    return (
+      <main className="min-h-screen bg-black text-white">
+        <div className="min-h-screen" />
+      </main>
+    )
+  }
 
   const fadeInUp = {
     initial: { opacity: 0, y: 60 },
@@ -126,7 +126,6 @@ export default function Home() {
 
   return (
     <main className={isDarkMode ? 'min-h-screen bg-black text-white' : 'min-h-screen bg-[#ECEFF1] text-[#111111]'}>
-      <SplashCursor />
       {/* Fixed Top Menubar */}
       <motion.nav 
         initial={{ y: -100, opacity: 0 }}

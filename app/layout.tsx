@@ -2,6 +2,7 @@ import './globals.css'
 import { Inter } from 'next/font/google'
 import type { Metadata, Viewport } from 'next'
 import SmoothScroll from '@/components/SmoothScroll'
+import { ThemeProvider } from '@/components/ThemeProvider'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -13,7 +14,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Tanya Panchal - B.Tech CSE Student | Software Developer',
     description: 'Portfolio of Tanya Panchal, a passionate B.Tech Computer Science student specializing in software development, UI/UX design, and competitive programming.',
-    url: 'https://tanyapanchal.dev',
+    url: 'https://panchaltanya1.netlify.app',
     siteName: 'Tanya Panchal Portfolio',
     type: 'website',
   },
@@ -30,11 +31,18 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en">
-      <body className={`${inter.className} bg-black text-white antialiased`}>
-        <SmoothScroll>
-          {children}
-        </SmoothScroll>
+    <html lang="en" suppressHydrationWarning>
+      <body className={`${inter.className} antialiased`}>
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="dark"
+          enableSystem
+          disableTransitionOnChange
+        >
+          <SmoothScroll>
+            {children}
+          </SmoothScroll>
+        </ThemeProvider>
       </body>
     </html>
   )

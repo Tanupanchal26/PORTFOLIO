@@ -37,7 +37,7 @@ npm run dev
 
 ## Live Demo
 
-Visit: https://panchaltanya1.netlify.app
+Visit: https://tanyapanchal.vercel.app/
 
 ## Contact
 

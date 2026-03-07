@@ -1,37 +1,38 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-html {
-  scroll-behavior: smooth;
-}
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 222 47% 11%;
+    --primary: 217 91% 60%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 210 40% 96%;
+    --secondary-foreground: 215 25% 27%;
+    --accent: 214 32% 91%;
+    --border: 214 32% 91%;
+    --ring: 217 91% 60%;
+  }
 
-body {
-  font-family: 'Inter', sans-serif;
-}
+  .dark {
+    --background: 0 0% 6%;
+    --foreground: 240 5% 96%;
+    --primary: 213 94% 68%;
+    --primary-foreground: 237 36% 21%;
+    --secondary: 0 0% 15%;
+    --secondary-foreground: 240 5% 65%;
+    --accent: 0 0% 9%;
+    --border: 0 0% 15%;
+    --ring: 213 94% 68%;
+  }
 
-/* Custom scrollbar */
-::-webkit-scrollbar {
-  width: 8px;
-}
+  * {
+    @apply border-border;
+  }
 
-::-webkit-scrollbar-track {
-  background: #000000;
-}
-
-::-webkit-scrollbar-thumb {
-  background: #4b5563;
-  border-radius: 4px;
-}
-
-::-webkit-scrollbar-thumb:hover {
-  background: #6b7280;
-}
-
-/* Smooth focus transitions */
-input:focus,
-textarea:focus {
-  outline: none;
-  box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.2);
+  body {
+    @apply bg-background text-foreground;
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
 }

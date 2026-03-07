@@ -363,17 +363,21 @@ export default function Home() {
             <motion.div variants={fadeInUp} className="mb-12">
               <h3 className="text-2xl font-semibold mb-8 text-center">📊 𝐂𝐨𝐧𝐭𝐫𝐢𝐛𝐮𝐭𝐢𝐨𝐧 𝐆𝐫𝐚𝐩𝐡</h3>
               <div className="flex justify-center mb-8">
-                <img 
+                <motion.img
+                  whileHover={{ scale: 1.02 }}
+                  transition={{ duration: 0.3 }}
                   src="https://github-readme-activity-graph.vercel.app/graph?username=Tanupanchal26&bg_color=0D1117&color=7C3AED&line=FF6B6B&point=FFFFFF&area=true&hide_border=true" 
                   alt="Contribution Graph" 
-                  className={`border ${isDark ? 'border-gray-600' : 'border-gray-300'} rounded-lg ${isDark ? 'hover:border-white' : 'hover:border-black'} transition-all duration-300 w-full max-w-5xl h-auto`}
+                  className={`border ${isDark ? 'border-gray-600' : 'border-gray-300'} rounded-lg transition-all duration-300 w-full max-w-5xl h-auto cursor-pointer`}
                 />
               </div>
               <div className="flex justify-center">
-                <img 
+                <motion.img
+                  whileHover={{ scale: 1.02 }}
+                  transition={{ duration: 0.3 }}
                   src="https://raw.githubusercontent.com/Tanupanchal26/Tanupanchal26/output/pacman-contribution-graph-dark.svg" 
                   alt="Pacman Contribution Graph" 
-                  className={`border ${isDark ? 'border-gray-600' : 'border-gray-300'} rounded-lg ${isDark ? 'hover:border-white' : 'hover:border-black'} transition-all duration-300 w-full max-w-5xl h-auto`}
+                  className={`border ${isDark ? 'border-gray-600' : 'border-gray-300'} rounded-lg transition-all duration-300 w-full max-w-5xl h-auto cursor-pointer`}
                 />
               </div>
             </motion.div>
@@ -383,43 +387,53 @@ export default function Home() {
               <h3 className="text-2xl font-semibold mb-8 text-center">📈 𝐆𝐢𝐭𝐇𝐮𝐛 𝐀𝐧𝐚𝐥𝐲𝐭𝐢𝐜𝐬</h3>
               
               <div className="flex justify-center mb-8">
-                <img 
+                <motion.img
+                  whileHover={{ scale: 1.02 }}
+                  transition={{ duration: 0.3 }}
                   src={isDark ? "https://github-profile-summary-cards.vercel.app/api/cards/profile-details?username=Tanupanchal26&theme=tokyonight" : "https://github-profile-summary-cards.vercel.app/api/cards/profile-details?username=Tanupanchal26&theme=default"}
                   alt="Profile Details" 
-                  className={`border ${isDark ? 'border-gray-600' : 'border-gray-300'} rounded-lg ${isDark ? 'hover:border-white' : 'hover:border-black'} transition-all duration-300 w-full max-w-3xl`}
+                  className={`border ${isDark ? 'border-gray-600' : 'border-gray-300'} rounded-lg transition-all duration-300 w-full max-w-3xl cursor-pointer`}
                 />
               </div>
               
-              <div className="grid md:grid-cols-2 gap-8 mb-10 max-w-2xl mx-auto">
+              <div className="grid md:grid-cols-2 gap-12 mb-12 max-w-2xl mx-auto">
                 <div className="flex justify-center">
-                  <img 
+                  <motion.img
+                    whileHover={{ scale: 1.05 }}
+                    transition={{ duration: 0.3 }}
                     src={isDark ? "https://github-profile-summary-cards.vercel.app/api/cards/repos-per-language?username=Tanupanchal26&theme=tokyonight" : "https://github-profile-summary-cards.vercel.app/api/cards/repos-per-language?username=Tanupanchal26&theme=default"}
                     alt="Repos per Language" 
-                    className={`border ${isDark ? 'border-gray-600' : 'border-gray-300'} rounded-lg ${isDark ? 'hover:border-white' : 'hover:border-black'} transition-all duration-300 w-full`}
+                    className={`border ${isDark ? 'border-gray-600' : 'border-gray-300'} rounded-lg transition-all duration-300 w-full cursor-pointer`}
                   />
                 </div>
                 <div className="flex justify-center">
-                  <img 
+                  <motion.img
+                    whileHover={{ scale: 1.05 }}
+                    transition={{ duration: 0.3 }}
                     src={isDark ? "https://github-profile-summary-cards.vercel.app/api/cards/most-commit-language?username=Tanupanchal26&theme=tokyonight" : "https://github-profile-summary-cards.vercel.app/api/cards/most-commit-language?username=Tanupanchal26&theme=default"}
                     alt="Most Commit Language" 
-                    className={`border ${isDark ? 'border-gray-600' : 'border-gray-300'} rounded-lg ${isDark ? 'hover:border-white' : 'hover:border-black'} transition-all duration-300 w-full`}
+                    className={`border ${isDark ? 'border-gray-600' : 'border-gray-300'} rounded-lg transition-all duration-300 w-full cursor-pointer`}
                   />
                 </div>
               </div>
               
-              <div className="grid md:grid-cols-2 gap-8 max-w-2xl mx-auto">
+              <div className="grid md:grid-cols-2 gap-12 max-w-2xl mx-auto">
                 <div className="flex justify-center">
-                  <img 
+                  <motion.img
+                    whileHover={{ scale: 1.05 }}
+                    transition={{ duration: 0.3 }}
                     src={isDark ? "https://github-profile-summary-cards.vercel.app/api/cards/stats?username=Tanupanchal26&theme=tokyonight" : "https://github-profile-summary-cards.vercel.app/api/cards/stats?username=Tanupanchal26&theme=default"}
                     alt="Stats" 
-                    className={`border ${isDark ? 'border-gray-600' : 'border-gray-300'} rounded-lg ${isDark ? 'hover:border-white' : 'hover:border-black'} transition-all duration-300 w-full`}
+                    className={`border ${isDark ? 'border-gray-600' : 'border-gray-300'} rounded-lg transition-all duration-300 w-full cursor-pointer`}
                   />
                 </div>
                 <div className="flex justify-center">
-                  <img 
+                  <motion.img
+                    whileHover={{ scale: 1.05 }}
+                    transition={{ duration: 0.3 }}
                     src={isDark ? "https://github-profile-summary-cards.vercel.app/api/cards/productive-time?username=Tanupanchal26&theme=tokyonight&utcOffset=5.5" : "https://github-profile-summary-cards.vercel.app/api/cards/productive-time?username=Tanupanchal26&theme=default&utcOffset=5.5"}
                     alt="Productive Time" 
-                    className={`border ${isDark ? 'border-gray-600' : 'border-gray-300'} rounded-lg ${isDark ? 'hover:border-white' : 'hover:border-black'} transition-all duration-300 w-full`}
+                    className={`border ${isDark ? 'border-gray-600' : 'border-gray-300'} rounded-lg transition-all duration-300 w-full cursor-pointer`}
                   />
                 </div>
               </div>

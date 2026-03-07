@@ -384,25 +384,28 @@ export default function Home() {
               
               <div className="flex justify-center mb-8">
                 <img 
-                  src="https://github-profile-summary-cards.vercel.app/api/cards/profile-details?username=Tanupanchal26&theme=tokyonight" 
+                  src={isDark ? "https://github-profile-summary-cards.vercel.app/api/cards/profile-details?username=Tanupanchal26&theme=tokyonight" : "https://github-profile-summary-cards.vercel.app/api/cards/profile-details?username=Tanupanchal26&theme=default"}
                   alt="Profile Details" 
-                  className={`border ${isDark ? 'border-gray-600' : 'border-gray-300'} rounded-lg ${isDark ? 'hover:border-white' : 'hover:border-black'} transition-all duration-300 w-full max-w-5xl`}
+                  className={`border ${isDark ? 'border-gray-600' : 'border-gray-300'} rounded-lg ${isDark ? 'hover:border-white' : 'hover:border-black'} transition-all duration-300 w-full`}
+                  style={{ maxWidth: '100%', height: 'auto' }}
                 />
               </div>
               
               <div className="grid md:grid-cols-2 gap-6 mb-8">
                 <div className="flex justify-center">
                   <img 
-                    src="https://github-profile-summary-cards.vercel.app/api/cards/repos-per-language?username=Tanupanchal26&theme=tokyonight" 
+                    src={isDark ? "https://github-profile-summary-cards.vercel.app/api/cards/repos-per-language?username=Tanupanchal26&theme=tokyonight" : "https://github-profile-summary-cards.vercel.app/api/cards/repos-per-language?username=Tanupanchal26&theme=default"}
                     alt="Repos per Language" 
                     className={`border ${isDark ? 'border-gray-600' : 'border-gray-300'} rounded-lg ${isDark ? 'hover:border-white' : 'hover:border-black'} transition-all duration-300 w-full`}
+                    style={{ maxWidth: '100%', height: 'auto' }}
                   />
                 </div>
                 <div className="flex justify-center">
                   <img 
-                    src="https://github-profile-summary-cards.vercel.app/api/cards/most-commit-language?username=Tanupanchal26&theme=tokyonight" 
+                    src={isDark ? "https://github-profile-summary-cards.vercel.app/api/cards/most-commit-language?username=Tanupanchal26&theme=tokyonight" : "https://github-profile-summary-cards.vercel.app/api/cards/most-commit-language?username=Tanupanchal26&theme=default"}
                     alt="Most Commit Language" 
                     className={`border ${isDark ? 'border-gray-600' : 'border-gray-300'} rounded-lg ${isDark ? 'hover:border-white' : 'hover:border-black'} transition-all duration-300 w-full`}
+                    style={{ maxWidth: '100%', height: 'auto' }}
                   />
                 </div>
               </div>
@@ -410,16 +413,18 @@ export default function Home() {
               <div className="grid md:grid-cols-2 gap-6">
                 <div className="flex justify-center">
                   <img 
-                    src="https://github-profile-summary-cards.vercel.app/api/cards/stats?username=Tanupanchal26&theme=tokyonight" 
+                    src={isDark ? "https://github-profile-summary-cards.vercel.app/api/cards/stats?username=Tanupanchal26&theme=tokyonight" : "https://github-profile-summary-cards.vercel.app/api/cards/stats?username=Tanupanchal26&theme=default"}
                     alt="Stats" 
                     className={`border ${isDark ? 'border-gray-600' : 'border-gray-300'} rounded-lg ${isDark ? 'hover:border-white' : 'hover:border-black'} transition-all duration-300 w-full`}
+                    style={{ maxWidth: '100%', height: 'auto' }}
                   />
                 </div>
                 <div className="flex justify-center">
                   <img 
-                    src="https://github-profile-summary-cards.vercel.app/api/cards/productive-time?username=Tanupanchal26&theme=tokyonight&utcOffset=5.5" 
+                    src={isDark ? "https://github-profile-summary-cards.vercel.app/api/cards/productive-time?username=Tanupanchal26&theme=tokyonight&utcOffset=5.5" : "https://github-profile-summary-cards.vercel.app/api/cards/productive-time?username=Tanupanchal26&theme=default&utcOffset=5.5"}
                     alt="Productive Time" 
                     className={`border ${isDark ? 'border-gray-600' : 'border-gray-300'} rounded-lg ${isDark ? 'hover:border-white' : 'hover:border-black'} transition-all duration-300 w-full`}
+                    style={{ maxWidth: '100%', height: 'auto' }}
                   />
                 </div>
               </div>

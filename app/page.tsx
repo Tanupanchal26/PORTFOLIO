@@ -368,7 +368,7 @@ export default function Home() {
                   transition={{ duration: 0.3 }}
                   src={isDark ? "https://github-readme-activity-graph.vercel.app/graph?username=Tanupanchal26&bg_color=0D1117&color=7C3AED&line=FF6B6B&point=FFFFFF&area=true&hide_border=true" : "https://github-readme-activity-graph.vercel.app/graph?username=Tanupanchal26&bg_color=FFFFFF&color=2F80ED&line=FF6B6B&point=000000&area=true&hide_border=true"}
                   alt="Contribution Graph" 
-                  className={`border ${isDark ? 'border-gray-600' : 'border-gray-300'} rounded-lg transition-all duration-300 w-full max-w-5xl h-auto cursor-pointer`}
+                  className={`border ${isDark ? 'border-gray-600' : 'border-gray-300'} rounded transition-all duration-300 w-full max-w-5xl h-auto cursor-pointer`}
                 />
               </div>
               <div className="flex justify-center">
@@ -377,7 +377,7 @@ export default function Home() {
                   transition={{ duration: 0.3 }}
                   src={isDark ? "https://raw.githubusercontent.com/Tanupanchal26/Tanupanchal26/output/pacman-contribution-graph-dark.svg" : "https://raw.githubusercontent.com/Tanupanchal26/Tanupanchal26/output/pacman-contribution-graph.svg"}
                   alt="Pacman Contribution Graph" 
-                  className={`border ${isDark ? 'border-gray-600' : 'border-gray-300'} rounded-lg transition-all duration-300 w-full max-w-5xl h-auto cursor-pointer`}
+                  className={`border ${isDark ? 'border-gray-600' : 'border-gray-300'} rounded transition-all duration-300 w-full max-w-5xl h-auto cursor-pointer`}
                 />
               </div>
             </motion.div>
@@ -392,7 +392,7 @@ export default function Home() {
                   transition={{ duration: 0.3 }}
                   src={isDark ? "https://github-profile-summary-cards.vercel.app/api/cards/profile-details?username=Tanupanchal26&theme=tokyonight" : "https://github-profile-summary-cards.vercel.app/api/cards/profile-details?username=Tanupanchal26&theme=default"}
                   alt="Profile Details" 
-                  className={`border ${isDark ? 'border-gray-600' : 'border-gray-300'} rounded-lg transition-all duration-300 w-full max-w-3xl cursor-pointer`}
+                  className={`border ${isDark ? 'border-gray-600' : 'border-gray-300'} rounded transition-all duration-300 w-full max-w-3xl cursor-pointer`}
                 />
               </div>
               
@@ -403,7 +403,7 @@ export default function Home() {
                     transition={{ duration: 0.3 }}
                     src={isDark ? "https://github-profile-summary-cards.vercel.app/api/cards/repos-per-language?username=Tanupanchal26&theme=tokyonight" : "https://github-profile-summary-cards.vercel.app/api/cards/repos-per-language?username=Tanupanchal26&theme=default"}
                     alt="Repos per Language" 
-                    className={`border ${isDark ? 'border-gray-600' : 'border-gray-300'} rounded-lg transition-all duration-300 w-full cursor-pointer`}
+                    className={`border ${isDark ? 'border-gray-600' : 'border-gray-300'} rounded transition-all duration-300 w-full cursor-pointer`}
                   />
                 </div>
                 <div className="flex justify-center">
@@ -412,7 +412,7 @@ export default function Home() {
                     transition={{ duration: 0.3 }}
                     src={isDark ? "https://github-profile-summary-cards.vercel.app/api/cards/most-commit-language?username=Tanupanchal26&theme=tokyonight" : "https://github-profile-summary-cards.vercel.app/api/cards/most-commit-language?username=Tanupanchal26&theme=default"}
                     alt="Most Commit Language" 
-                    className={`border ${isDark ? 'border-gray-600' : 'border-gray-300'} rounded-lg transition-all duration-300 w-full cursor-pointer`}
+                    className={`border ${isDark ? 'border-gray-600' : 'border-gray-300'} rounded transition-all duration-300 w-full cursor-pointer`}
                   />
                 </div>
               </div>
@@ -424,7 +424,7 @@ export default function Home() {
                     transition={{ duration: 0.3 }}
                     src={isDark ? "https://github-profile-summary-cards.vercel.app/api/cards/stats?username=Tanupanchal26&theme=tokyonight" : "https://github-profile-summary-cards.vercel.app/api/cards/stats?username=Tanupanchal26&theme=default"}
                     alt="Stats" 
-                    className={`border ${isDark ? 'border-gray-600' : 'border-gray-300'} rounded-lg transition-all duration-300 w-full cursor-pointer`}
+                    className={`border ${isDark ? 'border-gray-600' : 'border-gray-300'} rounded transition-all duration-300 w-full cursor-pointer`}
                   />
                 </div>
                 <div className="flex justify-center">
@@ -433,7 +433,7 @@ export default function Home() {
                     transition={{ duration: 0.3 }}
                     src={isDark ? "https://github-profile-summary-cards.vercel.app/api/cards/productive-time?username=Tanupanchal26&theme=tokyonight&utcOffset=5.5" : "https://github-profile-summary-cards.vercel.app/api/cards/productive-time?username=Tanupanchal26&theme=default&utcOffset=5.5"}
                     alt="Productive Time" 
-                    className={`border ${isDark ? 'border-gray-600' : 'border-gray-300'} rounded-lg transition-all duration-300 w-full cursor-pointer`}
+                    className={`border ${isDark ? 'border-gray-600' : 'border-gray-300'} rounded transition-all duration-300 w-full cursor-pointer`}
                   />
                 </div>
               </div>

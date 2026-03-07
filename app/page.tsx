@@ -212,7 +212,7 @@ export default function Home() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
           >
-            Tanya Panchal
+            Hi, I'm Tanya Panchal
           </motion.h1>
           <motion.p 
             className="text-xl md:text-2xl text-gray-400 mb-8"
@@ -220,6 +220,7 @@ export default function Home() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
           >
+            Software Developer<br />
             B.Tech CSE Student | Aspiring Software Developer
           </motion.p>
           <motion.div

@@ -361,7 +361,7 @@ export default function Home() {
             
             {/* Contribution Graph */}
             <motion.div variants={fadeInUp} className="mb-12">
-              <h3 className="text-2xl font-semibold mb-8 text-center">📊 𝐂𝐨𝐧𝐭𝐫𝐢𝐛𝐮𝐭𝐢𝐨𝐧 𝐆𝐫𝐚𝐩𝐡</h3>
+              <h3 className={`text-2xl font-semibold mb-8 text-center ${isDark ? 'text-white' : 'text-gray-900'}`}>📊 𝐂𝐨𝐧𝐭𝐫𝐢𝐛𝐮𝐭𝐢𝐨𝐧 𝐆𝐫𝐚𝐩𝐡</h3>
               <div className="flex justify-center mb-8">
                 <motion.img
                   whileHover={{ scale: 1.02 }}
@@ -384,7 +384,7 @@ export default function Home() {
 
             {/* GitHub Analytics */}
             <motion.div variants={fadeInUp} className="mb-12">
-              <h3 className="text-2xl font-semibold mb-8 text-center">📈 𝐆𝐢𝐭𝐇𝐮𝐛 𝐀𝐧𝐚𝐥𝐲𝐭𝐢𝐜𝐬</h3>
+              <h3 className={`text-2xl font-semibold mb-8 text-center ${isDark ? 'text-white' : 'text-gray-900'}`}>📈 𝐆𝐢𝐭𝐇𝐮𝐛 𝐀𝐧𝐚𝐥𝐲𝐭𝐢𝐜𝐬</h3>
               
               <div className="flex justify-center mb-8">
                 <motion.img

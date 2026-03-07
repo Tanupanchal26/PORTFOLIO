@@ -7,12 +7,25 @@ export default function Home() {
   const [mounted, setMounted] = useState(false)
   const [activeSection, setActiveSection] = useState('hero')
   const [isDark, setIsDark] = useState(true)
+  const [showHeader, setShowHeader] = useState(true)
+  const [lastScrollY, setLastScrollY] = useState(0)
 
   useEffect(() => {
     setMounted(true)
     
-    // Handle scroll for active section
+    // Handle scroll for active section and header visibility
     const handleScroll = () => {
+      const currentScrollY = window.scrollY
+      
+      // Show header when scrolling up, hide when scrolling down
+      if (currentScrollY > lastScrollY && currentScrollY > 100) {
+        setShowHeader(false)
+      } else {
+        setShowHeader(true)
+      }
+      setLastScrollY(currentScrollY)
+      
+      // Active section detection
       const sections = ['hero', 'about', 'skills', 'projects', 'github', 'certificates', 'contact']
       const scrollPosition = window.scrollY + 100
       
@@ -30,7 +43,7 @@ export default function Home() {
     
     window.addEventListener('scroll', handleScroll)
     return () => window.removeEventListener('scroll', handleScroll)
-  }, [])
+  }, [lastScrollY])
 
   if (!mounted) return null
 
@@ -104,8 +117,8 @@ export default function Home() {
       {/* Top Menu Bar */}
       <motion.header
         initial={{ y: -100, opacity: 0 }}
-        animate={{ y: 0, opacity: 1 }}
-        transition={{ duration: 0.5 }}
+        animate={{ y: showHeader ? 0 : -100, opacity: showHeader ? 1 : 0 }}
+        transition={{ duration: 0.3 }}
         className={`fixed top-0 left-0 right-0 z-50 ${isDark ? 'bg-black/90' : 'bg-white/90'} backdrop-blur-sm border-b ${isDark ? 'border-gray-800' : 'border-gray-200'}`}
       >
         <div className="flex items-center justify-between px-6 py-4">

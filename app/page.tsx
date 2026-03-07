@@ -489,7 +489,7 @@ export default function Home() {
       </section>
 
       {/* Certificates Section */}
-      <section id="certificates" className={`py-20 px-6 ${isDark ? 'bg-gray-900/20' : 'bg-gray-100/50'}`}>
+      <section id="certificates" className="py-20 px-6">
         <div className="max-w-6xl mx-auto">
           <motion.div
             variants={staggerContainer}
@@ -613,7 +613,7 @@ export default function Home() {
       </section>
 
       {/* Contact Section */}
-      <section id="contact" className={`py-20 px-6 ${isDark ? 'bg-gray-900/20' : 'bg-gray-100/50'}`}>
+      <section id="contact" className="py-20 px-6">
         <div className="max-w-6xl mx-auto">
           <motion.div
             variants={staggerContainer}
@@ -790,7 +790,7 @@ export default function Home() {
                     type="submit"
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.98 }}
-                    className={`w-full ${isDark ? 'bg-white text-black hover:bg-gray-200' : 'bg-gray-900 text-white hover:bg-gray-800'} py-3 px-6 rounded font-medium transition-all duration-300 flex items-center justify-center group`}
+                    className={`w-full ${isDark ? 'bg-white text-black hover:bg-gray-800 hover:text-white' : 'bg-black text-white hover:bg-gray-200 hover:text-black'} py-3 px-6 rounded font-medium transition-all duration-300 flex items-center justify-center group`}
                   >
                     <span>Send Message</span>
                     <svg className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">

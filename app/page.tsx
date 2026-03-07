@@ -396,7 +396,7 @@ export default function Home() {
                 />
               </div>
               
-              <div className="grid md:grid-cols-2 gap-x-32 gap-y-6 mb-8 max-w-3xl mx-auto">
+              <div className="grid md:grid-cols-2 gap-x-48 gap-y-6 mb-8 max-w-4xl mx-auto">
                 <div className="flex justify-center">
                   <motion.img
                     whileHover={{ scale: 1.05 }}
@@ -417,7 +417,7 @@ export default function Home() {
                 </div>
               </div>
               
-              <div className="grid md:grid-cols-2 gap-x-32 gap-y-6 max-w-3xl mx-auto">
+              <div className="grid md:grid-cols-2 gap-x-48 gap-y-6 max-w-4xl mx-auto">
                 <div className="flex justify-center">
                   <motion.img
                     whileHover={{ scale: 1.05 }}

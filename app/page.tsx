@@ -374,56 +374,47 @@ export default function Home() {
             {/* Contribution Graph */}
             <motion.div variants={fadeInUp} className="mb-12">
               <h3 className="text-2xl font-semibold mb-8 text-center">📊 𝐂𝐨𝐧𝐭𝐫𝐢𝐛𝐮𝐭𝐢𝐨𝐧 𝐆𝐫𝐚𝐩𝐡</h3>
+              <div className="flex justify-center mb-8">
+                <img 
+                  src="https://github-readme-activity-graph.vercel.app/graph?username=Tanupanchal26&bg_color=0D1117&color=7C3AED&line=FF6B6B&point=FFFFFF&area=true&hide_border=true" 
+                  alt="Contribution Graph" 
+                  className={`border ${isDark ? 'border-gray-600' : 'border-gray-300'} rounded-lg ${isDark ? 'hover:border-white' : 'hover:border-black'} transition-all duration-300 w-full max-w-5xl h-auto`}
+                />
+              </div>
               <div className="flex justify-center">
                 <img 
-                  src="https://github-readme-activity-graph.vercel.app/graph?username=Tanupanchal26&bg_color=0d1117&color=c9d1d9&line=58a6ff&point=f0f6fc&area=true&hide_border=false&border_color=30363d" 
-                  alt="Contribution Graph" 
+                  src="https://raw.githubusercontent.com/Tanupanchal26/Tanupanchal26/output/pacman-contribution-graph-dark.svg" 
+                  alt="Pacman Contribution Graph" 
                   className={`border ${isDark ? 'border-gray-600' : 'border-gray-300'} rounded-lg ${isDark ? 'hover:border-white' : 'hover:border-black'} transition-all duration-300 w-full max-w-5xl h-auto`}
                 />
               </div>
             </motion.div>
 
-            {/* Detailed Statistics */}
+            {/* GitHub Analytics */}
             <motion.div variants={fadeInUp} className="mb-12">
-              <h3 className="text-2xl font-semibold mb-8 text-center">📈 𝐃𝐞𝐭𝐚𝐢𝐥𝐞𝐝 𝐒𝐭𝐚𝐭𝐢𝐬𝐭𝐢𝐜𝐬</h3>
+              <h3 className="text-2xl font-semibold mb-8 text-center">📈 𝐆𝐢𝐭𝐇𝐮𝐛 𝐀𝐧𝐚𝐥𝐲𝐭𝐢𝐜𝐬</h3>
+              
+              <div className="flex justify-center mb-8">
+                <img 
+                  src="https://github-profile-summary-cards.vercel.app/api/cards/profile-details?username=Tanupanchal26&theme=tokyonight" 
+                  alt="Profile Details" 
+                  className={`border ${isDark ? 'border-gray-600' : 'border-gray-300'} rounded-lg ${isDark ? 'hover:border-white' : 'hover:border-black'} transition-all duration-300 w-full max-w-5xl`}
+                />
+              </div>
+              
               <div className="grid md:grid-cols-2 gap-6 mb-8">
                 <div className="flex justify-center">
                   <img 
-                    src="https://github-readme-stats.vercel.app/api/top-langs/?username=Tanupanchal26&layout=compact&theme=dark&bg_color=0d1117&text_color=c9d1d9&title_color=f0f6fc&border_color=30363d&hide_border=false" 
-                    alt="Top Languages" 
-                    className={`border ${isDark ? 'border-gray-600' : 'border-gray-300'} rounded-lg ${isDark ? 'hover:border-white' : 'hover:border-black'} transition-all duration-300`}
-                  />
-                </div>
-                <div className="flex justify-center">
-                  <img 
-                    src="https://github-readme-streak-stats.herokuapp.com/?user=Tanupanchal26&theme=dark&background=0d1117&border=30363d&stroke=c9d1d9&ring=58a6ff&fire=58a6ff&currStreakNum=f0f6fc&sideNums=c9d1d9&currStreakLabel=c9d1d9&sideLabels=c9d1d9&dates=c9d1d9&hide_border=false" 
-                    alt="GitHub Streak" 
-                    className={`border ${isDark ? 'border-gray-600' : 'border-gray-300'} rounded-lg ${isDark ? 'hover:border-white' : 'hover:border-black'} transition-all duration-300`}
-                  />
-                </div>
-              </div>
-              
-              {/* Additional Detailed Stats */}
-              <div className="grid md:grid-cols-3 gap-6 mb-8">
-                <div className="flex justify-center">
-                  <img 
-                    src="https://github-profile-summary-cards.vercel.app/api/cards/profile-details?username=Tanupanchal26&theme=github_dark" 
-                    alt="Profile Details" 
+                    src="https://github-profile-summary-cards.vercel.app/api/cards/repos-per-language?username=Tanupanchal26&theme=tokyonight" 
+                    alt="Repos per Language" 
                     className={`border ${isDark ? 'border-gray-600' : 'border-gray-300'} rounded-lg ${isDark ? 'hover:border-white' : 'hover:border-black'} transition-all duration-300 w-full`}
                   />
                 </div>
                 <div className="flex justify-center">
                   <img 
-                    src="https://github-profile-summary-cards.vercel.app/api/cards/repos-per-language?username=Tanupanchal26&theme=github_dark" 
-                    alt="Repos per Language" 
-                    className={`border ${isDark ? 'border-gray-600' : 'border-gray-300'} rounded-lg ${isDark ? 'hover:border-white' : 'hover:border-black'} transition-all duration-300`}
-                  />
-                </div>
-                <div className="flex justify-center">
-                  <img 
-                    src="https://github-profile-summary-cards.vercel.app/api/cards/most-commit-language?username=Tanupanchal26&theme=github_dark" 
+                    src="https://github-profile-summary-cards.vercel.app/api/cards/most-commit-language?username=Tanupanchal26&theme=tokyonight" 
                     alt="Most Commit Language" 
-                    className={`border ${isDark ? 'border-gray-600' : 'border-gray-300'} rounded-lg ${isDark ? 'hover:border-white' : 'hover:border-black'} transition-all duration-300`}
+                    className={`border ${isDark ? 'border-gray-600' : 'border-gray-300'} rounded-lg ${isDark ? 'hover:border-white' : 'hover:border-black'} transition-all duration-300 w-full`}
                   />
                 </div>
               </div>
@@ -431,16 +422,16 @@ export default function Home() {
               <div className="grid md:grid-cols-2 gap-6">
                 <div className="flex justify-center">
                   <img 
-                    src="https://github-profile-summary-cards.vercel.app/api/cards/stats?username=Tanupanchal26&theme=github_dark" 
+                    src="https://github-profile-summary-cards.vercel.app/api/cards/stats?username=Tanupanchal26&theme=tokyonight" 
                     alt="Stats" 
-                    className={`border ${isDark ? 'border-gray-600' : 'border-gray-300'} rounded-lg ${isDark ? 'hover:border-white' : 'hover:border-black'} transition-all duration-300`}
+                    className={`border ${isDark ? 'border-gray-600' : 'border-gray-300'} rounded-lg ${isDark ? 'hover:border-white' : 'hover:border-black'} transition-all duration-300 w-full`}
                   />
                 </div>
                 <div className="flex justify-center">
                   <img 
-                    src="https://github-profile-summary-cards.vercel.app/api/cards/productive-time?username=Tanupanchal26&theme=github_dark&utcOffset=5.5" 
+                    src="https://github-profile-summary-cards.vercel.app/api/cards/productive-time?username=Tanupanchal26&theme=tokyonight&utcOffset=5.5" 
                     alt="Productive Time" 
-                    className={`border ${isDark ? 'border-gray-600' : 'border-gray-300'} rounded-lg ${isDark ? 'hover:border-white' : 'hover:border-black'} transition-all duration-300`}
+                    className={`border ${isDark ? 'border-gray-600' : 'border-gray-300'} rounded-lg ${isDark ? 'hover:border-white' : 'hover:border-black'} transition-all duration-300 w-full`}
                   />
                 </div>
               </div>

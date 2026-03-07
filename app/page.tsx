@@ -359,18 +359,6 @@ export default function Home() {
               GitHub Activity
             </motion.h2>
             
-            {/* GitHub Statistics 2026 */}
-            <motion.div variants={fadeInUp} className="mb-12">
-              <h3 className="text-2xl font-semibold mb-8 text-center">𝐆𝐢𝐭𝐇𝐮𝐛 𝐒𝐭𝐚𝐭𝐢𝐬𝐭𝐢𝐜𝐬 (𝟐𝟎𝟐𝟔)</h3>
-              <div className="flex justify-center">
-                <img 
-                  src="https://github-readme-stats.vercel.app/api?username=Tanupanchal26&show_icons=true&theme=dark&bg_color=0d1117&text_color=c9d1d9&icon_color=58a6ff&title_color=f0f6fc&border_color=30363d&hide_border=false" 
-                  alt="GitHub Statistics" 
-                  className={`border ${isDark ? 'border-gray-600' : 'border-gray-300'} rounded-lg ${isDark ? 'hover:border-white' : 'hover:border-black'} transition-all duration-300`}
-                />
-              </div>
-            </motion.div>
-
             {/* Contribution Graph */}
             <motion.div variants={fadeInUp} className="mb-12">
               <h3 className="text-2xl font-semibold mb-8 text-center">📊 𝐂𝐨𝐧𝐭𝐫𝐢𝐛𝐮𝐭𝐢𝐨𝐧 𝐆𝐫𝐚𝐩𝐡</h3>

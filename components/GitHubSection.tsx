@@ -81,7 +81,7 @@ export default function GitHubSection({ username, isDark }: { username: string; 
     return (
       <section id="github" className="py-20 px-6">
         <div className="max-w-6xl mx-auto">
-          <h2 className="text-4xl md:text-5xl font-bold mb-12 text-center">GitHub Activity</h2>
+          <h2 className="text-4xl md:text-5xl font-bold mb-12 text-center text-white">GitHub Activity</h2>
           <div className="flex justify-center items-center h-64">
             <div className="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-white"></div>
           </div>
@@ -104,7 +104,7 @@ export default function GitHubSection({ username, isDark }: { username: string; 
         >
           <motion.h2 
             variants={fadeInUp}
-            className="text-4xl md:text-5xl font-bold mb-12 text-center"
+            className="text-4xl md:text-5xl font-bold mb-12 text-center text-white"
           >
             GitHub Activity
           </motion.h2>
@@ -112,38 +112,38 @@ export default function GitHubSection({ username, isDark }: { username: string; 
           {/* Stats Cards */}
           <motion.div variants={fadeInUp} className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-12">
             <div className={`border ${isDark ? 'border-gray-600' : 'border-gray-300'} p-6 text-center rounded-lg`}>
-              <h3 className="text-3xl font-bold text-green-400 mb-2">{user?.public_repos || 0}</h3>
-              <p className={`${isDark ? 'text-gray-400' : 'text-gray-600'} text-sm`}>Repositories</p>
+              <h3 className="text-3xl font-bold text-white mb-2">{user?.public_repos || 0}</h3>
+              <p className="text-white text-sm">Repositories</p>
             </div>
             <div className={`border ${isDark ? 'border-gray-600' : 'border-gray-300'} p-6 text-center rounded-lg`}>
-              <h3 className="text-3xl font-bold text-green-400 mb-2">{totalStars}</h3>
-              <p className={`${isDark ? 'text-gray-400' : 'text-gray-600'} text-sm`}>Total Stars</p>
+              <h3 className="text-3xl font-bold text-white mb-2">{totalStars}</h3>
+              <p className="text-white text-sm">Total Stars</p>
             </div>
             <div className={`border ${isDark ? 'border-gray-600' : 'border-gray-300'} p-6 text-center rounded-lg`}>
-              <h3 className="text-3xl font-bold text-green-400 mb-2">{user?.followers || 0}</h3>
-              <p className={`${isDark ? 'text-gray-400' : 'text-gray-600'} text-sm`}>Followers</p>
+              <h3 className="text-3xl font-bold text-white mb-2">{user?.followers || 0}</h3>
+              <p className="text-white text-sm">Followers</p>
             </div>
             <div className={`border ${isDark ? 'border-gray-600' : 'border-gray-300'} p-6 text-center rounded-lg`}>
-              <h3 className="text-3xl font-bold text-green-400 mb-2">{totalForks}</h3>
-              <p className={`${isDark ? 'text-gray-400' : 'text-gray-600'} text-sm`}>Total Forks</p>
+              <h3 className="text-3xl font-bold text-white mb-2">{totalForks}</h3>
+              <p className="text-white text-sm">Total Forks</p>
             </div>
           </motion.div>
 
           {/* Contribution Graph */}
           <motion.div variants={fadeInUp} className="mb-12">
-            <h3 className="text-2xl font-semibold mb-8 text-center">📊 Contribution Graph</h3>
+            <h3 className="text-2xl font-semibold mb-8 text-center text-white">📊 Contribution Graph</h3>
             <div className="flex justify-center">
               <img 
-                src={`https://github-readme-activity-graph.vercel.app/graph?username=${username}&bg_color=0d1117&color=c9d1d9&line=58a6ff&point=f0f6fc&area=true&hide_border=false&border_color=30363d`}
+                src={`https://github-readme-activity-graph.vercel.app/graph?username=${username}&bg_color=0d1117&color=c9d1d9&line=3fb950&point=39d353&area=true&hide_border=false&border_color=30363d&area_color=0e4429`}
                 alt="Contribution Graph" 
-                className={`border ${isDark ? 'border-gray-600' : 'border-gray-300'} rounded-lg w-full max-w-5xl`}
+                className="border border-[#30363d] rounded-lg w-full max-w-5xl"
               />
             </div>
           </motion.div>
 
           {/* Top Repositories */}
           <motion.div variants={fadeInUp} className="mb-12">
-            <h3 className="text-2xl font-semibold mb-8 text-center">📦 Top Repositories</h3>
+            <h3 className="text-2xl font-semibold mb-8 text-center text-white">📦 Top Repositories</h3>
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
               {repos.map((repo) => (
                 <a
@@ -153,20 +153,20 @@ export default function GitHubSection({ username, isDark }: { username: string; 
                   rel="noopener noreferrer"
                   className={`border ${isDark ? 'border-gray-600 hover:border-white' : 'border-gray-300 hover:border-black'} p-6 rounded-lg transition-all duration-300 group`}
                 >
-                  <h4 className={`text-lg font-semibold mb-2 ${isDark ? 'group-hover:text-gray-300' : 'group-hover:text-gray-700'}`}>
+                  <h4 className="text-lg font-semibold mb-2 text-green-500 group-hover:text-green-400">
                     {repo.name}
                   </h4>
-                  <p className={`${isDark ? 'text-gray-400' : 'text-gray-600'} text-sm mb-4 line-clamp-2`}>
+                  <p className="text-white text-sm mb-4 line-clamp-2">
                     {repo.description || 'No description'}
                   </p>
                   <div className="flex items-center justify-between text-sm">
                     <div className="flex items-center gap-4">
                       {repo.language && (
-                        <span className={`${isDark ? 'text-gray-400' : 'text-gray-600'}`}>
+                        <span className="text-white">
                           {repo.language}
                         </span>
                       )}
-                      <span className={`${isDark ? 'text-gray-400' : 'text-gray-600'}`}>
+                      <span className="text-white">
                         ⭐ {repo.stargazers_count}
                       </span>
                     </div>
@@ -178,7 +178,7 @@ export default function GitHubSection({ username, isDark }: { username: string; 
 
           {/* Recent Activity */}
           <motion.div variants={fadeInUp} className="mb-12">
-            <h3 className="text-2xl font-semibold mb-8 text-center">⚡ Recent Activity</h3>
+            <h3 className="text-2xl font-semibold mb-8 text-center text-white">⚡ Recent Activity</h3>
             <div className="space-y-4 max-w-3xl mx-auto">
               {events.slice(0, 5).map((event) => (
                 <div
@@ -187,10 +187,10 @@ export default function GitHubSection({ username, isDark }: { username: string; 
                 >
                   <div className="flex items-start justify-between">
                     <div>
-                      <p className={`font-medium ${isDark ? 'text-gray-300' : 'text-gray-700'}`}>
+                      <p className="font-medium text-white">
                         {event.type.replace('Event', '')} in {event.repo.name}
                       </p>
-                      <p className={`text-sm ${isDark ? 'text-gray-400' : 'text-gray-600'} mt-1`}>
+                      <p className="text-sm text-white mt-1">
                         {new Date(event.created_at).toLocaleDateString()}
                       </p>
                     </div>

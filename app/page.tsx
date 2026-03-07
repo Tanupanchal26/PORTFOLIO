@@ -848,7 +848,7 @@ export default function Home() {
       <footer className="py-8 px-6 border-t border-gray-600">
         <div className="max-w-4xl mx-auto text-center">
           <p className="text-gray-400">
-            © 2024 Tanya Panchal. All rights reserved.
+            © 2026 Tanya Panchal. All rights reserved.
           </p>
         </div>
       </footer>

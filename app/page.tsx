@@ -80,21 +80,21 @@ export default function Home() {
       year: '2025',
       tech: 'React.js, Node.js, MongoDB, Express.js',
       description: 'An automotive showcase platform for browsing and comparing vehicle models with a responsive, user-friendly interface.',
-      github: 'https://github.com/Tanupanchal26/hotwheels.git'
+      github: 'https://github.com/Tanupanchal26/hotwheels'
     },
     {
       title: 'JARVIS – AI Personal Assistant',
       year: '2026',
       tech: 'Python • Speech Recognition • NLP • Automation',
       description: 'An AI personal assistant that responds to voice commands, processes natural language, and automates tasks using speech recognition and NLP.',
-      github: 'https://github.com/Tanupanchal26/JARVIS.git'
+      github: 'https://github.com/Tanupanchal26/JARVIS'
     },
     {
       title: 'Python Projects Collection',
       year: '2026',
       tech: 'Python',
       description: 'A curated set of Python applications demonstrating scripting, automation, data handling, and logic implementation for real-world utility and learning.',
-      github: 'https://github.com/Tanupanchal26/Python-Projects.git'
+      github: 'https://github.com/Tanupanchal26/Python-Projects'
     }
   ]
 

@@ -366,7 +366,7 @@ export default function Home() {
                 <motion.img
                   whileHover={{ scale: 1.02 }}
                   transition={{ duration: 0.3 }}
-                  src="https://github-readme-activity-graph.vercel.app/graph?username=Tanupanchal26&bg_color=0D1117&color=7C3AED&line=FF6B6B&point=FFFFFF&area=true&hide_border=true" 
+                  src={isDark ? "https://github-readme-activity-graph.vercel.app/graph?username=Tanupanchal26&bg_color=0D1117&color=7C3AED&line=FF6B6B&point=FFFFFF&area=true&hide_border=true" : "https://github-readme-activity-graph.vercel.app/graph?username=Tanupanchal26&bg_color=FFFFFF&color=2F80ED&line=FF6B6B&point=000000&area=true&hide_border=true"}
                   alt="Contribution Graph" 
                   className={`border ${isDark ? 'border-gray-600' : 'border-gray-300'} rounded-lg transition-all duration-300 w-full max-w-5xl h-auto cursor-pointer`}
                 />
@@ -375,7 +375,7 @@ export default function Home() {
                 <motion.img
                   whileHover={{ scale: 1.02 }}
                   transition={{ duration: 0.3 }}
-                  src="https://raw.githubusercontent.com/Tanupanchal26/Tanupanchal26/output/pacman-contribution-graph-dark.svg" 
+                  src={isDark ? "https://raw.githubusercontent.com/Tanupanchal26/Tanupanchal26/output/pacman-contribution-graph-dark.svg" : "https://raw.githubusercontent.com/Tanupanchal26/Tanupanchal26/output/pacman-contribution-graph.svg"}
                   alt="Pacman Contribution Graph" 
                   className={`border ${isDark ? 'border-gray-600' : 'border-gray-300'} rounded-lg transition-all duration-300 w-full max-w-5xl h-auto cursor-pointer`}
                 />

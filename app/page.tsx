@@ -113,13 +113,13 @@ export default function Home() {
   ]
 
   return (
-    <main className={`min-h-screen ${isDark ? 'bg-black text-white' : 'bg-white text-black'}`}>
+    <main className={`min-h-screen ${isDark ? 'bg-[#000000] text-white' : 'bg-[#FFFFFF] text-black'}`}>
       {/* Top Menu Bar */}
       <motion.header
         initial={{ y: -100, opacity: 0 }}
         animate={{ y: showHeader ? 0 : -100, opacity: showHeader ? 1 : 0 }}
         transition={{ duration: 0.3 }}
-        className={`fixed top-0 left-0 right-0 z-50 ${isDark ? 'bg-black/90' : 'bg-white/90'} backdrop-blur-sm border-b ${isDark ? 'border-gray-800' : 'border-gray-200'}`}
+        className={`fixed top-0 left-0 right-0 z-50 ${isDark ? 'bg-[#000000]/90' : 'bg-[#FFFFFF]/90'} backdrop-blur-sm border-b ${isDark ? 'border-gray-800' : 'border-gray-200'}`}
       >
         <div className="flex items-center justify-between px-6 py-4">
           {/* Name on Left */}
@@ -173,7 +173,7 @@ export default function Home() {
               onClick={() => setIsDark(!isDark)}
               whileHover={{ scale: 1.15 }}
               whileTap={{ scale: 0.95 }}
-              className={`p-2 rounded transition-all duration-300 group relative ${isDark ? 'bg-black text-white hover:bg-gray-700' : 'bg-white text-black hover:bg-gray-300'}`}
+              className={`p-2 rounded transition-all duration-300 group relative ${isDark ? 'bg-[#000000] text-white hover:bg-gray-700' : 'bg-[#FFFFFF] text-black hover:bg-gray-300'}`}
             >
             {isDark ? (
               <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">

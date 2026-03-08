@@ -463,7 +463,7 @@ export default function Home() {
               {/* GitHub Stats Cards */}
               <motion.div
                 variants={fadeInUp}
-                className={`border ${isDark ? 'border-[#1F1F1F] bg-[#111111] hover:border-[#2ECC71]' : 'border-[#E5E7EB] bg-[#FFFFFF] hover:border-[#2ECC71]'} p-6 text-center transition-all duration-300`}
+                className={`border ${isDark ? 'border-[#1F1F1F] bg-[#000000] hover:border-[#9CA3AF]' : 'border-[#E5E7EB] bg-[#FFFFFF] hover:border-[#D1D5DB]'} p-6 text-center transition-all duration-300`}
               >
                 <h3 className="text-2xl font-bold text-[#2ECC71] mb-2">15+</h3>
                 <p className={`${isDark ? 'text-[#B3B3B3]' : 'text-[#4B5563]'}`}>Public Repositories</p>
@@ -471,7 +471,7 @@ export default function Home() {
               
               <motion.div
                 variants={fadeInUp}
-                className={`border ${isDark ? 'border-[#1F1F1F] bg-[#111111] hover:border-[#2ECC71]' : 'border-[#E5E7EB] bg-[#FFFFFF] hover:border-[#2ECC71]'} p-6 text-center transition-all duration-300`}
+                className={`border ${isDark ? 'border-[#1F1F1F] bg-[#000000] hover:border-[#9CA3AF]' : 'border-[#E5E7EB] bg-[#FFFFFF] hover:border-[#D1D5DB]'} p-6 text-center transition-all duration-300`}
               >
                 <h3 className="text-2xl font-bold text-[#2ECC71] mb-2">JavaScript</h3>
                 <p className={`${isDark ? 'text-[#B3B3B3]' : 'text-[#4B5563]'}`}>Primary Language</p>
@@ -479,7 +479,7 @@ export default function Home() {
               
               <motion.div
                 variants={fadeInUp}
-                className={`border ${isDark ? 'border-[#1F1F1F] bg-[#111111] hover:border-[#2ECC71]' : 'border-[#E5E7EB] bg-[#FFFFFF] hover:border-[#2ECC71]'} p-6 text-center transition-all duration-300`}
+                className={`border ${isDark ? 'border-[#1F1F1F] bg-[#000000] hover:border-[#9CA3AF]' : 'border-[#E5E7EB] bg-[#FFFFFF] hover:border-[#D1D5DB]'} p-6 text-center transition-all duration-300`}
               >
                 <h3 className="text-2xl font-bold text-[#2ECC71] mb-2">Active</h3>
                 <p className={`${isDark ? 'text-[#B3B3B3]' : 'text-[#4B5563]'}`}>Developer Status</p>

@@ -296,7 +296,7 @@ export default function Home() {
                 <motion.div
                   key={skill}
                   variants={fadeInUp}
-                  className={`border ${isDark ? 'border-[#1F1F1F] bg-[#111111] hover:border-[#D1D5DB]' : 'border-[#E5E7EB] bg-[#FFFFFF] hover:border-[#D1D5DB]'} px-4 py-3 text-center transition-colors duration-300`}
+                  className={`border ${isDark ? 'border-[#1F1F1F] bg-[#000000] hover:border-[#D1D5DB]' : 'border-[#E5E7EB] bg-[#FFFFFF] hover:border-[#D1D5DB]'} px-4 py-3 text-center transition-colors duration-300`}
                 >
                   {skill}
                 </motion.div>
@@ -329,7 +329,7 @@ export default function Home() {
                 <motion.div
                   key={project.title}
                   variants={fadeInUp}
-                  className={`project-card border ${isDark ? 'border-[#1F1F1F] bg-[#111111] hover:border-[#9CA3AF]' : 'border-[#E5E7EB] bg-[#FFFFFF] hover:border-[#9CA3AF]'} p-6 transition-all duration-300 ease-out group`}
+                  className={`project-card border ${isDark ? 'border-[#1F1F1F] bg-[#000000] hover:border-[#9CA3AF]' : 'border-[#E5E7EB] bg-[#FFFFFF] hover:border-[#9CA3AF]'} p-6 transition-all duration-300 ease-out group`}
                 >
                   <div className="flex justify-between items-start mb-4">
                     <h3 className={`project-card-title text-xl font-semibold ${isDark ? 'text-[#FFFFFF]' : 'text-[#111827]'} transition-colors duration-300`}>

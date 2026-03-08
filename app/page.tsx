@@ -147,7 +147,7 @@ export default function Home() {
                 }`}
               >
                 <svg
-                  className="w-5 h-5"
+                  className="w-4 h-4"
                   fill={item.fill ? 'currentColor' : 'none'}
                   stroke={item.fill ? 'none' : 'currentColor'}
                   viewBox="0 0 24 24"

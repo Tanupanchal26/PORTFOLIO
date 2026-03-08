@@ -419,7 +419,7 @@ export default function Home() {
                 />
               </div>
               
-              <div className="grid grid-cols-2 gap-x-3 sm:gap-x-8 md:gap-x-16 lg:gap-x-48 gap-y-3 sm:gap-y-6 mb-8 max-w-4xl mx-auto">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-x-3 sm:gap-x-8 md:gap-x-16 lg:gap-x-48 gap-y-3 sm:gap-y-6 mb-8 max-w-4xl mx-auto">
                 <div className="flex justify-center">
                   <motion.img
                     whileHover={{ scale: 1.05 }}
@@ -440,7 +440,7 @@ export default function Home() {
                 </div>
               </div>
               
-              <div className="grid grid-cols-2 gap-x-3 sm:gap-x-8 md:gap-x-16 lg:gap-x-48 gap-y-3 sm:gap-y-6 max-w-4xl mx-auto">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-x-3 sm:gap-x-8 md:gap-x-16 lg:gap-x-48 gap-y-3 sm:gap-y-6 max-w-4xl mx-auto">
                 <div className="flex justify-center">
                   <motion.img
                     whileHover={{ scale: 1.05 }}
@@ -464,7 +464,7 @@ export default function Home() {
             
             <motion.div 
               variants={staggerContainer}
-              className="grid grid-cols-3 gap-2 sm:gap-4 md:gap-6 mb-12"
+              className="grid grid-cols-1 md:grid-cols-3 gap-2 sm:gap-4 md:gap-6 mb-12"
             >
               {/* GitHub Stats Cards */}
               <motion.div

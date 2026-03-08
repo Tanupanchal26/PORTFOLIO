@@ -199,7 +199,7 @@ export default function Home() {
         <section id="hero" className={`relative min-h-screen w-full overflow-hidden flex items-center justify-center px-3 sm:px-4 md:px-6 ${isDark ? 'bg-[#000000]' : 'bg-[#FFFFFF]'}`}>
         <GLSLHills
           isDark={isDark}
-          className={`pointer-events-none absolute top-0 left-0 w-full h-full z-0 -translate-y-16 ${isDark ? 'opacity-100' : 'opacity-70'}`}
+          className={`pointer-events-none absolute top-0 left-0 w-full h-full z-0 ${isDark ? 'opacity-100' : 'opacity-70'}`}
         />
         <motion.div 
           className="relative z-10 w-full text-center max-w-4xl mx-auto"

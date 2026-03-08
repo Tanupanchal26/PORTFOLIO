@@ -156,8 +156,7 @@ export function GLSLHills({ className = '', isDark = true }: GLSLHillsProps) {
 
     const scene = new THREE.Scene()
     const camera = new THREE.PerspectiveCamera(45, 1, 1, 10000)
-    camera.position.set(0, 16, 128)
-    camera.lookAt(new THREE.Vector3(0, 28, 0))
+    const target = new THREE.Vector3(0, 28, 0)
 
     const renderer = new THREE.WebGLRenderer({
       antialias: false,
@@ -165,7 +164,13 @@ export function GLSLHills({ className = '', isDark = true }: GLSLHillsProps) {
       powerPreference: 'high-performance',
     })
 
-    renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, 1.8))
+    const isMobile = window.matchMedia('(max-width: 768px)').matches
+    const getPixelRatio = () => {
+      const dpr = window.devicePixelRatio || 1
+      return isMobile ? Math.min(dpr, 1.2) : Math.min(dpr, 1.8)
+    }
+
+    renderer.setPixelRatio(getPixelRatio())
     renderer.setClearColor(isDark ? 0x000000 : 0xffffff, 0)
     renderer.domElement.style.width = '100%'
     renderer.domElement.style.height = '100%'
@@ -191,10 +196,17 @@ export function GLSLHills({ className = '', isDark = true }: GLSLHillsProps) {
     const resize = () => {
       const width = Math.max(mount.clientWidth, 1)
       const height = Math.max(mount.clientHeight, 1)
-      camera.aspect = width / height
+      const aspect = width / height
+      const desktopAspect = 16 / 9
+      const fit = Math.max(0, desktopAspect - aspect) / desktopAspect
+
+      camera.aspect = aspect
+      // Keep the same desktop composition while zooming out on narrow screens.
+      camera.position.set(0, 16 + fit * 10, 128 + fit * 85)
+      camera.lookAt(target)
       camera.updateProjectionMatrix()
       renderer.setSize(width, height, false)
-      renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, 1.8))
+      renderer.setPixelRatio(getPixelRatio())
     }
 
     const resizeObserver = new ResizeObserver(resize)
@@ -204,9 +216,13 @@ export function GLSLHills({ className = '', isDark = true }: GLSLHillsProps) {
 
     const clock = new THREE.Clock()
     let raf = 0
+    let lastFrame = 0
+    const frameStep = isMobile ? 1000 / 45 : 1000 / 60
 
-    const animate = () => {
+    const animate = (now: number) => {
       raf = window.requestAnimationFrame(animate)
+      if (now - lastFrame < frameStep) return
+      lastFrame = now
       uniforms.time.value += clock.getDelta()
       renderer.render(scene, camera)
     }

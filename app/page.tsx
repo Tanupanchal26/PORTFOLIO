@@ -195,12 +195,11 @@ export default function Home() {
       {/* Main Content */}
       <div className="pt-16">
         {/* Hero Section */}
-        <section id="hero" className={`relative isolate w-full min-h-[calc(100svh-4rem)] overflow-hidden flex items-center justify-center px-4 sm:px-6 ${isDark ? 'bg-[#000000]' : 'bg-[#FFFFFF]'}`}>
+        <section id="hero" className={`relative min-h-screen w-full overflow-hidden flex items-center justify-center px-4 sm:px-6 ${isDark ? 'bg-[#000000]' : 'bg-[#FFFFFF]'}`}>
         <GLSLHills
           isDark={isDark}
-          className={`pointer-events-none absolute inset-0 z-0 ${isDark ? 'opacity-85' : 'opacity-30'}`}
+          className={`pointer-events-none absolute top-0 left-0 w-full h-full z-0 ${isDark ? 'opacity-100' : 'opacity-70'}`}
         />
-        <div className={`pointer-events-none absolute inset-0 z-[1] ${isDark ? 'bg-black/18' : 'bg-white/30'}`} />
         <motion.div 
           className="relative z-10 w-full text-center max-w-4xl mx-auto"
           initial={{ opacity: 0, y: 30 }}

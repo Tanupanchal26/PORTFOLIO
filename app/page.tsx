@@ -2,6 +2,7 @@
 
 import { motion } from 'framer-motion'
 import { useEffect, useState } from 'react'
+import { GLSLHills } from '@/components/ui/glsl-hills'
 
 export default function Home() {
   const [mounted, setMounted] = useState(false)
@@ -194,9 +195,14 @@ export default function Home() {
       {/* Main Content */}
       <div className="pt-16">
         {/* Hero Section */}
-        <section id="hero" className={`min-h-screen flex items-center justify-center px-6 ${isDark ? 'bg-[#000000]' : 'bg-[#FFFFFF]'}`}>
+        <section id="hero" className={`relative isolate min-h-screen overflow-hidden flex items-center justify-center px-6 ${isDark ? 'bg-[#000000]' : 'bg-[#FFFFFF]'}`}>
+        <GLSLHills
+          isDark={isDark}
+          className={`pointer-events-none absolute inset-0 z-0 ${isDark ? 'opacity-90' : 'opacity-35'}`}
+        />
+        <div className={`pointer-events-none absolute inset-0 z-[1] ${isDark ? 'bg-black/15' : 'bg-white/25'}`} />
         <motion.div 
-          className="text-center max-w-4xl mx-auto"
+          className="relative z-10 text-center max-w-4xl mx-auto"
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, ease: "easeOut" }}

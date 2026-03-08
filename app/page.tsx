@@ -831,6 +831,24 @@ export default function Home() {
         </div>
       </footer>
       </div>
+
+      {/* Floating Go to Home Button */}
+      <motion.button
+        onClick={() => {
+          const element = document.getElementById('hero')
+          if (element) element.scrollIntoView({ behavior: 'smooth', block: 'start' })
+        }}
+        whileHover={{ scale: 1.1, boxShadow: '0 8px 16px rgba(0, 0, 0, 0.2)' }}
+        whileTap={{ scale: 0.95 }}
+        className="fixed bottom-8 right-8 z-50 w-14 h-14 bg-white rounded-full flex items-center justify-center shadow-lg group"
+      >
+        <svg className="w-6 h-6 text-gray-800" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 15l7-7 7 7" />
+        </svg>
+        <span className="absolute -top-10 right-0 bg-gray-700 text-white text-xs px-3 py-1 rounded opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap">
+          Go to Home
+        </span>
+      </motion.button>
     </main>
   )
 }

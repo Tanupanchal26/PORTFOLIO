@@ -125,7 +125,7 @@ export default function Home() {
           {/* Name on Left */}
           <div className="text-xl font-bold flex items-center gap-2">
             <span className="text-2xl">👩‍💻</span>
-            Tanya Panchal
+            TANYA
           </div>
           
           {/* Navigation Icons in Center */}

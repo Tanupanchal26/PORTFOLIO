@@ -330,7 +330,7 @@ export default function Home() {
             </motion.h2>
             <motion.div 
               variants={staggerContainer}
-              className="grid grid-cols-2 gap-3 sm:gap-5 md:gap-8"
+              className="grid grid-cols-1 md:grid-cols-2 gap-3 sm:gap-5 md:gap-8"
             >
               {projects.map((project, index) => (
                 <motion.div
@@ -656,7 +656,7 @@ export default function Home() {
               Let's connect and discuss opportunities. I'm always open to new projects and collaborations.
             </motion.p>
             
-            <div className="grid grid-cols-2 gap-4 sm:gap-8 md:gap-12 items-start">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-8 md:gap-12 items-start">
               {/* Contact Cards */}
               <motion.div variants={fadeInUp} className="space-y-6">
                 <h3 className="text-lg sm:text-xl md:text-2xl font-semibold mb-5 sm:mb-6 md:mb-8">Contact Information</h3>

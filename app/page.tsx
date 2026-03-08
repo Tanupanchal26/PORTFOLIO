@@ -172,7 +172,7 @@ export default function Home() {
             onClick={() => setIsDark(!isDark)}
             whileHover={{ scale: 1.15 }}
             whileTap={{ scale: 0.95 }}
-            className={`p-2 rounded transition-all duration-300 ${isDark ? 'bg-black text-white hover:bg-gray-700' : 'bg-white text-black hover:bg-gray-300'}`}
+            className={`p-2 rounded transition-all duration-300 group relative ${isDark ? 'bg-black text-white hover:bg-gray-700' : 'bg-white text-black hover:bg-gray-300'}`}
           >
             {isDark ? (
               <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
@@ -183,6 +183,9 @@ export default function Home() {
                 <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z" />
               </svg>
             )}
+            <span className={`absolute -bottom-8 left-1/2 -translate-x-1/2 px-2 py-1 ${isDark ? 'bg-gray-800' : 'bg-gray-700'} text-white text-xs rounded opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap`}>
+              {isDark ? 'Light Theme' : 'Dark Theme'}
+            </span>
           </motion.button>
         </div>
       </motion.header>

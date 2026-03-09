@@ -1,9 +1,14 @@
 // USAGE EXAMPLE - Add to your layout.tsx or page.tsx
 
+import type { ReactNode } from 'react'
 import { ThemeProvider } from '@/components/ThemeProvider'
 import { ThemeToggle } from '@/components/ThemeToggle'
 
-export default function Layout({ children }) {
+type LayoutProps = {
+  children: ReactNode
+}
+
+export default function Layout({ children }: LayoutProps) {
   return (
     <ThemeProvider>
       <div className="min-h-screen bg-background text-foreground">

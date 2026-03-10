@@ -1,7 +1,7 @@
 
 'use client'
 
-import { motion } from 'framer-motion'
+import { motion, Variants } from 'framer-motion'
 import { useEffect, useRef, useState } from 'react'
 import { GLSLHills } from '@/components/ui/glsl-hills'
 
@@ -51,10 +51,13 @@ export default function Home() {
 
   if (!mounted) return null
 
-  const fadeInUp = {
+  const fadeInUp: Variants = {
     initial: { opacity: 0, y: 60 },
-    animate: { opacity: 1, y: 0 },
-    transition: { duration: 0.6, ease: "easeOut" }
+    animate: {
+      opacity: 1,
+      y: 0,
+      transition: { duration: 0.6, ease: "easeOut" }
+    }
   }
 
   const staggerContainer = {
@@ -68,7 +71,7 @@ export default function Home() {
   const skills = [
     'JavaScript', 'HTML', 'CSS', 'C', 'C++', 'Java',
     'Figma', 'Postman', 'VS Code', 'Redux', 'Node.js', 'Express.js', 'MongoDB', 'SQL', 'Redis',
-    'Git/GitHub', 'React.js', 'Next.js', 'TypeScript', 'Tailwind CSS', 'ASD'
+    'Git/GitHub', 'React.js', 'Next.js', 'TypeScript', 'Tailwind CSS', 
   ]
 
   const projects = [

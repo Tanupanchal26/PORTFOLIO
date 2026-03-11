@@ -213,7 +213,7 @@ export default function Home() {
       {/* Main Content */}
       <div className="pt-16">
         {/* Hero Section */}
-        <section id="hero" className={`relative min-h-[calc(100svh-4rem)] sm:min-h-screen w-full box-border overflow-hidden flex items-center justify-center px-3 sm:px-4 md:px-6 py-6 sm:py-0 ${isDark ? 'bg-[#000000]' : 'bg-[#FFFFFF]'}`}>
+        <section id="hero" className={`relative min-h-[calc(100svh-4rem)] sm:min-h-screen w-full box-border overflow-hidden flex items-center justify-center px-3 sm:px-4 md:px-6 py-3 sm:py-0 ${isDark ? 'bg-[#000000]' : 'bg-[#FFFFFF]'}`}>
         <GLSLHills
           isDark={isDark}
           className={`pointer-events-none absolute top-0 left-0 w-full h-full max-h-[100svh] sm:max-h-none z-0 ${isDark ? 'opacity-100' : 'opacity-80'}`}
@@ -225,7 +225,7 @@ export default function Home() {
           transition={{ duration: 0.8, ease: "easeOut" }}
         >
           <motion.h1 
-            className="text-[2.35rem] sm:text-[2.9rem] md:text-6xl lg:text-7xl font-bold mb-4 sm:mb-5 md:mb-6 tracking-tight"
+            className="text-[3.05rem] leading-[1.08] sm:text-[3.25rem] sm:leading-tight md:text-6xl lg:text-7xl font-bold mb-4 sm:mb-5 md:mb-6 tracking-tight"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
@@ -233,7 +233,7 @@ export default function Home() {
             Hi, I'm Tanya Panchal
           </motion.h1>
           <motion.p 
-            className={`text-lg sm:text-xl md:text-xl lg:text-2xl ${isDark ? 'text-[#B3B3B3]' : 'text-[#4B5563]'} mb-6 sm:mb-7 md:mb-8`}
+            className={`text-[1.35rem] leading-snug sm:text-[1.4rem] md:text-xl lg:text-2xl ${isDark ? 'text-[#B3B3B3]' : 'text-[#4B5563]'} mb-6 sm:mb-7 md:mb-8`}
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}

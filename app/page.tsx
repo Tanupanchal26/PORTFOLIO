@@ -143,14 +143,14 @@ export default function Home() {
         transition={{ duration: 0.3 }}
         className={`fixed top-0 left-0 right-0 z-50 ${isDark ? 'bg-[#000000]/90' : 'bg-[#FFFFFF]/90'} backdrop-blur-sm border-b ${isDark ? 'border-[#1F1F1F]' : 'border-[#E5E7EB]'}`}
       >
-        <div className="flex items-center justify-between px-2 sm:px-4 md:px-6 py-2 sm:py-3 md:py-4">
+        <div className="relative flex items-center justify-between gap-2 px-3 sm:px-4 md:px-6 py-2 sm:py-3 md:py-4">
           {/* Name on Left */}
-          <div className="text-xs sm:text-sm md:text-base font-bold ml-2 sm:ml-8 md:ml-28 leading-none">
+          <div className="text-xs sm:text-sm md:text-base font-bold ml-1 sm:ml-8 md:ml-28 leading-none shrink-0">
             TANYA
           </div>
           
           {/* Navigation Icons in Center */}
-          <div className="absolute left-1/2 transform -translate-x-1/2 flex items-center space-x-1 sm:space-x-3 md:space-x-8">
+          <div className="flex flex-1 items-center justify-center px-2 sm:px-0 space-x-1 sm:space-x-3 md:space-x-8 sm:absolute sm:left-1/2 sm:-translate-x-1/2 sm:transform">
             {[
               { id: 'hero', icon: 'M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6', label: 'Home' },
               { id: 'about', icon: 'M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z', label: 'About' },
@@ -187,7 +187,7 @@ export default function Home() {
           </div>
           
           {/* Theme Toggle on Right */}
-          <div className="mr-2 sm:mr-8 md:mr-24">
+          <div className="mr-1 sm:mr-8 md:mr-24 shrink-0">
             <motion.button
               onClick={() => setIsDark(!isDark)}
               whileTap={{ scale: 0.95 }}
@@ -213,10 +213,10 @@ export default function Home() {
       {/* Main Content */}
       <div className="pt-16">
         {/* Hero Section */}
-        <section id="hero" className={`relative min-h-screen w-full overflow-hidden flex items-center justify-center px-3 sm:px-4 md:px-6 ${isDark ? 'bg-[#000000]' : 'bg-[#FFFFFF]'}`}>
+        <section id="hero" className={`relative min-h-[calc(100svh-4rem)] sm:min-h-screen w-full box-border overflow-hidden flex items-center justify-center px-3 sm:px-4 md:px-6 py-6 sm:py-0 ${isDark ? 'bg-[#000000]' : 'bg-[#FFFFFF]'}`}>
         <GLSLHills
           isDark={isDark}
-          className={`pointer-events-none absolute top-0 left-0 w-full h-full z-0 ${isDark ? 'opacity-100' : 'opacity-70'}`}
+          className={`pointer-events-none absolute top-0 left-0 w-full h-full max-h-[100svh] sm:max-h-none z-0 ${isDark ? 'opacity-100' : 'opacity-80'}`}
         />
         <motion.div 
           className="relative z-10 w-full text-center max-w-4xl mx-auto"

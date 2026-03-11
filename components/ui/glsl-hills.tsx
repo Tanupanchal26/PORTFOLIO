@@ -139,10 +139,12 @@ const fragmentShader = `
 precision highp float;
 
 varying vec3 vPosition;
+uniform vec3 baseColor;
+uniform float opacityScale;
 
 void main(void) {
-  float opacity = (96.0 - length(vPosition)) / 256.0 * 0.6;
-  vec3 color = vec3(0.6);
+  float opacity = (96.0 - length(vPosition)) / 256.0 * 0.6 * opacityScale;
+  vec3 color = baseColor;
   gl_FragColor = vec4(color, opacity);
 }
 `
@@ -179,6 +181,8 @@ export function GLSLHills({ className = '', isDark = true }: GLSLHillsProps) {
 
     const uniforms = {
       time: { value: 0 },
+      baseColor: { value: isDark ? new THREE.Color(0.6, 0.6, 0.6) : new THREE.Color(0.42, 0.42, 0.42) },
+      opacityScale: { value: isDark ? 1 : 1.12 },
     }
 
     const plane = new THREE.Mesh(
@@ -199,10 +203,16 @@ export function GLSLHills({ className = '', isDark = true }: GLSLHillsProps) {
       const aspect = width / height
       const desktopAspect = 16 / 9
       const fit = Math.max(0, desktopAspect - aspect) / desktopAspect
+      const portraitBoost = height > width ? Math.min(height / width - 1, 1) : 0
+      const mobileZoom = isMobile ? 1.12 : 1
 
       camera.aspect = aspect
       // Keep the same desktop composition while zooming out on narrow screens.
-      camera.position.set(0, 16 + fit * 10, 128 + fit * 85)
+      camera.position.set(
+        0,
+        16 + fit * 10 * mobileZoom + portraitBoost * 4,
+        128 + fit * 85 * mobileZoom + portraitBoost * 40
+      )
       camera.lookAt(target)
       camera.updateProjectionMatrix()
       renderer.setSize(width, height, false)

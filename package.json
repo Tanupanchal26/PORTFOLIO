@@ -11,7 +11,6 @@
   "dependencies": {
     "@radix-ui/react-slot": "^1.2.4",
     "@splinetool/react-spline": "^4.1.0",
-    "@studio-freight/lenis": "^1.0.42",
     "@types/three": "^0.182.0",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
@@ -31,8 +30,8 @@
     "@types/react": "^18",
     "@types/react-dom": "^18",
     "autoprefixer": "^10.0.1",
-    "eslint": "^8",
-    "eslint-config-next": "14.0.0",
+    "eslint": "^9",
+    "eslint-config-next": "^14.2.0",
     "postcss": "^8",
     "tailwindcss": "^3.3.0",
     "typescript": "5.9.3"

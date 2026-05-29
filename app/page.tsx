@@ -72,7 +72,7 @@ export default function Home() {
   const skills = [
     'JavaScript', 'HTML', 'CSS', 'C', 'C++', 'Java',
     'Figma', 'Postman', 'VS Code', 'Redux', 'Node.js', 'Express.js', 'MongoDB', 'SQL', 'Redis',
-    'Git/GitHub', 'React.js', 'Next.js', 'TypeScript', 'Tailwind CSS', 
+    'Git/GitHub', 'React.js', 'Next.js', 'TypeScript', 'Tailwind CSS', 'AWS', 'Kubernetes', 'Jenkins', 'Docker', 'Python', 'SpringBoot', 'Bootstrap', 'MySQL'
   ]
 
   const projects = [
@@ -262,7 +262,7 @@ export default function Home() {
 
       {/* About Section */}
       <section id="about" className={`py-12 sm:py-16 md:py-20 px-3 sm:px-4 md:px-6 ${isDark ? 'bg-[#000000]' : 'bg-[#FFFFFF]'}`}>
-        <div className="max-w-4xl mx-auto">
+        <div className="max-w-6xl mx-auto">
           <motion.div
             variants={staggerContainer}
             initial="initial"
@@ -275,27 +275,49 @@ export default function Home() {
             >
               About
             </motion.h2>
-            <motion.p 
-              variants={fadeInUp}
-              className={`text-sm sm:text-base md:text-lg lg:text-xl leading-relaxed ${isDark ? 'text-[#B3B3B3]' : 'text-[#4B5563]'} text-center max-w-3xl mx-auto mb-8 sm:mb-10 md:mb-12`}
-            >
-              I am a passionate Software Developer and B.Tech Computer Science student with a strong interest in building modern, scalable, and user-focused web applications. I have a solid foundation in front-end and back-end technologies and enjoy turning ideas into practical digital solutions. Through academic learning and hands-on projects, I continuously work on improving my problem-solving skills, code quality, and understanding of real-world software development. I am eager to learn, grow, and contribute to meaningful projects as a developer.
-            </motion.p>
             
-            <div className="text-center mt-12">
-              <button
-                onClick={() => {
-                  const link = document.createElement('a');
-                  link.href = '/tanya resume.pdf';
-                  link.download = 'tanya resume.pdf';
-                  document.body.appendChild(link);
-                  link.click();
-                  document.body.removeChild(link);
-                }}
-                className={`ui-btn inline-block border px-5 sm:px-6 md:px-8 py-2 sm:py-2.5 md:py-3 transition-all duration-300 ease-out ${isDark ? 'border-[#1F1F1F]' : 'border-[#E5E7EB]'}`}
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-center">
+              {/* Left Side - Image */}
+              <motion.div
+                variants={fadeInUp}
+                className="flex justify-center"
               >
-                📄 Download Resume
-              </button>
+                <img
+                  src="/TANYA.jpg"
+                  alt="Tanya Panchal"
+                  className={`w-full max-w-sm rounded-lg border ${isDark ? 'border-gray-600' : 'border-gray-300'} shadow-lg`}
+                />
+              </motion.div>
+              
+              {/* Right Side - Text and Button */}
+              <motion.div
+                variants={staggerContainer}
+              >
+                <motion.p 
+                  variants={fadeInUp}
+                  className={`text-sm sm:text-base md:text-lg lg:text-xl leading-relaxed ${isDark ? 'text-[#B3B3B3]' : 'text-[#4B5563]'} mb-8`}
+                >
+                  I am a passionate Software Developer and B.Tech Computer Science student with a strong interest in building modern, scalable, and user-focused web applications. I have a solid foundation in front-end and back-end technologies and enjoy turning ideas into practical digital solutions. Through academic learning and hands-on projects, I continuously work on improving my problem-solving skills, code quality, and understanding of real-world software development. I am eager to learn, grow, and contribute to meaningful projects as a developer.
+                </motion.p>
+                
+                <motion.div
+                  variants={fadeInUp}
+                >
+                  <button
+                    onClick={() => {
+                      const link = document.createElement('a');
+                      link.href = '/tanya resume.pdf';
+                      link.download = 'tanya resume.pdf';
+                      document.body.appendChild(link);
+                      link.click();
+                      document.body.removeChild(link);
+                    }}
+                    className={`ui-btn inline-block border px-5 sm:px-6 md:px-8 py-2 sm:py-2.5 md:py-3 transition-all duration-300 ease-out ${isDark ? 'border-[#1F1F1F]' : 'border-[#E5E7EB]'}`}
+                  >
+                    📄 Download Resume
+                  </button>
+                </motion.div>
+              </motion.div>
             </div>
           </motion.div>
         </div>
@@ -554,155 +576,264 @@ export default function Home() {
               variants={staggerContainer}
               className="space-y-4 max-w-3xl mx-auto"
             >
-              {/* Deloitte Certificate */}
-              <motion.div
-                variants={fadeInUp}
-                whileHover={{ scale: 1.02 }}
-                className={`flex items-center justify-between p-4 border ${isDark ? 'border-gray-600' : 'border-gray-300'} rounded transition-all duration-300`}
-              >
-                <div className="flex-1">
-                  <h3 className={`text-lg font-semibold mb-1 ${isDark ? 'text-white' : 'text-gray-900'}`}>Technology Job Simulation</h3>
-                  <p className={`${isDark ? 'text-gray-400' : 'text-gray-600'} text-sm mb-1`}>Deloitte Australia</p>
-                  <span className={`${isDark ? 'text-gray-500' : 'text-gray-500'} text-xs`}>2025</span>
-                </div>
-                <a
-                  href="https://res.cloudinary.com/dazqanb4h/image/upload/v1771257749/DELOITTE_b2xpfz.jpg"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className={`ui-btn ml-6 inline-flex items-center px-4 py-2 rounded border transition-all duration-300 ease-out ${isDark ? 'border-gray-600' : 'border-gray-300'} text-sm`}
-                >
-                  <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
-                  </svg>
-                  <span className="text-sm">View</span>
-                </a>
-              </motion.div>
+               {/* Microsoft Certificate */}
+               <motion.div
+                 variants={fadeInUp}
+                 whileHover={{ scale: 1.02 }}
+                 className={`flex items-center justify-between p-4 border ${isDark ? 'border-gray-600' : 'border-gray-300'} rounded transition-all duration-300`}
+               >
+                 <div className="flex-1">
+                   <h3 className={`text-lg font-semibold mb-1 ${isDark ? 'text-white' : 'text-gray-900'}`}>Explore Generative AI</h3>
+                   <p className={`${isDark ? 'text-gray-400' : 'text-gray-600'} text-sm mb-1`}>Microsoft</p>
+                   <span className={`${isDark ? 'text-gray-500' : 'text-gray-500'} text-xs`}>2026</span>
+                 </div>
+                 <button
+                   onClick={() => setOpenCertificate(openCertificate === 'microsoft' ? null : 'microsoft')}
+                   className={`ml-6 inline-flex items-center gap-2 ui-btn px-4 py-2 rounded border transition-all duration-300 ease-out ${isDark ? 'border-gray-600' : 'border-gray-300'} text-sm shrink-0`}
+                 >
+                   <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
+                   </svg>
+                   {openCertificate === 'microsoft' ? 'Close' : 'View'}
+                 </button>
+               </motion.div>
+               {openCertificate === 'microsoft' && (
+                 <motion.div
+                   initial={{ opacity: 0, y: -10 }}
+                   animate={{ opacity: 1, y: 0 }}
+                   transition={{ duration: 0.3 }}
+                   className="mt-4 flex justify-center"
+                 >
+                   <img
+                     src="/MICROSOFT.jpg"
+                     alt="Microsoft Certificate"
+                     className={`max-w-full rounded border ${isDark ? 'border-gray-600' : 'border-gray-300'}`}
+                   />
+                 </motion.div>
+               )}
 
-              {/* BCG Certificate */}
-              <motion.div
-                variants={fadeInUp}
-                whileHover={{ scale: 1.02 }}
-                className={`flex items-center justify-between p-4 border ${isDark ? 'border-gray-600' : 'border-gray-300'} rounded transition-all duration-300`}
-              >
-                <div className="flex-1">
-                  <h3 className={`text-lg font-semibold mb-1 ${isDark ? 'text-white' : 'text-gray-900'}`}>GenAI Job Simulation</h3>
-                  <p className={`${isDark ? 'text-gray-400' : 'text-gray-600'} text-sm mb-1`}>BCG</p>
-                  <span className={`${isDark ? 'text-gray-500' : 'text-gray-500'} text-xs`}>2025</span>
-                </div>
-                <a
-                  href="https://res.cloudinary.com/dazqanb4h/image/upload/v1771258036/BCG_rjnby0.jpg"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className={`ui-btn ml-6 inline-flex items-center px-4 py-2 rounded border transition-all duration-300 ease-out ${isDark ? 'border-gray-600' : 'border-gray-300'} text-sm`}
-                >
-                  <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
-                  </svg>
-                  <span className="text-sm">View</span>
-                </a>
-              </motion.div>
+               {/* Deloitte Certificate */}
+               <motion.div
+                 variants={fadeInUp}
+                 whileHover={{ scale: 1.02 }}
+                 className={`flex items-center justify-between p-4 border ${isDark ? 'border-gray-600' : 'border-gray-300'} rounded transition-all duration-300`}
+               >
+                 <div className="flex-1">
+                   <h3 className={`text-lg font-semibold mb-1 ${isDark ? 'text-white' : 'text-gray-900'}`}>Technology Job Simulation</h3>
+                   <p className={`${isDark ? 'text-gray-400' : 'text-gray-600'} text-sm mb-1`}>Deloitte Australia</p>
+                   <span className={`${isDark ? 'text-gray-500' : 'text-gray-500'} text-xs`}>2025</span>
+                 </div>
+                 <button
+                   onClick={() => setOpenCertificate(openCertificate === 'deloitte' ? null : 'deloitte')}
+                   className={`ml-6 inline-flex items-center gap-2 ui-btn px-4 py-2 rounded border transition-all duration-300 ease-out ${isDark ? 'border-gray-600' : 'border-gray-300'} text-sm shrink-0`}
+                 >
+                   <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
+                   </svg>
+                   {openCertificate === 'deloitte' ? 'Close' : 'View'}
+                 </button>
+               </motion.div>
+               {openCertificate === 'deloitte' && (
+                 <motion.div
+                   initial={{ opacity: 0, y: -10 }}
+                   animate={{ opacity: 1, y: 0 }}
+                   transition={{ duration: 0.3 }}
+                   className="mt-4 flex justify-center"
+                 >
+                   <img
+                     src="https://res.cloudinary.com/dazqanb4h/image/upload/v1771257749/DELOITTE_b2xpfz.jpg"
+                     alt="Deloitte Certificate"
+                     className={`max-w-full rounded border ${isDark ? 'border-gray-600' : 'border-gray-300'}`}
+                   />
+                 </motion.div>
+               )}
 
-              {/* Google Cloud Certificate */}
-              <motion.div
-                variants={fadeInUp}
-                whileHover={{ scale: 1.02 }}
-                className={`flex items-center justify-between p-4 border ${isDark ? 'border-gray-600' : 'border-gray-300'} rounded transition-all duration-300`}
-              >
-                <div className="flex-1">
-                  <h3 className={`text-lg font-semibold mb-1 ${isDark ? 'text-white' : 'text-gray-900'}`}>Introduction to Generative AI Studio</h3>
-                  <p className={`${isDark ? 'text-gray-400' : 'text-gray-600'} text-sm mb-1`}>Google Cloud Certified</p>
-                  <span className={`${isDark ? 'text-gray-500' : 'text-gray-500'} text-xs`}>2025</span>
-                </div>
-                <a
-                  href="https://res.cloudinary.com/dazqanb4h/image/upload/v1771257868/google_s7mgni.jpg"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className={`ui-btn ml-6 inline-flex items-center px-4 py-2 rounded border transition-all duration-300 ease-out ${isDark ? 'border-gray-600' : 'border-gray-300'} text-sm`}
-                >
-                  <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
-                  </svg>
-                  <span className="text-sm">View</span>
-                </a>
-              </motion.div>
+               {/* BCG Certificate */}
+               <motion.div
+                 variants={fadeInUp}
+                 whileHover={{ scale: 1.02 }}
+                 className={`flex items-center justify-between p-4 border ${isDark ? 'border-gray-600' : 'border-gray-300'} rounded transition-all duration-300`}
+               >
+                 <div className="flex-1">
+                   <h3 className={`text-lg font-semibold mb-1 ${isDark ? 'text-white' : 'text-gray-900'}`}>GenAI Job Simulation</h3>
+                   <p className={`${isDark ? 'text-gray-400' : 'text-gray-600'} text-sm mb-1`}>BCG</p>
+                   <span className={`${isDark ? 'text-gray-500' : 'text-gray-500'} text-xs`}>2025</span>
+                 </div>
+                 <button
+                   onClick={() => setOpenCertificate(openCertificate === 'bcg' ? null : 'bcg')}
+                   className={`ml-6 inline-flex items-center gap-2 ui-btn px-4 py-2 rounded border transition-all duration-300 ease-out ${isDark ? 'border-gray-600' : 'border-gray-300'} text-sm shrink-0`}
+                 >
+                   <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
+                   </svg>
+                   {openCertificate === 'bcg' ? 'Close' : 'View'}
+                 </button>
+               </motion.div>
+               {openCertificate === 'bcg' && (
+                 <motion.div
+                   initial={{ opacity: 0, y: -10 }}
+                   animate={{ opacity: 1, y: 0 }}
+                   transition={{ duration: 0.3 }}
+                   className="mt-4 flex justify-center"
+                 >
+                   <img
+                     src="https://res.cloudinary.com/dazqanb4h/image/upload/v1771258036/BCG_rjnby0.jpg"
+                     alt="BCG Certificate"
+                     className={`max-w-full rounded border ${isDark ? 'border-gray-600' : 'border-gray-300'}`}
+                   />
+                 </motion.div>
+               )}
 
-              {/* AWS Certificate */}
-              <motion.div
-                variants={fadeInUp}
-                whileHover={{ scale: 1.02 }}
-                className={`flex items-center justify-between p-4 border ${isDark ? 'border-gray-600' : 'border-gray-300'} rounded transition-all duration-300`}
-              >
-                <div className="flex-1">
-                  <h3 className={`text-lg font-semibold mb-1 ${isDark ? 'text-white' : 'text-gray-900'}`}>Solutions Architecture Job Simulation</h3>
-                  <p className={`${isDark ? 'text-gray-400' : 'text-gray-600'} text-sm mb-1`}>AWS</p>
-                  <span className={`${isDark ? 'text-gray-500' : 'text-gray-500'} text-xs`}>2025</span>
-                </div>
-                <a
-                  href="https://res.cloudinary.com/dazqanb4h/image/upload/v1771257944/AWS_hnbxzx.jpg"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className={`ui-btn ml-6 inline-flex items-center px-4 py-2 rounded border transition-all duration-300 ease-out ${isDark ? 'border-gray-600' : 'border-gray-300'} text-sm`}
-                >
-                  <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
-                  </svg>
-                  <span className="text-sm">View</span>
-                </a>
-              </motion.div>
+               {/* Google Cloud Certificate */}
+               <motion.div
+                 variants={fadeInUp}
+                 whileHover={{ scale: 1.02 }}
+                 className={`flex items-center justify-between p-4 border ${isDark ? 'border-gray-600' : 'border-gray-300'} rounded transition-all duration-300`}
+               >
+                 <div className="flex-1">
+                   <h3 className={`text-lg font-semibold mb-1 ${isDark ? 'text-white' : 'text-gray-900'}`}>Introduction to Generative AI Studio</h3>
+                   <p className={`${isDark ? 'text-gray-400' : 'text-gray-600'} text-sm mb-1`}>Google Cloud Certified</p>
+                   <span className={`${isDark ? 'text-gray-500' : 'text-gray-500'} text-xs`}>2025</span>
+                 </div>
+                 <button
+                   onClick={() => setOpenCertificate(openCertificate === 'google-cloud' ? null : 'google-cloud')}
+                   className={`ml-6 inline-flex items-center gap-2 ui-btn px-4 py-2 rounded border transition-all duration-300 ease-out ${isDark ? 'border-gray-600' : 'border-gray-300'} text-sm shrink-0`}
+                 >
+                   <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
+                   </svg>
+                   {openCertificate === 'google-cloud' ? 'Close' : 'View'}
+                 </button>
+               </motion.div>
+               {openCertificate === 'google-cloud' && (
+                 <motion.div
+                   initial={{ opacity: 0, y: -10 }}
+                   animate={{ opacity: 1, y: 0 }}
+                   transition={{ duration: 0.3 }}
+                   className="mt-4 flex justify-center"
+                 >
+                   <img
+                     src="https://res.cloudinary.com/dazqanb4h/image/upload/v1771257868/google_s7mgni.jpg"
+                     alt="Google Cloud Certificate"
+                     className={`max-w-full rounded border ${isDark ? 'border-gray-600' : 'border-gray-300'}`}
+                   />
+                 </motion.div>
+               )}
 
-              {/* ADS Foundation Certificate */}
-              <motion.div
-                variants={fadeInUp}
-                whileHover={{ scale: 1.02 }}
-                className={`flex items-center justify-between p-4 border ${isDark ? 'border-gray-600' : 'border-gray-300'} rounded transition-all duration-300`}
-              >
-                <div className="flex-1">
-                  <h3 className={`text-lg font-semibold mb-1 ${isDark ? 'text-white' : 'text-gray-900'}`}>ADS Foundation</h3>
-                  <p className={`${isDark ? 'text-gray-400' : 'text-gray-600'} text-sm mb-1`}>ADS Foundation</p>
-                  <span className={`${isDark ? 'text-gray-500' : 'text-gray-500'} text-xs`}>2026</span>
-                </div>
-                <a
-                  href="https://res.cloudinary.com/dazqanb4h/image/upload/v1779977882/ADS_buzigl.jpg"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className={`ui-btn ml-6 inline-flex items-center px-4 py-2 rounded border transition-all duration-300 ease-out ${isDark ? 'border-gray-600' : 'border-gray-300'} text-sm`}
-                >
-                  <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
-                  </svg>
-                  <span className="text-sm">View</span>
-                </a>
-              </motion.div>
+               {/* AWS Certificate */}
+               <motion.div
+                 variants={fadeInUp}
+                 whileHover={{ scale: 1.02 }}
+                 className={`flex items-center justify-between p-4 border ${isDark ? 'border-gray-600' : 'border-gray-300'} rounded transition-all duration-300`}
+               >
+                 <div className="flex-1">
+                   <h3 className={`text-lg font-semibold mb-1 ${isDark ? 'text-white' : 'text-gray-900'}`}>Solutions Architecture Job Simulation</h3>
+                   <p className={`${isDark ? 'text-gray-400' : 'text-gray-600'} text-sm mb-1`}>AWS</p>
+                   <span className={`${isDark ? 'text-gray-500' : 'text-gray-500'} text-xs`}>2025</span>
+                 </div>
+                 <button
+                   onClick={() => setOpenCertificate(openCertificate === 'aws' ? null : 'aws')}
+                   className={`ml-6 inline-flex items-center gap-2 ui-btn px-4 py-2 rounded border transition-all duration-300 ease-out ${isDark ? 'border-gray-600' : 'border-gray-300'} text-sm shrink-0`}
+                 >
+                   <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
+                   </svg>
+                   {openCertificate === 'aws' ? 'Close' : 'View'}
+                 </button>
+               </motion.div>
+               {openCertificate === 'aws' && (
+                 <motion.div
+                   initial={{ opacity: 0, y: -10 }}
+                   animate={{ opacity: 1, y: 0 }}
+                   transition={{ duration: 0.3 }}
+                   className="mt-4 flex justify-center"
+                 >
+                   <img
+                     src="https://res.cloudinary.com/dazqanb4h/image/upload/v1771257944/AWS_hnbxzx.jpg"
+                     alt="AWS Certificate"
+                     className={`max-w-full rounded border ${isDark ? 'border-gray-600' : 'border-gray-300'}`}
+                   />
+                 </motion.div>
+               )}
 
-              {/* NPTEL Certificate */}
-              <motion.div
-                variants={fadeInUp}
-                whileHover={{ scale: 1.02 }}
-                className={`flex items-center justify-between p-4 border ${isDark ? 'border-gray-600' : 'border-gray-300'} rounded transition-all duration-300`}
-              >
-                <div className="flex-1">
-                  <h3 className={`text-lg font-semibold mb-1 ${isDark ? 'text-white' : 'text-gray-900'}`}>NPTEL</h3>
-                  <p className={`${isDark ? 'text-gray-400' : 'text-gray-600'} text-sm mb-1`}>NPTEL</p>
-                  <span className={`${isDark ? 'text-gray-500' : 'text-gray-500'} text-xs`}>2026</span>
-                </div>
-                <a
-                  href="https://res.cloudinary.com/dazqanb4h/image/upload/v1779977968/NPTEL_pnp28a.jpg"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className={`ui-btn ml-6 inline-flex items-center px-4 py-2 rounded border transition-all duration-300 ease-out ${isDark ? 'border-gray-600' : 'border-gray-300'} text-sm`}
-                >
-                  <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
-                  </svg>
-                  <span className="text-sm">View</span>
-                </a>
-              </motion.div>
+               {/* ADS Foundation Certificate */}
+               <motion.div
+                 variants={fadeInUp}
+                 whileHover={{ scale: 1.02 }}
+                 className={`flex items-center justify-between p-4 border ${isDark ? 'border-gray-600' : 'border-gray-300'} rounded transition-all duration-300`}
+               >
+                 <div className="flex-1">
+                   <h3 className={`text-lg font-semibold mb-1 ${isDark ? 'text-white' : 'text-gray-900'}`}>ADS Foundation</h3>
+                   <p className={`${isDark ? 'text-gray-400' : 'text-gray-600'} text-sm mb-1`}>ADS Foundation</p>
+                   <span className={`${isDark ? 'text-gray-500' : 'text-gray-500'} text-xs`}>2026</span>
+                 </div>
+                 <button
+                   onClick={() => setOpenCertificate(openCertificate === 'ads' ? null : 'ads')}
+                   className={`ml-6 inline-flex items-center gap-2 ui-btn px-4 py-2 rounded border transition-all duration-300 ease-out ${isDark ? 'border-gray-600' : 'border-gray-300'} text-sm shrink-0`}
+                 >
+                   <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
+                   </svg>
+                   {openCertificate === 'ads' ? 'Close' : 'View'}
+                 </button>
+               </motion.div>
+               {openCertificate === 'ads' && (
+                 <motion.div
+                   initial={{ opacity: 0, y: -10 }}
+                   animate={{ opacity: 1, y: 0 }}
+                   transition={{ duration: 0.3 }}
+                   className="mt-4 flex justify-center"
+                 >
+                   <img
+                     src="https://res.cloudinary.com/dazqanb4h/image/upload/v1779977882/ADS_buzigl.jpg"
+                     alt="ADS Foundation Certificate"
+                     className={`max-w-full rounded border ${isDark ? 'border-gray-600' : 'border-gray-300'}`}
+                   />
+                 </motion.div>
+               )}
+
+               {/* NPTEL Certificate */}
+               <motion.div
+                 variants={fadeInUp}
+                 whileHover={{ scale: 1.02 }}
+                 className={`flex items-center justify-between p-4 border ${isDark ? 'border-gray-600' : 'border-gray-300'} rounded transition-all duration-300`}
+               >
+                 <div className="flex-1">
+                   <h3 className={`text-lg font-semibold mb-1 ${isDark ? 'text-white' : 'text-gray-900'}`}>NPTEL</h3>
+                   <p className={`${isDark ? 'text-gray-400' : 'text-gray-600'} text-sm mb-1`}>NPTEL</p>
+                   <span className={`${isDark ? 'text-gray-500' : 'text-gray-500'} text-xs`}>2026</span>
+                 </div>
+                 <button
+                   onClick={() => setOpenCertificate(openCertificate === 'nptel' ? null : 'nptel')}
+                   className={`ml-6 inline-flex items-center gap-2 ui-btn px-4 py-2 rounded border transition-all duration-300 ease-out ${isDark ? 'border-gray-600' : 'border-gray-300'} text-sm shrink-0`}
+                 >
+                   <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
+                   </svg>
+                   {openCertificate === 'nptel' ? 'Close' : 'View'}
+                 </button>
+               </motion.div>
+               {openCertificate === 'nptel' && (
+                 <motion.div
+                   initial={{ opacity: 0, y: -10 }}
+                   animate={{ opacity: 1, y: 0 }}
+                   transition={{ duration: 0.3 }}
+                   className="mt-4 flex justify-center"
+                 >
+                   <img
+                     src="https://res.cloudinary.com/dazqanb4h/image/upload/v1779977968/NPTEL_pnp28a.jpg"
+                     alt="NPTEL Certificate"
+                     className={`max-w-full rounded border ${isDark ? 'border-gray-600' : 'border-gray-300'}`}
+                   />
+                 </motion.div>
+               )}
             </motion.div>
           </motion.div>
         </div>

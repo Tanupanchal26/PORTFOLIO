@@ -56,7 +56,11 @@ export default function Home() {
     initial: { opacity: 0, y: 60 },
     animate: {
       opacity: 1,
-      y: 0
+      y: 0,
+      transition: {
+        duration: 0.6,
+        ease: [0.4, 0, 0.2, 1]
+      }
     }
   }
 
@@ -270,7 +274,6 @@ export default function Home() {
           >
             <motion.h2 
               variants={fadeInUp}
-              transition={{ duration: 0.6, ease: "easeOut" }}
               className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-8 sm:mb-10 md:mb-12 text-center"
             >
               About
@@ -334,7 +337,6 @@ export default function Home() {
           >
             <motion.h2 
               variants={fadeInUp}
-              transition={{ duration: 0.6, ease: "easeOut" }}
               className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-8 sm:mb-10 md:mb-12 text-center"
             >
               Skills
@@ -368,7 +370,6 @@ export default function Home() {
           >
             <motion.h2 
               variants={fadeInUp}
-              transition={{ duration: 0.6, ease: "easeOut" }}
               className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-8 sm:mb-10 md:mb-12 text-center"
             >
               Projects
@@ -435,7 +436,6 @@ export default function Home() {
           >
             <motion.h2
               variants={fadeInUp}
-              transition={{ duration: 0.6, ease: "easeOut" }}
               className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-8 sm:mb-10 md:mb-12 text-center"
             >
               Hackathons
@@ -570,7 +570,6 @@ export default function Home() {
           >
             <motion.h2 
               variants={fadeInUp}
-              transition={{ duration: 0.6, ease: "easeOut" }}
               className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-8 sm:mb-10 md:mb-12 text-center"
             >
               Certificates
@@ -854,7 +853,6 @@ export default function Home() {
           >
             <motion.h2 
               variants={fadeInUp}
-              transition={{ duration: 0.6, ease: "easeOut" }}
               className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-4 text-center"
             >
               Get In Touch

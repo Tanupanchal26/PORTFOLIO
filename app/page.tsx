@@ -11,6 +11,8 @@ export default function Home() {
   const [activeSection, setActiveSection] = useState('hero')
   const [isDark, setIsDark] = useState(true)
   const [showHeader, setShowHeader] = useState(true)
+  const [openHackathon, setOpenHackathon] = useState<string | null>(null)
+  const [openCertificate, setOpenCertificate] = useState<string | null>(null)
   const lastScrollYRef = useRef(0)
 
   useEffect(() => {
@@ -29,7 +31,7 @@ export default function Home() {
       lastScrollYRef.current = currentScrollY
       
       // Active section detection
-      const sections = ['hero', 'about', 'skills', 'projects', 'github', 'certificates', 'contact']
+      const sections = ['hero', 'about', 'skills', 'projects', 'hackathons', 'certificates', 'contact']
       const scrollPosition = window.scrollY + 100
       
       for (const section of sections) {
@@ -93,7 +95,8 @@ export default function Home() {
       year: '2025',
       tech: 'React.js, CSS, JavaScript',
       description: 'Personal portfolio website showcasing projects and skills with smooth animations, responsive design, and modern UI/UX principles.',
-      github: 'https://github.com/Tanupanchal26/PORTFOLIO.git'
+      github: 'https://github.com/Tanupanchal26/PORTFOLIO.git',
+      demo: 'https://panchaltanya26.netlify.app/'
     },
     {
       title: 'HotWheels – Automotive Showcase Platform',
@@ -110,11 +113,12 @@ export default function Home() {
       github: 'https://github.com/Tanupanchal26/JARVIS'
     },
     {
-      title: 'Python Projects Collection',
+      title: 'SkillBridge',
       year: '2026',
-      tech: 'Python',
-      description: 'A curated set of Python applications demonstrating scripting, automation, data handling, and logic implementation for real-world utility and learning.',
-      github: 'https://github.com/Tanupanchal26/Python-Projects'
+      tech: 'AI • Codebase Analysis • Visual Navigation',
+      description: 'An AI-powered developer onboarding platform that helps new engineers quickly understand complex codebases through smart repo analysis, visual navigation, and contextual AI guidance.',
+      github: 'https://github.com/Tanupanchal26/ai-adaptive-onboarding.git',
+      demo: 'https://ai-adaptive.streamlit.app/'
     }
   ]
 
@@ -156,7 +160,7 @@ export default function Home() {
               { id: 'about', icon: 'M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z', label: 'About' },
               { id: 'skills', icon: 'M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z', label: 'Skills' },
               { id: 'projects', icon: 'M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10', label: 'Projects' },
-              { id: 'github', icon: 'M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.30.653 1.652.242 2.873.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z', label: 'GitHub', fill: true },
+              { id: 'hackathons', icon: 'M13 10V3L4 14h7v7l9-11h-7z', label: 'Hackathons' },
               { id: 'certificates', icon: 'M12 14l9-5-9-5-9 5 9 5zm0 0l7-3.889V17l-7 3-7-3v-6.889L12 14z', label: 'Certificates' },
               { id: 'contact', icon: 'M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z', label: 'Contact' }
             ].map((item) => (
@@ -363,7 +367,7 @@ export default function Home() {
                   </div>
                   <p className={`project-card-secondary ${isDark ? 'text-[#B3B3B3]' : 'text-[#4B5563]'} text-[10px] sm:text-xs md:text-sm mb-3 sm:mb-4 transition-colors duration-300`}>{project.tech}</p>
                   <p className={`project-card-secondary ${isDark ? 'text-[#B3B3B3]' : 'text-[#4B5563]'} text-[10px] sm:text-xs md:text-sm leading-relaxed mb-3 sm:mb-4 transition-colors duration-300`}>{project.description}</p>
-                  <div className="text-center">
+                  <div className="flex gap-2 justify-center">
                     <a
                       href={project.github}
                       target="_blank"
@@ -375,6 +379,19 @@ export default function Home() {
                       </svg>
                       Source Code
                     </a>
+                    {project.demo && (
+                      <a
+                        href={project.demo}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className={`ui-btn inline-flex items-center px-4 py-2 rounded border transition-all duration-300 ease-out ${isDark ? 'border-[#1F1F1F]' : 'border-[#E5E7EB]'} text-sm`}
+                      >
+                        <svg className="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                        </svg>
+                        Live Demo
+                      </a>
+                    )}
                   </div>
                 </motion.div>
               ))}
@@ -383,145 +400,135 @@ export default function Home() {
         </div>
       </section>
 
-      {/* GitHub Section */}
-      <section id="github" className={`py-12 sm:py-16 md:py-20 px-3 sm:px-4 md:px-6 ${isDark ? 'bg-[#000000]' : 'bg-[#FFFFFF]'}`}>
-        <div className="max-w-6xl mx-auto">
+      {/* Hackathons Section */}
+      <section id="hackathons" className={`py-12 sm:py-16 md:py-20 px-3 sm:px-4 md:px-6 ${isDark ? 'bg-[#000000]' : 'bg-[#FFFFFF]'}`}>
+        <div className="max-w-4xl mx-auto">
           <motion.div
             variants={staggerContainer}
             initial="initial"
             whileInView="animate"
             viewport={{ once: true, margin: "-100px" }}
           >
-            <motion.h2 
+            <motion.h2
               variants={fadeInUp}
               className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-8 sm:mb-10 md:mb-12 text-center"
             >
-              GitHub Activity
+              Hackathons
             </motion.h2>
-            
-            {/* Contribution Graph */}
-            <motion.div variants={fadeInUp} className="mb-12">
-              <h3 className={`text-2xl font-semibold mb-8 text-center ${isDark ? 'text-[#FFFFFF]' : 'text-[#111827]'}`}>📊 𝐂𝐨𝐧𝐭𝐫𝐢𝐛𝐮𝐭𝐢𝐨𝐧 𝐆𝐫𝐚𝐩𝐡</h3>
-              <div className="flex justify-center mb-8">
-                <motion.img
-                  whileHover={{ scale: 1.02 }}
-                  transition={{ duration: 0.3 }}
-                  src={isDark ? "https://github-readme-activity-graph.vercel.app/graph?username=Tanupanchal26&bg_color=000000&color=FFFFFF&line=39FF14&point=FFFFFF&area_color=9333EA&hide_border=true&title_color=FFFFFF" : "https://github-readme-activity-graph.vercel.app/graph?username=Tanupanchal26&bg_color=FFFFFF&color=000000&line=2ECC71&point=000000&area_color=9333EA&hide_border=true&title_color=000000"}
-                  alt="Contribution Graph" 
-                  className={`${isDark ? 'border-2 border-black' : 'border border-gray-300'} rounded transition-all duration-300 w-full max-w-5xl h-auto cursor-pointer`}
-                />
-              </div>
-              <div className="flex justify-center">
-                <motion.img
-                  whileHover={{ scale: 1.02 }}
-                  transition={{ duration: 0.3 }}
-                  src="https://raw.githubusercontent.com/Tanupanchal26/Tanupanchal26/output/pacman-contribution-graph-dark.svg"
-                  alt="Pacman Contribution Graph" 
-                  className={`${isDark ? 'border-2 border-black' : 'border border-gray-300'} rounded transition-all duration-300 w-full max-w-5xl h-auto cursor-pointer`}
-                />
-              </div>
-            </motion.div>
-
-            {/* GitHub Analytics */}
-            <motion.div variants={fadeInUp} className="mb-12">
-              <h3 className={`text-2xl font-semibold mb-8 text-center ${isDark ? 'text-[#FFFFFF]' : 'text-[#111827]'}`}>📈 𝐆𝐢𝐭𝐇𝐮𝐛 𝐀𝐧𝐚𝐥𝐲𝐭𝐢𝐜𝐬</h3>
-              
-              <div className="flex justify-center mb-8">
-                <motion.img
-                  whileHover={{ scale: 1.02 }}
-                  transition={{ duration: 0.3 }}
-                  src={isDark ? "https://github-profile-summary-cards.vercel.app/api/cards/profile-details?username=Tanupanchal26&theme=tokyonight" : "https://github-profile-summary-cards.vercel.app/api/cards/profile-details?username=Tanupanchal26&theme=default"}
-                  alt="Profile Details" 
-                  className={`${isDark ? 'border-2 border-black' : 'border border-gray-300'} rounded transition-all duration-300 w-full max-w-3xl cursor-pointer`}
-                />
-              </div>
-              
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-x-3 sm:gap-x-8 md:gap-x-16 lg:gap-x-48 gap-y-3 sm:gap-y-6 mb-8 max-w-4xl mx-auto">
-                <div className="flex justify-center">
-                  <motion.img
-                    whileHover={{ scale: 1.05 }}
-                    transition={{ duration: 0.3 }}
-                    src={isDark ? "https://github-profile-summary-cards.vercel.app/api/cards/repos-per-language?username=Tanupanchal26&theme=tokyonight" : "https://github-profile-summary-cards.vercel.app/api/cards/repos-per-language?username=Tanupanchal26&theme=default"}
-                    alt="Repos per Language" 
-                    className={`${isDark ? 'border-2 border-black' : 'border border-gray-300'} rounded transition-all duration-300 w-full cursor-pointer`}
-                  />
-                </div>
-                <div className="flex justify-center">
-                  <motion.img
-                    whileHover={{ scale: 1.05 }}
-                    transition={{ duration: 0.3 }}
-                    src={isDark ? "https://github-profile-summary-cards.vercel.app/api/cards/most-commit-language?username=Tanupanchal26&theme=tokyonight" : "https://github-profile-summary-cards.vercel.app/api/cards/most-commit-language?username=Tanupanchal26&theme=default"}
-                    alt="Most Commit Language" 
-                    className={`${isDark ? 'border-2 border-black' : 'border border-gray-300'} rounded transition-all duration-300 w-full cursor-pointer`}
-                  />
-                </div>
-              </div>
-              
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-x-3 sm:gap-x-8 md:gap-x-16 lg:gap-x-48 gap-y-3 sm:gap-y-6 max-w-4xl mx-auto">
-                <div className="flex justify-center">
-                  <motion.img
-                    whileHover={{ scale: 1.05 }}
-                    transition={{ duration: 0.3 }}
-                    src={isDark ? "https://github-profile-summary-cards.vercel.app/api/cards/stats?username=Tanupanchal26&theme=tokyonight" : "https://github-profile-summary-cards.vercel.app/api/cards/stats?username=Tanupanchal26&theme=default"}
-                    alt="Stats" 
-                    className={`${isDark ? 'border-2 border-black' : 'border border-gray-300'} rounded transition-all duration-300 w-full cursor-pointer`}
-                  />
-                </div>
-                <div className="flex justify-center">
-                  <motion.img
-                    whileHover={{ scale: 1.05 }}
-                    transition={{ duration: 0.3 }}
-                    src={isDark ? "https://github-profile-summary-cards.vercel.app/api/cards/productive-time?username=Tanupanchal26&theme=tokyonight&utcOffset=5.5" : "https://github-profile-summary-cards.vercel.app/api/cards/productive-time?username=Tanupanchal26&theme=default&utcOffset=5.5"}
-                    alt="Productive Time" 
-                    className={`${isDark ? 'border-2 border-black' : 'border border-gray-300'} rounded transition-all duration-300 w-full cursor-pointer`}
-                  />
-                </div>
-              </div>
-            </motion.div>
-            
-            <motion.div 
-              variants={staggerContainer}
-              className="grid grid-cols-1 md:grid-cols-3 gap-3 sm:gap-4 md:gap-6 mb-12"
-            >
-              {/* GitHub Stats Cards */}
+            <motion.div variants={staggerContainer} className="space-y-4 max-w-3xl mx-auto">
               <motion.div
                 variants={fadeInUp}
-                className={`border ${isDark ? 'border-[#1F1F1F] bg-[#000000] hover:border-[#9CA3AF]' : 'border-[#E5E7EB] bg-[#FFFFFF] hover:border-[#D1D5DB]'} w-full p-4 sm:p-4 md:p-6 text-center transition-all duration-300`}
+                className={`p-4 sm:p-6 border ${isDark ? 'border-gray-600' : 'border-gray-300'} rounded transition-all duration-300`}
               >
-                <h3 className="text-xl sm:text-xl md:text-2xl font-bold text-[#2ECC71] mb-2">15+</h3>
-                <p className={`text-sm sm:text-sm md:text-base leading-snug whitespace-nowrap ${isDark ? 'text-[#B3B3B3]' : 'text-[#4B5563]'}`}>Public Repositories</p>
+                <div className="flex justify-between items-start">
+                  <div className="flex-1">
+                    <h3 className={`text-lg font-semibold mb-1 ${isDark ? 'text-white' : 'text-gray-900'}`}>🏆 1st Place — DefenceTech Domain</h3>
+                    <p className={`text-sm ${isDark ? 'text-gray-400' : 'text-gray-600'} mb-1`}>Gandhinagar University Hackathon · Team codeXlearner</p>
+                    <span className={`text-xs ${isDark ? 'text-gray-500' : 'text-gray-500'}`}>3rd-4th April 2026</span>
+                  </div>
+                  <button
+                    onClick={() => setOpenHackathon(openHackathon === 'gu' ? null : 'gu')}
+                    className={`ml-6 inline-flex items-center gap-2 ui-btn px-4 py-2 rounded border transition-all duration-300 ease-out ${isDark ? 'border-gray-600' : 'border-gray-300'} text-sm shrink-0`}
+                  >
+                    <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
+                    </svg>
+                    {openHackathon === 'gu' ? 'Close' : 'View Certificate'}
+                  </button>
+                </div>
+                {openHackathon === 'gu' && (
+                  <motion.div
+                    initial={{ opacity: 0, y: -10 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.3 }}
+                    className="mt-4 flex gap-3"
+                  >
+                    <img
+                      src="https://res.cloudinary.com/dazqanb4h/image/upload/v1779978525/GU_ya1qkb.jpg"
+                      alt="GU Hackathon Certificate"
+                      className={`w-1/2 rounded border ${isDark ? 'border-gray-600' : 'border-gray-300'}`}
+                    />
+                    <img
+                      src="/RAI.jpg"
+                      alt="RAI Certificate"
+                      className={`w-1/2 rounded border ${isDark ? 'border-gray-600' : 'border-gray-300'}`}
+                    />
+                  </motion.div>
+                )}
               </motion.div>
-              
               <motion.div
                 variants={fadeInUp}
-                className={`border ${isDark ? 'border-[#1F1F1F] bg-[#000000] hover:border-[#9CA3AF]' : 'border-[#E5E7EB] bg-[#FFFFFF] hover:border-[#D1D5DB]'} w-full p-4 sm:p-4 md:p-6 text-center transition-all duration-300`}
+                className={`p-4 sm:p-6 border ${isDark ? 'border-gray-600' : 'border-gray-300'} rounded transition-all duration-300`}
               >
-                <h3 className="text-xl sm:text-xl md:text-2xl font-bold text-[#2ECC71] mb-2">JavaScript</h3>
-                <p className={`text-sm sm:text-sm md:text-base leading-snug whitespace-nowrap ${isDark ? 'text-[#B3B3B3]' : 'text-[#4B5563]'}`}>Primary Language</p>
+                <div className="flex justify-between items-start">
+                  <div className="flex-1">
+                    <h3 className={`text-lg font-semibold mb-1 ${isDark ? 'text-white' : 'text-gray-900'}`}>Tech Expo</h3>
+                    <p className={`text-sm ${isDark ? 'text-gray-400' : 'text-gray-600'} mb-1`}>RAI University</p>
+                    <span className={`text-xs ${isDark ? 'text-gray-500' : 'text-gray-500'}`}>2025</span>
+                  </div>
+                  <button
+                    onClick={() => setOpenHackathon(openHackathon === 'techexpo' ? null : 'techexpo')}
+                    className={`ml-6 inline-flex items-center gap-2 ui-btn px-4 py-2 rounded border transition-all duration-300 ease-out ${isDark ? 'border-gray-600' : 'border-gray-300'} text-sm shrink-0`}
+                  >
+                    <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
+                    </svg>
+                    {openHackathon === 'techexpo' ? 'Close' : 'View Certificate'}
+                  </button>
+                </div>
+                {openHackathon === 'techexpo' && (
+                  <motion.div
+                    initial={{ opacity: 0, y: -10 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.3 }}
+                    className="mt-4"
+                  >
+                    <img
+                      src="/TECHEXPO-2025.jpg"
+                      alt="Tech Expo Certificate"
+                      className={`w-full rounded border ${isDark ? 'border-gray-600' : 'border-gray-300'}`}
+                    />
+                  </motion.div>
+                )}
               </motion.div>
-              
               <motion.div
                 variants={fadeInUp}
-                className={`border ${isDark ? 'border-[#1F1F1F] bg-[#000000] hover:border-[#9CA3AF]' : 'border-[#E5E7EB] bg-[#FFFFFF] hover:border-[#D1D5DB]'} w-full p-4 sm:p-4 md:p-6 text-center transition-all duration-300`}
+                className={`p-4 sm:p-6 border ${isDark ? 'border-gray-600' : 'border-gray-300'} rounded transition-all duration-300`}
               >
-                <h3 className="text-xl sm:text-xl md:text-2xl font-bold text-[#2ECC71] mb-2">Active</h3>
-                <p className={`text-sm sm:text-sm md:text-base leading-snug whitespace-nowrap ${isDark ? 'text-[#B3B3B3]' : 'text-[#4B5563]'}`}>Developer Status</p>
+                <div className="flex justify-between items-start">
+                  <div className="flex-1">
+                    <h3 className={`text-lg font-semibold mb-1 ${isDark ? 'text-white' : 'text-gray-900'}`}>ARTPARK CODEFORGE HACKATHON</h3>
+                    <p className={`text-sm ${isDark ? 'text-gray-400' : 'text-gray-600'} mb-1`}>UNSTOP - Online</p>
+                    <span className={`text-xs ${isDark ? 'text-gray-500' : 'text-gray-500'}`}>2026</span>
+                  </div>
+                  <button
+                    onClick={() => setOpenHackathon(openHackathon === 'artpark' ? null : 'artpark')}
+                    className={`ml-6 inline-flex items-center gap-2 ui-btn px-4 py-2 rounded border transition-all duration-300 ease-out ${isDark ? 'border-gray-600' : 'border-gray-300'} text-sm shrink-0`}
+                  >
+                    <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
+                    </svg>
+                    {openHackathon === 'artpark' ? 'Close' : 'View Certificate'}
+                  </button>
+                </div>
+                {openHackathon === 'artpark' && (
+                  <motion.div
+                    initial={{ opacity: 0, y: -10 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.3 }}
+                    className="mt-4"
+                  >
+                    <img
+                      src="/UNSTOP.jpg"
+                      alt="ARTPARK CODEFORGE HACKATHON Certificate"
+                      className={`w-full rounded border ${isDark ? 'border-gray-600' : 'border-gray-300'}`}
+                    />
+                  </motion.div>
+                )}
               </motion.div>
-            </motion.div>
-
-{/* GitHub Profile Link */}
-            <motion.div variants={fadeInUp} className="text-center">
-              <motion.a
-                href="https://github.com/Tanupanchal26/Tanupanchal26.git"
-                target="_blank"
-                rel="noopener noreferrer"
-                className={`ui-btn inline-flex items-center border px-5 sm:px-6 md:px-8 py-2 sm:py-2.5 md:py-3 transition-all duration-300 ease-out ${isDark ? 'border-[#1F1F1F]' : 'border-[#E5E7EB]'}`}
-              >
-                <svg className="w-5 h-5 mr-3" fill="currentColor" viewBox="0 0 24 24">
-                  <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.30.653 1.652.242 2.873.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
-                </svg>
-                View Full GitHub Profile
-              </motion.a>
             </motion.div>
           </motion.div>
         </div>
@@ -635,6 +642,56 @@ export default function Home() {
                 </div>
                 <a
                   href="https://res.cloudinary.com/dazqanb4h/image/upload/v1771257944/AWS_hnbxzx.jpg"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={`ui-btn ml-6 inline-flex items-center px-4 py-2 rounded border transition-all duration-300 ease-out ${isDark ? 'border-gray-600' : 'border-gray-300'} text-sm`}
+                >
+                  <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
+                  </svg>
+                  <span className="text-sm">View</span>
+                </a>
+              </motion.div>
+
+              {/* ADS Foundation Certificate */}
+              <motion.div
+                variants={fadeInUp}
+                whileHover={{ scale: 1.02 }}
+                className={`flex items-center justify-between p-4 border ${isDark ? 'border-gray-600' : 'border-gray-300'} rounded transition-all duration-300`}
+              >
+                <div className="flex-1">
+                  <h3 className={`text-lg font-semibold mb-1 ${isDark ? 'text-white' : 'text-gray-900'}`}>ADS Foundation</h3>
+                  <p className={`${isDark ? 'text-gray-400' : 'text-gray-600'} text-sm mb-1`}>ADS Foundation</p>
+                  <span className={`${isDark ? 'text-gray-500' : 'text-gray-500'} text-xs`}>2026</span>
+                </div>
+                <a
+                  href="https://res.cloudinary.com/dazqanb4h/image/upload/v1779977882/ADS_buzigl.jpg"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={`ui-btn ml-6 inline-flex items-center px-4 py-2 rounded border transition-all duration-300 ease-out ${isDark ? 'border-gray-600' : 'border-gray-300'} text-sm`}
+                >
+                  <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
+                  </svg>
+                  <span className="text-sm">View</span>
+                </a>
+              </motion.div>
+
+              {/* NPTEL Certificate */}
+              <motion.div
+                variants={fadeInUp}
+                whileHover={{ scale: 1.02 }}
+                className={`flex items-center justify-between p-4 border ${isDark ? 'border-gray-600' : 'border-gray-300'} rounded transition-all duration-300`}
+              >
+                <div className="flex-1">
+                  <h3 className={`text-lg font-semibold mb-1 ${isDark ? 'text-white' : 'text-gray-900'}`}>NPTEL</h3>
+                  <p className={`${isDark ? 'text-gray-400' : 'text-gray-600'} text-sm mb-1`}>NPTEL</p>
+                  <span className={`${isDark ? 'text-gray-500' : 'text-gray-500'} text-xs`}>2026</span>
+                </div>
+                <a
+                  href="https://res.cloudinary.com/dazqanb4h/image/upload/v1779977968/NPTEL_pnp28a.jpg"
                   target="_blank"
                   rel="noopener noreferrer"
                   className={`ui-btn ml-6 inline-flex items-center px-4 py-2 rounded border transition-all duration-300 ease-out ${isDark ? 'border-gray-600' : 'border-gray-300'} text-sm`}
@@ -846,7 +903,7 @@ export default function Home() {
       <footer className={`py-6 sm:py-7 md:py-8 px-3 sm:px-4 md:px-6 border-t ${isDark ? 'border-gray-600' : 'border-gray-300'}`}>
         <div className="max-w-4xl mx-auto text-center">
           <p className={`${isDark ? 'text-gray-400' : 'text-gray-600'}`}>
-            © 2026 Tanya Panchal. All rights reserved.
+            © 2025 Tanya Panchal. All rights reserved.
           </p>
         </div>
       </footer>
@@ -868,4 +925,5 @@ export default function Home() {
     </main>
   )
 }
+
 

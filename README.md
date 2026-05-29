@@ -1,7 +1,7 @@
 # Tanya Panchal - Portfolio Website
 
 A professional, minimalist portfolio website built with Next.js, Tailwind CSS, and Framer Motion.
-live --> https://panchaltanya.vercel.app/
+live --> https://panchaltanya.netlify.app/
 
 ## Getting Started
 

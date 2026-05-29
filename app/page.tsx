@@ -4,6 +4,13 @@ import { motion, Variants } from 'framer-motion'
 import { useEffect, useRef, useState } from 'react'
 import { GLSLHills } from '@/components/ui/glsl-hills'
 
+type NavItem = {
+  id: string
+  icon: string
+  label: string
+  fill?: boolean
+}
+
 const EASE_OUT_CUBIC = (t: number) => 1 - Math.pow(1 - t, 3)
 
 export default function Home() {
@@ -158,7 +165,7 @@ export default function Home() {
           
           {/* Navigation Icons in Center */}
           <div className="flex flex-1 items-center justify-center px-2 sm:px-0 space-x-1 sm:space-x-3 md:space-x-8 sm:absolute sm:left-1/2 sm:-translate-x-1/2 sm:transform">
-            {[
+            {([
               { id: 'hero', icon: 'M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6', label: 'Home' },
               { id: 'about', icon: 'M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z', label: 'About' },
               { id: 'skills', icon: 'M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z', label: 'Skills' },
@@ -166,7 +173,7 @@ export default function Home() {
               { id: 'hackathons', icon: 'M13 10V3L4 14h7v7l9-11h-7z', label: 'Hackathons' },
               { id: 'certificates', icon: 'M12 14l9-5-9-5-9 5 9 5zm0 0l7-3.889V17l-7 3-7-3v-6.889L12 14z', label: 'Certificates' },
               { id: 'contact', icon: 'M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z', label: 'Contact' }
-            ].map((item) => (
+            ] as NavItem[]).map((item) => (
               <motion.button
                 key={item.id}
                 onClick={() => scrollToSection(item.id)}
@@ -179,8 +186,8 @@ export default function Home() {
               >
                 <svg
                   className="w-3 h-3 sm:w-3.5 sm:h-3.5 md:w-4 md:h-4"
-                  fill={item.fill ? 'currentColor' : 'none'}
-                  stroke={item.fill ? 'none' : 'currentColor'}
+                  fill={item.fill ? "currentColor" : "none"}
+                  stroke={item.fill ? "none" : "currentColor"}
                   viewBox="0 0 24 24"
                   strokeWidth={item.fill ? 0 : 1.5}
                 >

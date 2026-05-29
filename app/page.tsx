@@ -106,7 +106,7 @@ export default function Home() {
       tech: 'React.js, CSS, JavaScript',
       description: 'Personal portfolio website showcasing projects and skills with smooth animations, responsive design, and modern UI/UX principles.',
       github: 'https://github.com/Tanupanchal26/PORTFOLIO.git',
-      demo: 'https://panchaltanya26.netlify.app/'
+      demo: 'https://panchaltanya.netlify.app/'
     },
     {
       title: 'HotWheels – Automotive Showcase Platform',

@@ -312,6 +312,7 @@ export default function Home() {
                 
                 <motion.div
                   variants={fadeInUp}
+                  className="flex justify-center md:justify-start"
                 >
                   <button
                     onClick={() => {

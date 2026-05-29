@@ -316,15 +316,15 @@ export default function Home() {
                   <button
                     onClick={() => {
                       const link = document.createElement('a');
-                      link.href = '/tanya resume.pdf';
-                      link.download = 'tanya resume.pdf';
+                      link.href = '/RESUME.pdf';
+                      link.download = 'RESUME.pdf';
                       document.body.appendChild(link);
                       link.click();
                       document.body.removeChild(link);
                     }}
                     className={`ui-btn inline-block border px-5 sm:px-6 md:px-8 py-2 sm:py-2.5 md:py-3 transition-all duration-300 ease-out ${isDark ? 'border-[#1F1F1F]' : 'border-[#E5E7EB]'}`}
                   >
-                    📄 Download Resume
+                    📄 Download CV
                   </button>
                 </motion.div>
               </motion.div>

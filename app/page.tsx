@@ -845,6 +845,43 @@ export default function Home() {
                    />
                  </motion.div>
                )}
+
+               {/* IBM Certificate */}
+               <motion.div
+                 variants={fadeInUp}
+                 whileHover={{ scale: 1.02 }}
+                 className={`flex items-center justify-between p-4 border ${isDark ? 'border-gray-600' : 'border-gray-300'} rounded transition-all duration-300`}
+               >
+                 <div className="flex-1">
+                   <h3 className={`text-lg font-semibold mb-1 ${isDark ? 'text-white' : 'text-gray-900'}`}>Data Analysis with Python</h3>
+                   <p className={`${isDark ? 'text-gray-400' : 'text-gray-600'} text-sm mb-1`}>IBM</p>
+                   <span className={`${isDark ? 'text-gray-500' : 'text-gray-500'} text-xs`}>2026</span>
+                 </div>
+                 <button
+                   onClick={() => setOpenCertificate(openCertificate === 'ibm' ? null : 'ibm')}
+                   className={`ml-6 inline-flex items-center gap-2 ui-btn px-4 py-2 rounded border transition-all duration-300 ease-out ${isDark ? 'border-gray-600' : 'border-gray-300'} text-sm shrink-0`}
+                 >
+                   <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
+                   </svg>
+                   {openCertificate === 'ibm' ? 'Close' : 'View'}
+                 </button>
+               </motion.div>
+               {openCertificate === 'ibm' && (
+                 <motion.div
+                   initial={{ opacity: 0, y: -10 }}
+                   animate={{ opacity: 1, y: 0 }}
+                   transition={{ duration: 0.3 }}
+                   className="mt-4 flex justify-center"
+                 >
+                   <img
+                     src="/IBM.jpg"
+                     alt="IBM Certificate"
+                     className={`max-w-full rounded border ${isDark ? 'border-gray-600' : 'border-gray-300'}`}
+                   />
+                 </motion.div>
+               )}
             </motion.div>
           </motion.div>
         </div>
